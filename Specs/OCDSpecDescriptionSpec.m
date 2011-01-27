@@ -1,10 +1,10 @@
-#import "OCDSpec/OcSpec.h"
+#import "OCDSpec/OCDSpec.h"
 #import "Specs/Mocks/MockExample.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
 void testRunsOneExampleWithError()
 {
-  OCSpecDescription *description = [[[OCSpecDescription alloc] init] autorelease];
+  OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
   description.outputter = [NSFileHandle fileHandleWithNullDevice];
   
   MockExample *example = [MockExample exampleThatFailed];  
@@ -20,11 +20,11 @@ void testRunsOneExampleWithError()
 
 void testDescribeWorksWithMultipleExamples()
 {
-  OCSpecDescription *description = [[[OCSpecDescription alloc] init] autorelease];
+  OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
   description.outputter = [NSFileHandle fileHandleWithNullDevice];
   
-  OCSpecExample *exampleOne = [[[OCSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail One"); }] autorelease];
-  OCSpecExample *exampleTwo = [[[OCSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail Two"); }] autorelease];
+  OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail One"); }] autorelease];
+  OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail Two"); }] autorelease];
   
   NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
   
@@ -38,11 +38,11 @@ void testDescribeWorksWithMultipleExamples()
 
 void testDescribeWorksWithMultipleSuccesses()
 {
-  OCSpecDescription *description = [[[OCSpecDescription alloc] init] autorelease];
+  OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
   description.outputter = [NSFileHandle fileHandleWithNullDevice];
   
-  OCSpecExample *exampleOne = [[[OCSpecExample alloc] initWithBlock: ^{ }] autorelease];
-  OCSpecExample *exampleTwo = [[[OCSpecExample alloc] initWithBlock: ^{ }] autorelease];
+  OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
+  OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
   
   NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
   
@@ -54,10 +54,10 @@ void testDescribeWorksWithMultipleSuccesses()
   }
 }
 
-DESCRIBE(OCSpecDescription,
+DESCRIBE(OCDSpecDescription,
          IT(@"describes one example without errors",
             ^{
-              OCSpecDescription *description = [[[OCSpecDescription alloc] init] autorelease];
+              OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
               
               [description describe:@"It Should Do Something" onArrayOfExamples: [[[NSArray alloc] init] autorelease]];
               
@@ -73,10 +73,10 @@ DESCRIBE(OCSpecDescription,
          
          IT(@"writes the exceptions to its outputter", 
             ^{
-              OCSpecDescription *description = [[[OCSpecDescription alloc] init] autorelease];
+              OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
               description.outputter = GetTemporaryFileHandle();
               
-              OCSpecExample *example = [[[OCSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
+              OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
               NSArray *tests = [NSArray arrayWithObject: example];
               
               [description describe:@"It Should Do Something" onArrayOfExamples: tests];
@@ -93,7 +93,7 @@ DESCRIBE(OCSpecDescription,
          
          IT(@"has a default ouputter of standard error",
             ^{
-              OCSpecDescription *description = [[[OCSpecDescription alloc] init] autorelease];
+              OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
               
               if (description.outputter != [NSFileHandle fileHandleWithStandardError])
               {

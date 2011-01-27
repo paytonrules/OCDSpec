@@ -1,5 +1,5 @@
-#import "OCSpec.h"
-#import "OCSpecExample.h"
+#import "OCDSpec/OCDSpec.h"
+#import "OCDSpec/OCDSpecExample.h"
 
 DESCRIBE(Test1,
   IT(@"Fails", ^{
@@ -21,8 +21,8 @@ DESCRIBE(Test2,
 
 -(void) applicationDidFinishLaunching:(UIApplication *)app
 {
-  OCSpecExample *example = [[OCSpecExample alloc] initWithBlock: ^{
-    OCSpecDescriptionRunner *runner = [[[OCSpecDescriptionRunner alloc] init] autorelease];
+  OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
+    OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
     
     [runner runAllDescriptions];
     

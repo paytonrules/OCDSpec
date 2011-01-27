@@ -1,6 +1,6 @@
-#import "OCSpecExample.h"
+#import "OCDSpec/OCDSpecExample.h"
 
-@implementation OCSpecExample
+@implementation OCDSpecExample
 
 @synthesize failed, outputter;
 

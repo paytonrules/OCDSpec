@@ -1,4 +1,4 @@
-#import "OCSpecDescriptionRunner.h"
+#import "OCDSpec/OCDSpecDescriptionRunner.h"
 
 @interface TestClass : NSObject
 {
@@ -10,7 +10,7 @@
 
 -(void) applicationDidFinishLaunching:(UIApplication *) app
 {
-  OCSpecDescriptionRunner *runner = [[[OCSpecDescriptionRunner alloc] init] autorelease];
+  OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
   
   [runner runAllDescriptions];
   

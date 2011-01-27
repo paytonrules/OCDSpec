@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "DescriptionRunner.h"
-#import "OCSpecDescription.h"
+#import "OCDSpec/Protocols/DescriptionRunner.h"
+#import "OCDSpec/OCDSpecDescription.h"
 
-@interface OCSpecDescriptionRunner : NSObject 
+@interface OCDSpecDescriptionRunner : NSObject 
 {
   Class         *classes;
   NSInteger     classCount;
@@ -28,13 +28,13 @@
 #define IDCOUNT(...) (sizeof(IDARRAY(__VA_ARGS__)) / sizeof(id))
 
 #define DESCRIBE(classname, ...)\
-static OCSpecDescription *desc##classname;\
+static OCDSpecDescription *desc##classname;\
 @interface TestRunner##classname : NSObject<DescriptionRunner>\
 @end\
 @implementation TestRunner##classname\
 +(void) run \
 { \
-desc##classname = [[[OCSpecDescription alloc] initWithName:@"##classname" examples:ARRAY(__VA_ARGS__)] autorelease]; \
+desc##classname = [[[OCDSpecDescription alloc] initWithName:@"##classname" examples:ARRAY(__VA_ARGS__)] autorelease]; \
 [desc##classname describe]; \
 } \
 +(NSNumber *)getFailures \

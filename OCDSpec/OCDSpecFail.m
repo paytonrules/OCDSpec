@@ -1,6 +1,6 @@
-#import "OCSpecFail.h"
+#import "OCDSpec/OCDSpecFail.h"
 
-@implementation OCSpecFail
+@implementation OCDSpecFail
 
 +(void) fail:(NSString *)reason atLine:(NSInteger) line inFile: (NSString *)file
 {

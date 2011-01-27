@@ -1,12 +1,12 @@
-#import "OCSpecDescriptionRunner.h"
-#import "OCSpecFail.h"
-#import "OCSpecExample.h"
-#import "TemporaryFileStuff.h"
+#import "OCDSpec/OCDSpecDescriptionRunner.h"
+#import "OCDSpec/OCDSpecFail.h"
+#import "OCDSpec/OCDSpecExample.h"
+#import "Specs/Utils/TemporaryFileStuff.h"
 
 void testExceptionFormat()
 {
   int outputLine = __LINE__ + 1;
-  OCSpecExample *example = [[[OCSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
+  OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
   example.outputter = GetTemporaryFileHandle();
   
   [example run];
@@ -28,7 +28,7 @@ void testExceptionFormat()
   DeleteTemporaryFile();  
 }
 
-DESCRIBE(OCSpecExample,
+DESCRIBE(OCDSpecExample,
          IT(@"Should Fail One Test",
             ^{
               BOOL caughtFailure = NO;
@@ -53,7 +53,7 @@ DESCRIBE(OCSpecExample,
          
          IT(@"writes its exceptions to the outputter",
             ^{
-              OCSpecExample *example = [[[OCSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
+              OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
               example.outputter = GetTemporaryFileHandle();
               
               [example run];

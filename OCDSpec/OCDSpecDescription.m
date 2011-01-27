@@ -1,7 +1,7 @@
-#import "OCSpecDescription.h"
-#import "OCSpecExample.h"
+#import "OCDSpec/OCDSpecDescription.h"
+#import "OCDSpec/OCDSpecExample.h"
 
-@implementation OCSpecDescription
+@implementation OCDSpecDescription
 
 @synthesize errors, successes, outputter;
 
@@ -36,7 +36,7 @@
 {
   [itsExamples enumerateObjectsUsingBlock: ^(id obj, NSUInteger idx, BOOL *stop)
   {
-    OCSpecExample *example = (OCSpecExample *) obj;
+    OCDSpecExample *example = (OCDSpecExample *) obj;
     example.outputter = self.outputter;
      
     [example run];

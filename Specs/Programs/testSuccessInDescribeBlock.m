@@ -1,4 +1,4 @@
-#import "OCDSpec/OCSpec.h"
+#import "OCDSpec/OCDSpec.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
 DESCRIBE(TestSuccess,
@@ -15,8 +15,8 @@ DESCRIBE(TestSuccess,
 
 -(void) applicationDidFinishLaunching:(UIApplication *)app
 {
-  OCSpecExample *example = [[OCSpecExample alloc] initWithBlock: ^{
-    OCSpecDescriptionRunner *runner = [[[OCSpecDescriptionRunner alloc] init] autorelease];
+  OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
+    OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
     runner.outputter = GetTemporaryFileHandle();
     
     [runner runAllDescriptions];

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "Example.h"
+#import "OCDSpec/Protocols/Example.h"
 
-@interface OCSpecExample : NSObject<Example>
+@interface OCDSpecExample : NSObject<Example>
 {
   BOOL          failed;
   id            itsExample;
@@ -15,4 +15,4 @@
 @end
 
 
-#define IT(description, example) [[OCSpecExample alloc] initWithBlock:example]
+#define IT(description, example) [[OCDSpecExample alloc] initWithBlock:example]

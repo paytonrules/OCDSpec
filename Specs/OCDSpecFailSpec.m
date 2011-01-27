@@ -1,11 +1,11 @@
-#import "OCDSpec/OCSpec.h"
+#import "OCDSpec/OCDSpec.h"
 
-DESCRIBE(OCSpecFail,
+DESCRIBE(OCDSpecFail,
          IT(@"Has a failure assertion", 
             ^{
               @try
               {
-                [OCSpecFail fail:@"Dude" atLine:1 inFile:@"file"];
+                [OCDSpecFail fail:@"Dude" atLine:1 inFile:@"file"];
                 FAIL(@"Did not fail - in fail");
               }
               @catch (NSException *e) 
@@ -20,7 +20,7 @@ DESCRIBE(OCSpecFail,
               @try 
               {
                 FAIL(@"FAIL HERE");
-                [OCSpecFail fail:@"Should have failed, didn't" atLine:1 inFile:@"file"];
+                [OCDSpecFail fail:@"Should have failed, didn't" atLine:1 inFile:@"file"];
               }
               @catch (NSException * e) 
               {

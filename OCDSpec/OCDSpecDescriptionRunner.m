@@ -1,10 +1,10 @@
 #include <objc/runtime.h>
-#import "OCSpecDescriptionRunner.h"
-#import "DescriptionRunner.h"
+#import "OCDSpec/OCDSpecDescriptionRunner.h"
+#import "OCDSpec/Protocols/DescriptionRunner.h"
 
 @class TestDescriptionRunner;
 
-@implementation OCSpecDescriptionRunner
+@implementation OCDSpecDescriptionRunner
 
 @synthesize outputter, specProtocol, successes, failures;
 

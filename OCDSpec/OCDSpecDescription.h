@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface OCSpecDescription : NSObject 
+@interface OCDSpecDescription : NSObject 
 {
   NSInteger     errors;
   NSInteger     successes;
