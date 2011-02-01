@@ -55,7 +55,7 @@ void testDescribeWorksWithMultipleSuccesses()
 }
 
 DESCRIBE(OCDSpecDescription,
-         IT(@"describes one example without errors",
+         it(@"describes one example without errors",
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
               
@@ -66,12 +66,12 @@ DESCRIBE(OCDSpecDescription,
               }
             }),
          
-         IT(@"describes an example with one error",
+         it(@"describes an example with one error",
             ^{
               testRunsOneExampleWithError();
             }),
          
-         IT(@"writes the exceptions to its outputter", 
+         it(@"writes the exceptions to its outputter", 
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
               description.outputter = GetTemporaryFileHandle();
@@ -91,7 +91,7 @@ DESCRIBE(OCDSpecDescription,
               DeleteTemporaryFile();
             }),
          
-         IT(@"has a default ouputter of standard error",
+         it(@"has a default ouputter of standard error",
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
               
@@ -101,12 +101,12 @@ DESCRIBE(OCDSpecDescription,
               }
             }),
          
-         IT(@"can describe multiple examples", 
+         it(@"can describe multiple examples", 
             ^{
               testDescribeWorksWithMultipleExamples();
             }),
          
-         IT(@"can describe multiple successes",
+         it(@"can describe multiple successes",
             ^{
               testDescribeWorksWithMultipleSuccesses();
             }),

@@ -47,3 +47,9 @@
 // Dealloc the block, and the outputter.
 
 @end
+
+// It helper function for testing
+OCDSpecExample *it(NSString *description, void (^example)(void))
+{
+  return [[OCDSpecExample alloc] initWithBlock:example];
+}

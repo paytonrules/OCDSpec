@@ -1,7 +1,7 @@
 #import "OCDSpec/OCDSpec.h"
 
 DESCRIBE(OCDSpecFail,
-         IT(@"Has a failure assertion", 
+         it(@"Has a failure assertion", 
             ^{
               @try
               {
@@ -15,7 +15,7 @@ DESCRIBE(OCDSpecFail,
               }
             }),
          
-         IT(@"Has a failure maco",
+         it(@"Has a failure macro",
             ^{
               @try 
               {

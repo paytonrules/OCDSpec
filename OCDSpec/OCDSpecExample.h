@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>`
 #import "OCDSpec/Protocols/Example.h"
 
 @interface OCDSpecExample : NSObject<Example>
@@ -14,5 +14,5 @@
 
 @end
 
-
 #define IT(description, example) [[OCDSpecExample alloc] initWithBlock:example]
+OCDSpecExample *it(NSString *description, void (^example)(void));
