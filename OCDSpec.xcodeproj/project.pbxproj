@@ -152,6 +152,7 @@
 			children = (
 				07C2DE3512844C33009E03F7 /* Protocols */,
 				07B90FAD12EA59E800FC388F /* OCDSpec.h */,
+				077CEFF912DDDFBC00F7B1C5 /* OCDSpecDescription.h */,
 				077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */,
 				077CF00412DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.h */,
 				077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */,
@@ -159,7 +160,6 @@
 				077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */,
 				077CF00912DDE01E00F7B1C5 /* OCDSpecFail.h */,
 				077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */,
-				077CEFF912DDDFBC00F7B1C5 /* OCDSpecDescription.h */,
 			);
 			path = OCDSpec;
 			sourceTree = "<group>";
