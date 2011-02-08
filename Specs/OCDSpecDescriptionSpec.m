@@ -2,58 +2,6 @@
 #import "Specs/Mocks/MockExample.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
-void testRunsOneExampleWithError()
-{
-  OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-  description.outputter = [NSFileHandle fileHandleWithNullDevice];
-  
-  MockExample *example = [MockExample exampleThatFailed];  
-  NSArray *examples = [NSArray arrayWithObjects:example, nil];
-  
-  [description describe:@"It Should Do Something" onArrayOfExamples: examples];
-  
-  if (description.errors != 1)
-  {
-    FAIL(@"Should have had 1 error, did not");
-  }
-}
-
-void testDescribeWorksWithMultipleExamples()
-{
-  OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-  description.outputter = [NSFileHandle fileHandleWithNullDevice];
-  
-  OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail One"); }] autorelease];
-  OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail Two"); }] autorelease];
-  
-  NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
-  
-  [description describe:@"It Should Do Something" onArrayOfExamples: tests];
-  
-  if (description.errors != 2)
-  {
-    FAIL(@"Should have had two errors, didn't");
-  }
-}
-
-void testDescribeWorksWithMultipleSuccesses()
-{
-  OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-  description.outputter = [NSFileHandle fileHandleWithNullDevice];
-  
-  OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
-  OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
-  
-  NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
-  
-  [description describe:@"It Should Do Something" onArrayOfExamples: tests];
-  
-  if (description.successes != 2)
-  {
-    FAIL(@"Should have had two successes, didn't");
-  }
-}
-
 DESCRIBE(OCDSpecDescription,
          it(@"describes one example without errors",
             ^{
@@ -68,7 +16,18 @@ DESCRIBE(OCDSpecDescription,
          
          it(@"describes an example with one error",
             ^{
-              testRunsOneExampleWithError();
+              OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+              description.outputter = [NSFileHandle fileHandleWithNullDevice];
+              
+              MockExample *example = [MockExample exampleThatFailed];  
+              NSArray *examples = [NSArray arrayWithObjects:example, nil];
+              
+              [description describe:@"It Should Do Something" onArrayOfExamples: examples];
+              
+              if (description.errors != 1)
+              {
+                FAIL(@"Should have had 1 error, did not");
+              }
             }),
          
          it(@"writes the exceptions to its outputter", 
@@ -103,11 +62,37 @@ DESCRIBE(OCDSpecDescription,
          
          it(@"can describe multiple examples", 
             ^{
-              testDescribeWorksWithMultipleExamples();
+              OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+              description.outputter = [NSFileHandle fileHandleWithNullDevice];
+              
+              OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail One"); }] autorelease];
+              OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail Two"); }] autorelease];
+              
+              NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
+              
+              [description describe:@"It Should Do Something" onArrayOfExamples: tests];
+              
+              if (description.errors != 2)
+              {
+                FAIL(@"Should have had two errors, didn't");
+              }
             }),
          
          it(@"can describe multiple successes",
             ^{
-              testDescribeWorksWithMultipleSuccesses();
+              OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+              description.outputter = [NSFileHandle fileHandleWithNullDevice];
+              
+              OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
+              OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
+              
+              NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
+              
+              [description describe:@"It Should Do Something" onArrayOfExamples: tests];
+              
+              if (description.successes != 2)
+              {
+                FAIL(@"Should have had two successes, didn't");
+              }
             }),
          );
