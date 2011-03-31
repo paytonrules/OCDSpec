@@ -3,8 +3,10 @@
 #import "OCDSpec/OCDSpecExample.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
-DESCRIBE(OCDSpecExample,
-         it(@"Should Fail One Test",
+CONTEXT(OCDSpecExample)
+{
+  describe(@"Standard Failures",
+           it(@"Should Fail One Test",
             ^{
               BOOL caughtFailure = NO;
               @try 
@@ -15,9 +17,10 @@ DESCRIBE(OCDSpecExample,
               {
                 caughtFailure = YES;
               }
-      
+
               if (caughtFailure != YES) 
               {
+                [[object should] fail];
                 FAIL(@"This should have raised a failure");
               }
             }),
@@ -45,7 +48,7 @@ DESCRIBE(OCDSpecExample,
  
          it(@"Examples write their output in a XCode friendly format",
             ^{
-          /*    int outputLine = __LINE__ + 1;
+              int outputLine = __LINE__ + 1;
               OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
               example.outputter = GetTemporaryFileHandle();
       
@@ -65,6 +68,7 @@ DESCRIBE(OCDSpecExample,
                 FAIL(failMessage);
               }
       
-              DeleteTemporaryFile();*/
-            }),
-         )
+              DeleteTemporaryFile();
+            })
+           );
+}

@@ -10,6 +10,10 @@
 		073A6F7612F1D0A0003EC052 /* OCDSpecFailSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */; };
 		07550BAB126A2C5400C4A7FF /* unitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 07550BAA126A2C5400C4A7FF /* unitTestMain.m */; };
 		0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757F8B612C9B4460004134A /* testFailureinDescribeBlock.m */; };
+		07763E7D131881160059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
+		07763E7E131881170059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
+		07763E7F131881170059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
+		07763E80131881180059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
 		077CF00C12DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
 		077CF00D12DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
 		077CF00E12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
@@ -70,6 +74,8 @@
 		0757F8B612C9B4460004134A /* testFailureinDescribeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testFailureinDescribeBlock.m; sourceTree = "<group>"; tabWidth = 0; };
 		0757F8BB12C9B4980004134A /* TestDescribeMacroFailing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDescribeMacroFailing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0757F8BD12C9B4980004134A /* TestDescribeMacroFailing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TestDescribeMacroFailing-Info.plist"; path = "Specs/Programs/TestDescribeMacroFailing-Info.plist"; sourceTree = "<group>"; };
+		07763E79131880620059DA1D /* OCDSpecOutputter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecOutputter.h; sourceTree = "<group>"; };
+		07763E7A131880620059DA1D /* OCDSpecOutputter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecOutputter.m; sourceTree = "<group>"; };
 		077CEFF912DDDFBC00F7B1C5 /* OCDSpecDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecDescription.h; sourceTree = "<group>"; };
 		077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescription.m; sourceTree = "<group>"; };
 		077CF00412DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecDescriptionRunner.h; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 				077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */,
 				077CF00912DDE01E00F7B1C5 /* OCDSpecFail.h */,
 				077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */,
+				07763E79131880620059DA1D /* OCDSpecOutputter.h */,
+				07763E7A131880620059DA1D /* OCDSpecOutputter.m */,
 			);
 			path = OCDSpec;
 			sourceTree = "<group>";
@@ -430,6 +438,7 @@
 				077CF01012DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
 				077CF01112DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m in Sources */,
 				073A6F7612F1D0A0003EC052 /* OCDSpecFailSpec.m in Sources */,
+				07763E7D131881160059DA1D /* OCDSpecOutputter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +453,7 @@
 				077CF02012DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
 				077CF02212DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
 				07B90FBB12EA5AB400FC388F /* MockExample.m in Sources */,
+				07763E7F131881170059DA1D /* OCDSpecOutputter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +467,7 @@
 				077CF01912DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
 				077CF01A12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
 				077CF01C12DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
+				07763E7E131881170059DA1D /* OCDSpecOutputter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +482,7 @@
 				077CF02612DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
 				077CF02812DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
 				07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */,
+				07763E80131881180059DA1D /* OCDSpecOutputter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

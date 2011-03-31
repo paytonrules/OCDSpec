@@ -5,7 +5,6 @@
 {
   BOOL          failed;
   id            itsExample;
-  NSFileHandle  *outputter;
 }
 
 @property(readonly) BOOL failed;
@@ -13,6 +12,4 @@
 -(id) initWithBlock:(void (^)(void))example;
 
 @end
-
-#define IT(description, example) [[OCDSpecExample alloc] initWithBlock:example]
 OCDSpecExample *it(NSString *description, void (^example)(void));

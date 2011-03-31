@@ -1,15 +1,15 @@
 #import "OCDSpec/OCDSpecExample.h"
+#import "OCDSpec/OCDSpecOutputter.h"
 
 @implementation OCDSpecExample
 
-@synthesize failed, outputter;
+@synthesize failed;
 
 -(id) init
 {
   if (self = [super init]) 
   {
     failed = NO;
-    outputter = [NSFileHandle fileHandleWithStandardError];
   }
   return self;
 }
@@ -37,14 +37,14 @@
                              [[[e userInfo] objectForKey:@"file"] UTF8String],
                              [[[e userInfo] objectForKey:@"line"] longValue],
                              [e reason]];
-    
-    [outputter writeData:[errorString dataUsingEncoding:NSUTF8StringEncoding]];
+
+    [[OCDSpecOutputter sharedOutputter] writeData:[errorString dataUsingEncoding:NSUTF8StringEncoding]];
     
     failed = YES;
   }
 }
 
-// Dealloc the block, and the outputter.
+// Dealloc the block
 
 @end
 

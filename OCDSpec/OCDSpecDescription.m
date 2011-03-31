@@ -1,24 +1,33 @@
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecExample.h"
 
+// Warning - untested code
+void describe(NSString *description, ...)
+{
+  va_list         variableArgumentList;
+  OCDSpecExample  *example;
+  NSMutableArray  *exampleList = [NSMutableArray arrayWithCapacity:20];
+  
+  va_start(variableArgumentList, description);
+  while (example = va_arg(variableArgumentList, OCDSpecExample*) )
+  {
+    [exampleList addObject: example];
+  }
+  va_end(variableArgumentList);
+
+  OCDSpecDescription *decription = [[[OCDSpecDescription alloc] initWithName:description examples:exampleList] autorelease];
+  [decription describe];
+}
+// End untested code
+
 @implementation OCDSpecDescription
 
-@synthesize errors, successes, outputter;
-
--(id) init
-{
-  if (self = [super init]) 
-  {
-    self.outputter = [NSFileHandle fileHandleWithStandardError];
-  }
-  return self;
-}
+@synthesize errors, successes;
 
 -(id) initWithName:(NSString *) name examples:(NSArray *)examples
 {
-  if (self = [super init])
+  if (self = [self init])
   {
-    [super init];
     itsExamples = examples;
     itsName = name;
   }
@@ -37,7 +46,6 @@
   [itsExamples enumerateObjectsUsingBlock: ^(id obj, NSUInteger idx, BOOL *stop)
   {
     OCDSpecExample *example = (OCDSpecExample *) obj;
-    example.outputter = self.outputter;
      
     [example run];
     if (example.failed)

@@ -1,22 +1,26 @@
 #import "OCDSpec/OCDSpec.h"
+#import "OCDSpec/OCDSpecOutputter.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
-DESCRIBE(Test1,
-         IT(@"Fails", 
+CONTEXT(OCDSpecFail)
+{
+  describe(@"The Failures",
+           it(@"Fails", 
             ^{
               FAIL(@"FAILURE");
             }),
-         
-         IT(@"Also Fails",
+           it(@"Also Fails",
             ^{
               FAIL(@"Another Failure");
             }),
-         
-         IT(@"Will Fail You punk",
+           
+           it(@"Will Fail You punk",
             ^{
               FAIL(@"Failed");
-            })
+            }),
+           nil
          );
+}
 
 @interface TestClass : NSObject
 -(void) applicationDidFinishLaunching:(UIApplication *)app;
@@ -28,12 +32,16 @@ DESCRIBE(Test1,
 {
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
     OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
-    
-    runner.outputter = GetTemporaryFileHandle();
-    
+     
+    OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+    outputter.fileHandle = GetTemporaryFileHandle();
     [runner runAllDescriptions];
-    
+     
     NSString *outputException = ReadTemporaryFile();
+    
+    // Need an 'after'    
+   // DeleteTemporaryFile();
+    outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
     
     // For some reason outputException is faling, thats why this doesn't work.
     // Make the TemporaryFile stuff in to part of the Spec of the Spec not the Spec itself
@@ -42,8 +50,6 @@ DESCRIBE(Test1,
     {
       FAIL(@"The wrong number of failing tests was written");
     }
-    
-    DeleteTemporaryFile();
   }];
   
   [example run];

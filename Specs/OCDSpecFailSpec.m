@@ -1,7 +1,9 @@
 #import "OCDSpec/OCDSpec.h"
 
-DESCRIBE(OCDSpecFail,
-         it(@"Has a failure assertion", 
+CONTEXT(OCDSpecFail)
+{
+  describe(@"OCDSpec Failures",
+           it(@"Has a failure assertion", 
             ^{
               @try
               {
@@ -28,4 +30,5 @@ DESCRIBE(OCDSpecFail,
                   [e raise];
               }
             })
-         )
+           );
+}

@@ -1,11 +1,13 @@
 #import "OCDSpec/OCDSpec.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
-DESCRIBE(TestSuccess,
-         IT(@"Succeeds", ^{}),
-         IT(@"Successeeds too",^{}),
-         IT(@"Successeeds three",^{}),
-);
+CONTEXT(TestSuccess)
+{
+  describe(@"Successful Tests",
+           it(@"Succeeds", ^{}),
+           it(@"Succeeds too",^{}),
+           it(@"Succeeds three",^{}));
+}
 
 @interface TestClass : NSObject
 -(void) applicationDidFinishLaunching:(UIApplication *)app;

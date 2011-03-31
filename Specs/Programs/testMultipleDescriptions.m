@@ -1,17 +1,25 @@
 #import "OCDSpec/OCDSpec.h"
 #import "OCDSpec/OCDSpecExample.h"
 
-DESCRIBE(Test1,
-  IT(@"Fails", ^{
-    FAIL(@"FAILURE");
-  })
-);
+CONTEXT(Test1)
+{
+  describe(@"First Description/Context",
+           it(@"Fails",
+              ^{
+                FAIL(@"FAILURE");
+              })
+           );
+}
 
-DESCRIBE(Test2,
-  IT(@"Fails", ^{
-    // Success
-  })
-);
+CONTEXT(Test2)
+{
+  describe(@"Second Context",
+           it(@"Doesnt fail",
+              ^{
+                // Success
+              })
+           );
+}
 
 @interface TestClass : NSObject
 -(void) applicationDidFinishLaunching:(UIApplication *)app;

@@ -1,12 +1,13 @@
 #include <objc/runtime.h>
 #import "OCDSpec/OCDSpecDescriptionRunner.h"
 #import "OCDSpec/Protocols/DescriptionRunner.h"
+#import "OCDSpec/OCDSpecOutputter.h"
 
 @class TestDescriptionRunner;
 
 @implementation OCDSpecDescriptionRunner
 
-@synthesize outputter, specProtocol, successes, failures;
+@synthesize specProtocol, successes, failures;
 
 -(id) init
 {
@@ -54,7 +55,7 @@
 -(void) reportResults
 {
   NSString *resultsMessage = [NSString stringWithFormat:@"Tests ran with %d passing tests and %d failing tests\n", successes, failures];
-  [outputter writeData:[resultsMessage dataUsingEncoding:NSUTF8StringEncoding]];
+  [[OCDSpecOutputter sharedOutputter] writeData:[resultsMessage dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 -(void) runAllDescriptions

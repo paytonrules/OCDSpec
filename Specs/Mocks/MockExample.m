@@ -1,7 +1,7 @@
 #import "MockExample.h"
 
 @implementation MockExample
-@synthesize failed, outputter;
+@synthesize failed;
 
 +(MockExample *)exampleThatFailed
 {

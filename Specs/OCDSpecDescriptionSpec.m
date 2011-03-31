@@ -2,7 +2,9 @@
 #import "Specs/Mocks/MockExample.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
-DESCRIBE(OCDSpecDescription,
+CONTEXT(OCDSpecDescription)
+{
+  describe(@"The Description",
          it(@"describes one example without errors",
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
@@ -94,5 +96,6 @@ DESCRIBE(OCDSpecDescription,
               {
                 FAIL(@"Should have had two successes, didn't");
               }
-            }),
-         );
+            })
+           );
+}

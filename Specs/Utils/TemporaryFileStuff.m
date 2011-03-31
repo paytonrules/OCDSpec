@@ -16,8 +16,9 @@ NSString *OutputterPath()
 
 NSFileHandle *GetTemporaryFileHandle()
 {
-  NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
+  NSFileManager *fileManager = [[NSFileManager alloc] init];
   [fileManager createFileAtPath:OutputterPath() contents:nil attributes:nil];
+  [fileManager release];
   NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:OutputterPath()]; 
   return fileHandle;
 }
@@ -32,6 +33,7 @@ NSString *ReadTemporaryFile()
 void DeleteTemporaryFile()
 {
   NSString *outputterPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"test.txt"];
-  NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
+  NSFileManager *fileManager = [[NSFileManager alloc] init];
   [fileManager removeItemAtPath:outputterPath error:NULL];
+  [fileManager release];
 }
