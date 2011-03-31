@@ -37,7 +37,9 @@ CONTEXT(OCDSpecFail)
     outputter.fileHandle = GetTemporaryFileHandle();
     [runner runAllDescriptions];
      
-    NSString *outputException = ReadTemporaryFile();
+    NSString *output = ReadTemporaryFile();
+    NSArray *lines = [[output stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] ] componentsSeparatedByString:@"\n"];
+    NSString *outputException = [lines lastObject];
     
     // Need an 'after'    
    // DeleteTemporaryFile();
@@ -48,6 +50,7 @@ CONTEXT(OCDSpecFail)
     // Maybe it's a library object
     if ([outputException compare:@"Tests ran with 0 passing tests and 3 failing tests\n"] != 0)
     {
+      NSLog(@"Exception was: %@", outputException);
       FAIL(@"The wrong number of failing tests was written");
     }
   }];
