@@ -1,22 +1,27 @@
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecExample.h"
+#import "OCDSpec/OCDSpecSharedResults.h"
 
 // Warning - untested code
-void describe(NSString *description, ...)
+void describe(NSString *descriptionName, ...)
 {
   va_list         variableArgumentList;
   OCDSpecExample  *example;
   NSMutableArray  *exampleList = [NSMutableArray arrayWithCapacity:20];
   
-  va_start(variableArgumentList, description);
+  va_start(variableArgumentList, descriptionName);
   while (example = va_arg(variableArgumentList, OCDSpecExample*) )
   {
     [exampleList addObject: example];
   }
   va_end(variableArgumentList);
 
-  OCDSpecDescription *decription = [[[OCDSpecDescription alloc] initWithName:description examples:exampleList] autorelease];
-  [decription describe];
+  OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
+  [description describe];
+  
+  OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
+  results.successes = description.successes;
+  results.failures = description.errors;
 }
 // End untested code
 

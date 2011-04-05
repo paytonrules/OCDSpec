@@ -77,7 +77,7 @@ CONTEXT(OCDSpecFail)
 
     // Make the TemporaryFile stuff in to part of the Spec of the Spec not the Spec itself
     // Maybe it's a library object
-    if ([outputException compare:@"Tests ran with 0 passing tests and 3 failing tests\n"] != 0)
+    if ([outputException compare:@"Tests ran with 0 passing tests and 3 failing tests"] != 0)
     {
       NSLog(@"Exception was: %@", outputException);
       FAIL(@"The wrong number of failing tests was written");

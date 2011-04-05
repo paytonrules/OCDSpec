@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "OCDSpec/Protocols/DescriptionRunner.h"
 #import "OCDSpec/OCDSpecDescription.h"
+#import "OCDSpec/OCDSpecSharedResults.h"
 
 @interface OCDSpecDescriptionRunner : NSObject 
 {
@@ -20,17 +21,16 @@
 
 #define CONTEXT(classname) \
 void descriptionOf##classname();\
-static OCDSpecDescription *desc##classname;\
 @interface TestRunner##classname : NSObject<DescriptionRunner>\
 @end\
 @implementation TestRunner##classname\
 +(NSNumber *)getFailures \
 { \
-  return [NSNumber numberWithInt:[desc##classname errors]];\
+  return [NSNumber numberWithInt:[OCDSpecSharedResults sharedResults].failures];\
 } \
 +(NSNumber *)getSuccesses \
 { \
-  return [NSNumber numberWithInt:[desc##classname successes]];\
+  return [NSNumber numberWithInt:[OCDSpecSharedResults sharedResults].successes];\
 } \
 +(void) run \
 { \
