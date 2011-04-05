@@ -3,7 +3,7 @@
 @protocol DescriptionRunner
 
 +(void) run;
-+(NSNumber *) getSuccesses;
-+(NSNumber *) getFailures;
++(int) getSuccesses;
++(int) getFailures;
 
 @end

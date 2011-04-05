@@ -21,13 +21,13 @@ void describe(NSString *descriptionName, ...)
   
   OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
   results.successes = description.successes;
-  results.failures = description.errors;
+  results.failures = description.failures;
 }
 // End untested code
 
 @implementation OCDSpecDescription
 
-@synthesize errors, successes;
+@synthesize failures, successes;
 
 -(id) initWithName:(NSString *) name examples:(NSArray *)examples
 {
@@ -57,7 +57,7 @@ void describe(NSString *descriptionName, ...)
     [example run];
     if (example.failed)
     {
-      self.errors++;
+      self.failures++;
     }
     else 
     {

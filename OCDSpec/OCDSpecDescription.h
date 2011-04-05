@@ -4,14 +4,14 @@
 
 @interface OCDSpecDescription : NSObject 
 {
-  NSInteger     errors;
-  NSInteger     successes;
-  NSArray       *itsExamples;
-  NSString      *itsName;
+  int         failures;
+  int         successes;
+  NSArray     *itsExamples;
+  NSString    *itsName;
 }
 
-@property(assign) NSInteger errors;
-@property(assign) NSInteger successes;
+@property(assign) int failures;
+@property(assign) int successes;
 
 // NOTE - this describe is probably deletable!
 -(void) describe:(NSString *)name onArrayOfExamples:(NSArray *) examples;

@@ -12,8 +12,8 @@ CONTEXT(OCDSpecDescription)
               
               [description describe:@"It Should Do Something" onArrayOfExamples: [[[NSArray alloc] init] autorelease]];
               
-              if (description.errors != 0) {
-                FAIL(@"Should have had 0 errors.  Did not");
+              if (description.failures != 0) {
+                FAIL(@"Should have had 0 failures.  Did not");
               }
             }),
          
@@ -30,7 +30,7 @@ CONTEXT(OCDSpecDescription)
               
               outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
               
-              if (description.errors != 1)
+              if (description.failures != 1)
               {
                 FAIL(@"Should have had 1 error, did not");
               }
@@ -73,7 +73,7 @@ CONTEXT(OCDSpecDescription)
               
               outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
               
-              if (description.errors != 2)
+              if (description.failures != 2)
               {
                 FAIL(@"Should have had two errors, didn't");
               }

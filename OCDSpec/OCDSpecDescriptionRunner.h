@@ -6,7 +6,7 @@
 @interface OCDSpecDescriptionRunner : NSObject 
 {
   Class         *classes;
-  NSInteger     classCount;
+  int           classCount;
   id            specProtocol;
   int           successes;
   int           failures;
@@ -24,13 +24,13 @@ void descriptionOf##classname();\
 @interface TestRunner##classname : NSObject<DescriptionRunner>\
 @end\
 @implementation TestRunner##classname\
-+(NSNumber *)getFailures \
++(int) getFailures \
 { \
-  return [NSNumber numberWithInt:[OCDSpecSharedResults sharedResults].failures];\
+  return [OCDSpecSharedResults sharedResults].failures;\
 } \
-+(NSNumber *)getSuccesses \
++(int)getSuccesses \
 { \
-  return [NSNumber numberWithInt:[OCDSpecSharedResults sharedResults].successes];\
+  return [OCDSpecSharedResults sharedResults].successes;\
 } \
 +(void) run \
 { \

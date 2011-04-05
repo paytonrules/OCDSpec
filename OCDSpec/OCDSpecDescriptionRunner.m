@@ -46,8 +46,8 @@
     if ([self isDescriptionRunner:currClass])
     {
       [currClass run];
-      successes += [[currClass getSuccesses] intValue]; 
-      failures += [[currClass getFailures] intValue];
+      successes += [currClass getSuccesses]; 
+      failures += [currClass getFailures];
     }
   }
 }

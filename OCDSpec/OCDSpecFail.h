@@ -5,7 +5,7 @@
 
 }
 
-+(void) fail:(NSString*)reason atLine:(NSInteger) line inFile: (NSString *)file;
++(void) fail:(NSString*)reason atLine:(int) line inFile: (NSString *)file;
 
 @end
 
