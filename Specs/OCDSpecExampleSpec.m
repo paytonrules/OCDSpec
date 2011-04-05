@@ -1,6 +1,7 @@
 #import "OCDSpec/OCDSpecDescriptionRunner.h"
 #import "OCDSpec/OCDSpecFail.h"
 #import "OCDSpec/OCDSpecExample.h"
+#import "OCDSpec/OCDSpecOutputter.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
 CONTEXT(OCDSpecExample)
@@ -20,7 +21,6 @@ CONTEXT(OCDSpecExample)
 
               if (caughtFailure != YES) 
               {
-                [[object should] fail];
                 FAIL(@"This should have raised a failure");
               }
             }),
@@ -32,11 +32,13 @@ CONTEXT(OCDSpecExample)
          it(@"writes its exceptions to the outputter",
             ^{
               OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
-              example.outputter = GetTemporaryFileHandle();
+              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+              outputter.fileHandle = GetTemporaryFileHandle();
       
               [example run];
       
               NSString *outputException = ReadTemporaryFile();
+              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
       
               if (outputException.length == 0)
               {
@@ -50,17 +52,19 @@ CONTEXT(OCDSpecExample)
             ^{
               int outputLine = __LINE__ + 1;
               OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
-              example.outputter = GetTemporaryFileHandle();
+              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+              outputter.fileHandle = GetTemporaryFileHandle();
       
               [example run];
       
               NSString *outputException = ReadTemporaryFile();
-      
+              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+              
               NSString *errorFormat = [NSString stringWithFormat:@"%s:%ld: error: %@\n",
                                        __FILE__,
                                        outputLine,
                                        @"FAIL"];
-      
+              
               // This is a string match assertion :)
               if ([outputException compare:errorFormat] != 0)
               {
@@ -69,6 +73,7 @@ CONTEXT(OCDSpecExample)
               }
       
               DeleteTemporaryFile();
-            })
+            }),
+           nil
            );
 }

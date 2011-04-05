@@ -1,4 +1,5 @@
 #import "OCDSpec/OCDSpec.h"
+#import "OCDSpec/OCDSpecOutputter.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
 CONTEXT(TestSuccess)
@@ -19,11 +20,13 @@ CONTEXT(TestSuccess)
 {
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
     OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
-    runner.outputter = GetTemporaryFileHandle();
+    OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+    outputter.fileHandle = GetTemporaryFileHandle();
     
     [runner runAllDescriptions];
     
     NSString *outputException = ReadTemporaryFile();
+    outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
     
     if ([outputException compare:@"Tests ran with 3 passing tests and 0 failing tests\n"] != 0)
     {

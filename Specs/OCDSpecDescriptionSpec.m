@@ -1,6 +1,7 @@
 #import "OCDSpec/OCDSpec.h"
 #import "Specs/Mocks/MockExample.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
+#import "OCDSpec/OCDSpecOutputter.h"
 
 CONTEXT(OCDSpecDescription)
 {
@@ -19,12 +20,15 @@ CONTEXT(OCDSpecDescription)
          it(@"describes an example with one error",
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-              description.outputter = [NSFileHandle fileHandleWithNullDevice];
+              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+              outputter.fileHandle = [NSFileHandle fileHandleWithNullDevice];
               
               MockExample *example = [MockExample exampleThatFailed];  
               NSArray *examples = [NSArray arrayWithObjects:example, nil];
               
               [description describe:@"It Should Do Something" onArrayOfExamples: examples];
+              
+              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
               
               if (description.errors != 1)
               {
@@ -32,10 +36,11 @@ CONTEXT(OCDSpecDescription)
               }
             }),
          
-         it(@"writes the exceptions to its outputter", 
+         it(@"writes the exceptions to the shared outputter", 
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-              description.outputter = GetTemporaryFileHandle();
+              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+              outputter.fileHandle = GetTemporaryFileHandle();
               
               OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
               NSArray *tests = [NSArray arrayWithObject: example];
@@ -43,6 +48,7 @@ CONTEXT(OCDSpecDescription)
               [description describe:@"It Should Do Something" onArrayOfExamples: tests];
               
               NSString *outputException = ReadTemporaryFile();  
+              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
               
               if (outputException.length == 0)
               {
@@ -52,20 +58,11 @@ CONTEXT(OCDSpecDescription)
               DeleteTemporaryFile();
             }),
          
-         it(@"has a default ouputter of standard error",
-            ^{
-              OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-              
-              if (description.outputter != [NSFileHandle fileHandleWithStandardError])
-              {
-                FAIL(@"Should have had standard error.  Didn't");
-              }
-            }),
-         
          it(@"can describe multiple examples", 
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-              description.outputter = [NSFileHandle fileHandleWithNullDevice];
+              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+              outputter.fileHandle = [NSFileHandle fileHandleWithNullDevice];
               
               OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail One"); }] autorelease];
               OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ FAIL(@"Fail Two"); }] autorelease];
@@ -73,6 +70,8 @@ CONTEXT(OCDSpecDescription)
               NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
               
               [description describe:@"It Should Do Something" onArrayOfExamples: tests];
+              
+              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
               
               if (description.errors != 2)
               {
@@ -83,7 +82,8 @@ CONTEXT(OCDSpecDescription)
          it(@"can describe multiple successes",
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-              description.outputter = [NSFileHandle fileHandleWithNullDevice];
+              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+              outputter.fileHandle = [NSFileHandle fileHandleWithNullDevice];
               
               OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
               OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: ^{ }] autorelease];
@@ -92,10 +92,13 @@ CONTEXT(OCDSpecDescription)
               
               [description describe:@"It Should Do Something" onArrayOfExamples: tests];
               
+              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+              
               if (description.successes != 2)
               {
                 FAIL(@"Should have had two successes, didn't");
               }
-            })
+            }),
+          nil
            );
 }

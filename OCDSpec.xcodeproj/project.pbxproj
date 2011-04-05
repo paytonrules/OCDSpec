@@ -37,6 +37,7 @@
 		07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C0C18812CCD140008B4D42 /* testMultipleDescriptions.m */; };
 		07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
+		07DD9D3D1347534F0034EA52 /* OCDSpecSharedOutputterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD9D3C1347534F0034EA52 /* OCDSpecSharedOutputterSpec.m */; };
 		07E417CC12D2D833001647F8 /* TemporaryFileStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */; };
 		07E4180D12D2DB25001647F8 /* TemporaryFileStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */; };
 		07E4180E12D2DB26001647F8 /* TemporaryFileStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */; };
@@ -97,6 +98,7 @@
 		07C2DDF3128442EA009E03F7 /* MockExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockExample.h; sourceTree = "<group>"; };
 		07C2DDF4128442EA009E03F7 /* MockExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockExample.m; sourceTree = "<group>"; };
 		07C2DE3712844CDE009E03F7 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
+		07DD9D3C1347534F0034EA52 /* OCDSpecSharedOutputterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecSharedOutputterSpec.m; sourceTree = "<group>"; };
 		07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemporaryFileStuff.m; sourceTree = "<group>"; };
 		07E417CD12D2D850001647F8 /* TemporaryFileStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryFileStuff.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -178,6 +180,7 @@
 				073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */,
 				077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */,
 				077CF00B12DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m */,
+				07DD9D3C1347534F0034EA52 /* OCDSpecSharedOutputterSpec.m */,
 				073A6F9312F1D43C003EC052 /* Mocks */,
 				073A6F9412F1D444003EC052 /* Utils */,
 				073A6FCC12F1D7DF003EC052 /* Programs */,
@@ -439,6 +442,7 @@
 				077CF01112DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m in Sources */,
 				073A6F7612F1D0A0003EC052 /* OCDSpecFailSpec.m in Sources */,
 				07763E7D131881160059DA1D /* OCDSpecOutputter.m in Sources */,
+				07DD9D3D1347534F0034EA52 /* OCDSpecSharedOutputterSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,11 +24,12 @@ CONTEXT(OCDSpecFail)
                 FAIL(@"FAIL HERE");
                 [OCDSpecFail fail:@"Should have failed, didn't" atLine:1 inFile:@"file"];
               }
-              @catch (NSException * e) 
+              @catch (NSException *e) 
               {
                 if ([e reason] != @"FAIL HERE")
                   [e raise];
               }
-            })
+            }),
+           nil
            );
 }
