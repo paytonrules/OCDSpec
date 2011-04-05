@@ -7,7 +7,8 @@ CONTEXT(TestSuccess)
   describe(@"Successful Tests",
            it(@"Succeeds", ^{}),
            it(@"Succeeds too",^{}),
-           it(@"Succeeds three",^{}));
+           it(@"Succeeds three",^{}),
+           nil);
 }
 
 @interface TestClass : NSObject

@@ -1,5 +1,7 @@
 #import "OCDSpec/OCDSpec.h"
 #import "OCDSpec/OCDSpecExample.h"
+#import "OCDSpec/OCDSpecOutputter.h"
+#import "TemporaryFileStuff.h"
 
 CONTEXT(Test1)
 {
@@ -7,7 +9,8 @@ CONTEXT(Test1)
            it(@"Fails",
               ^{
                 FAIL(@"FAILURE");
-              })
+              }),
+           nil
            );
 }
 
@@ -17,7 +20,8 @@ CONTEXT(Test2)
            it(@"Doesnt fail",
               ^{
                 // Success
-              })
+              }), 
+           nil
            );
 }
 
@@ -31,8 +35,13 @@ CONTEXT(Test2)
 {
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
     OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+    OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+    outputter.fileHandle = GetTemporaryFileHandle();
     
     [runner runAllDescriptions];
+    
+    outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+    DeleteTemporaryFile();
     
     if (runner.failures != 1)
     {
