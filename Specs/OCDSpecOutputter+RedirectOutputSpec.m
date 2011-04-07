@@ -11,7 +11,7 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                 [OCDSpecOutputter withRedirectedOutput:
                  ^{
                    OCDSpecOutputter *sharedOutputter = [OCDSpecOutputter sharedOutputter];
-                   [sharedOutputter writeData:@"Test Data"];
+                   [sharedOutputter writeMessage:@"Test Data"];
                    
                    outputData = [ReadTemporaryFile() stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                  }];

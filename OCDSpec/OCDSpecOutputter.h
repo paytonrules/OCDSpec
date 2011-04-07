@@ -6,7 +6,7 @@
 }
 
 +(OCDSpecOutputter*) sharedOutputter;
--(void) writeData:(NSString *)data;
+-(void) writeMessage:(NSString *)message;
 @property(nonatomic, retain) NSFileHandle *fileHandle;
 
 @end
