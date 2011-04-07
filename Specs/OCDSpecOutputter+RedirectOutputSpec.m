@@ -18,9 +18,38 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                 
                 if ( [outputData compare:@"Test Data"] != 0) 
                 {
-                  NSLog(@"%@", outputData);
                   FAIL(@"The Test data was not redirected");
                 }
               }),
+           
+           it(@"still restores the outputter to the standard error if the call raises an exception",
+              ^{
+                @try {
+                  [OCDSpecOutputter withRedirectedOutput:
+                   ^{
+                     [NSException raise:@"Oh No" format: @"I am an exception"];
+                   }];                  
+                }
+                @catch (NSException * e) {
+                  if ([e.name compare:@"Oh No"] != 0) 
+                  {
+                    FAIL(@"This raised an exception other than the expected one");
+                  }
+                }
+                @finally 
+                {
+                  OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
+                  if ( outputter.fileHandle != [NSFileHandle fileHandleWithStandardError] )
+                  {
+                    FAIL(@"ERROR filehandle was not redirected back to standard error");
+                  }
+                }
+              }),
+           /*
+           it(@"Make sure the file is deleted",
+              ^{
+                FAIL(@"PLACEHOLDER");
+              }),*/
+           
            nil);
 }

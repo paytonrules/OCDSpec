@@ -11,9 +11,14 @@
   OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
   outputter.fileHandle = GetTemporaryFileHandle();
   
-  context();
-  
-  outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+  @try
+  {
+    context();
+  }
+  @finally
+  {
+    outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+  }
 }
 
 @end
