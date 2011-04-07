@@ -55,7 +55,7 @@
 -(void) reportResults
 {
   NSString *resultsMessage = [NSString stringWithFormat:@"Tests ran with %d passing tests and %d failing tests\n", successes, failures];
-  [[OCDSpecOutputter sharedOutputter] writeData:[resultsMessage dataUsingEncoding:NSUTF8StringEncoding]];
+  [[OCDSpecOutputter sharedOutputter] writeData:resultsMessage];
 }
 
 -(void) runAllDescriptions

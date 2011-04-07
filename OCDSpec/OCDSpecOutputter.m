@@ -24,9 +24,9 @@ static OCDSpecOutputter *sharedOutputter = nil;
   return sharedOutputter;
 }
 
--(void) writeData:(NSData *)data
+-(void) writeData:(NSString *)data
 {
-  [fileHandle writeData:data];
+  [fileHandle writeData:[data dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 // I intentionally do not override alloc with zone etc, because I want to be able to test this. 

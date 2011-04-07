@@ -38,7 +38,7 @@
                              [[[e userInfo] objectForKey:@"line"] longValue],
                              [e reason]];
 
-    [[OCDSpecOutputter sharedOutputter] writeData:[errorString dataUsingEncoding:NSUTF8StringEncoding]];
+    [[OCDSpecOutputter sharedOutputter] writeData:errorString];
     
     failed = YES;
   }
