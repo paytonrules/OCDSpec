@@ -45,11 +45,11 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                   }
                 }
               }),
-           /*
+
            it(@"Make sure the file is deleted",
               ^{
                 FAIL(@"PLACEHOLDER");
-              }),*/
+              }),
            
            nil);
 }
