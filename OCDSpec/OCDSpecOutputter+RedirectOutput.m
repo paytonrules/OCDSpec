@@ -18,6 +18,7 @@
   @finally
   {
     outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+    [[NSFileManager defaultManager] removeItemAtPath:OutputterPath() error:nil];
   }
 }
 

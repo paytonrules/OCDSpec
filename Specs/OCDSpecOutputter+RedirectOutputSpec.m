@@ -46,9 +46,27 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                 }
               }),
 
-           it(@"Make sure the file is deleted",
+           it(@"Make sure the file is deleted on exception",
               ^{
-                FAIL(@"PLACEHOLDER");
+                @try {
+                  [OCDSpecOutputter withRedirectedOutput:
+                   ^{
+                     [NSException raise:@"Oh No" format: @"I am another exception"];
+                   }];                  
+                }
+                @catch (NSException * e) {
+                  if ([e.name compare:@"Oh No"] != 0) 
+                  {
+                    FAIL(@"This raised an exception other than the expected one");
+                  }
+                }
+                @finally 
+                {
+                  if ([[NSFileManager defaultManager] fileExistsAtPath: OutputterPath()] == YES)
+                  {
+                    FAIL(@"File should not have existed but did");
+                  }
+                }
               }),
            
            nil);
