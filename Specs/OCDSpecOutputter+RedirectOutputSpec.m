@@ -13,7 +13,7 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                    OCDSpecOutputter *sharedOutputter = [OCDSpecOutputter sharedOutputter];
                    [sharedOutputter writeMessage:@"Test Data"];
                    
-                   outputData = [ReadTemporaryFile() stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                   outputData = [[sharedOutputter readOutput] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                  }];
                 
                 if ( [outputData compare:@"Test Data"] != 0) 
@@ -62,10 +62,25 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                 }
                 @finally 
                 {
-                  if ([[NSFileManager defaultManager] fileExistsAtPath: OutputterPath()] == YES)
+                  if ([[NSFileManager defaultManager] fileExistsAtPath: [OCDSpecOutputter temporaryDirectory]] == YES)
                   {
                     FAIL(@"File should not have existed but did");
                   }
+                }
+              }),
+           
+           it(@"Allows you to read the redirected output", 
+              ^{
+                __block NSString *outputData;
+                [OCDSpecOutputter withRedirectedOutput: ^{
+                  [[OCDSpecOutputter sharedOutputter] writeMessage:@"Message"];
+                  
+                  outputData = [[OCDSpecOutputter sharedOutputter] readOutput];
+                }];
+                
+                if ([outputData compare:@"Message"] != 0)
+                {
+                  FAIL(@"You could not read back the data the redirected outputter");
                 }
               }),
            

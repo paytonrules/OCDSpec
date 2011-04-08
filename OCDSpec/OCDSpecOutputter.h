@@ -6,6 +6,7 @@
 }
 
 +(OCDSpecOutputter*) sharedOutputter;
++(NSString*) temporaryDirectory;
 -(void) writeMessage:(NSString *)message;
 @property(nonatomic, retain) NSFileHandle *fileHandle;
 

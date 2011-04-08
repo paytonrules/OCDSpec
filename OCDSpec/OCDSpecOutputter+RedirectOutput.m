@@ -3,9 +3,6 @@
 
 @implementation OCDSpecOutputter (RedirectOutput)
 
-// Exception in call
-// delete the temp file
-// Move temp file stuff to here - maybe test paths and such
 +(void) withRedirectedOutput:(void (^)(void))context
 {
   OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
@@ -18,8 +15,15 @@
   @finally
   {
     outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
-    [[NSFileManager defaultManager] removeItemAtPath:OutputterPath() error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[self temporaryDirectory] error:nil];
   }
+}
+
+-(NSString *) readOutput
+{
+  NSFileHandle *inputFile = [NSFileHandle fileHandleForReadingAtPath:[OCDSpecOutputter temporaryDirectory]];
+  return [[[NSString alloc] initWithData:[inputFile readDataToEndOfFile] 
+                                encoding:NSUTF8StringEncoding] autorelease];
 }
 
 @end

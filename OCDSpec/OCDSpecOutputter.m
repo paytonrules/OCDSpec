@@ -24,6 +24,11 @@ static OCDSpecOutputter *sharedOutputter = nil;
   return sharedOutputter;
 }
 
++(NSString *)temporaryDirectory
+{
+  return [NSTemporaryDirectory() stringByAppendingPathComponent:@"test.txt"];
+}
+
 -(void) writeMessage:(NSString *)message
 {
   [fileHandle writeData:[message dataUsingEncoding:NSUTF8StringEncoding]];

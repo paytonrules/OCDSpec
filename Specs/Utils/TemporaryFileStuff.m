@@ -7,33 +7,14 @@
  *
  */
 
+#import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 #include "TemporaryFileStuff.h"
-
-NSString *OutputterPath()
-{
-  return [NSTemporaryDirectory() stringByAppendingPathComponent:@"test.txt"];
-}
 
 NSFileHandle *GetTemporaryFileHandle()
 {
   NSFileManager *fileManager = [[NSFileManager alloc] init];
-  [fileManager createFileAtPath:OutputterPath() contents:nil attributes:nil];
+  [fileManager createFileAtPath:[OCDSpecOutputter temporaryDirectory] contents:nil attributes:nil];
   [fileManager release];
-  NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:OutputterPath()]; 
+  NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:[OCDSpecOutputter temporaryDirectory]]; 
   return fileHandle;
-}
-
-NSString *ReadTemporaryFile()
-{
-  NSFileHandle *inputFile = [NSFileHandle fileHandleForReadingAtPath:OutputterPath()];
-  return [[[NSString alloc] initWithData:[inputFile readDataToEndOfFile] 
-                                encoding:NSUTF8StringEncoding] autorelease];
-}
-
-void DeleteTemporaryFile()
-{
-  NSString *outputterPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"test.txt"];
-  NSFileManager *fileManager = [[NSFileManager alloc] init];
-  [fileManager removeItemAtPath:outputterPath error:NULL];
-  [fileManager release];
 }

@@ -8,7 +8,4 @@
  */
 #import <Foundation/Foundation.h>
 
-NSString *OutputterPath();
 NSFileHandle *GetTemporaryFileHandle();
-NSString *ReadTemporaryFile();
-void DeleteTemporaryFile();

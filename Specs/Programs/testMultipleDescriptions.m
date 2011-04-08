@@ -1,6 +1,6 @@
 #import "OCDSpec/OCDSpec.h"
 #import "OCDSpec/OCDSpecExample.h"
-#import "OCDSpec/OCDSpecOutputter.h"
+#import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 #import "TemporaryFileStuff.h"
 
 CONTEXT(Test1)
@@ -35,13 +35,9 @@ CONTEXT(Test2)
 {
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
     OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
-    OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
-    outputter.fileHandle = GetTemporaryFileHandle();
-    
-    [runner runAllDescriptions];
-    
-    outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
-    DeleteTemporaryFile();
+    [OCDSpecOutputter withRedirectedOutput: ^{
+      [runner runAllDescriptions];
+    }];
     
     if (runner.failures != 1)
     {

@@ -1,7 +1,7 @@
 #import "OCDSpec/OCDSpec.h"
 #import "Specs/Mocks/MockExample.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
-#import "OCDSpec/OCDSpecOutputter.h"
+#import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 
 CONTEXT(OCDSpecDescription)
 {
@@ -39,23 +39,20 @@ CONTEXT(OCDSpecDescription)
          it(@"writes the exceptions to the shared outputter", 
             ^{
               OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
-              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
-              outputter.fileHandle = GetTemporaryFileHandle();
+              __block NSString *outputException;
+              [OCDSpecOutputter withRedirectedOutput:^{
+                OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
+                NSArray *tests = [NSArray arrayWithObject: example];
               
-              OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
-              NSArray *tests = [NSArray arrayWithObject: example];
+                [description describe:@"It Should Do Something" onArrayOfExamples: tests];
               
-              [description describe:@"It Should Do Something" onArrayOfExamples: tests];
-              
-              NSString *outputException = ReadTemporaryFile();  
-              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+                outputException = [[OCDSpecOutputter sharedOutputter] readOutput];;
+              }];
               
               if (outputException.length == 0)
               {
                 FAIL(@"An exception should have been written to the outputter - but wasn't.");
               }
-              
-              DeleteTemporaryFile();
             }),
          
          it(@"can describe multiple examples", 

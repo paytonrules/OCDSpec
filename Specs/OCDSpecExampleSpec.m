@@ -1,7 +1,7 @@
 #import "OCDSpec/OCDSpecDescriptionRunner.h"
 #import "OCDSpec/OCDSpecFail.h"
 #import "OCDSpec/OCDSpecExample.h"
-#import "OCDSpec/OCDSpecOutputter.h"
+#import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
 CONTEXT(OCDSpecExample)
@@ -32,33 +32,29 @@ CONTEXT(OCDSpecExample)
          it(@"writes its exceptions to the outputter",
             ^{
               OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
-              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
-              outputter.fileHandle = GetTemporaryFileHandle();
-      
-              [example run];
-      
-              NSString *outputException = ReadTemporaryFile();
-              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+              __block NSString *outputException;
+              [OCDSpecOutputter withRedirectedOutput: ^{
+                [example run];
+                
+                outputException = [[OCDSpecOutputter sharedOutputter] readOutput];
+              }];
       
               if (outputException.length == 0)
               {
                 FAIL(@"An exception should have been written to the outputter - but wasn't.");
               }
-      
-              DeleteTemporaryFile();
             }),
  
          it(@"Examples write their output in a XCode friendly format",
             ^{
               int outputLine = __LINE__ + 1;
               OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{ FAIL(@"FAIL"); }] autorelease];
-              OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
-              outputter.fileHandle = GetTemporaryFileHandle();
+              __block NSString *outputException;
+              [OCDSpecOutputter withRedirectedOutput: ^{
+                [example run];
       
-              [example run];
-      
-              NSString *outputException = ReadTemporaryFile();
-              outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
+                outputException = [[OCDSpecOutputter sharedOutputter] readOutput];
+              }];
               
               NSString *errorFormat = [NSString stringWithFormat:@"%s:%ld: error: %@\n",
                                        __FILE__,
@@ -71,8 +67,7 @@ CONTEXT(OCDSpecExample)
                 NSString *failMessage = [NSString stringWithFormat:@"%@ expected, received %@", errorFormat, outputException];
                 FAIL(failMessage);
               }
-      
-              DeleteTemporaryFile();
+    
             }),
            nil
            );

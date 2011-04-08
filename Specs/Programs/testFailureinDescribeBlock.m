@@ -1,5 +1,5 @@
 #import "OCDSpec/OCDSpec.h"
-#import "OCDSpec/OCDSpecOutputter.h"
+#import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 #import "Specs/Utils/TemporaryFileStuff.h"
 
 CONTEXT(OCDSpecFail)
@@ -40,43 +40,23 @@ CONTEXT(OCDSpecFail)
 
 -(NSString *) readResultFromFile 
 {
-  NSString *output = ReadTemporaryFile();
+  NSString *output = [[OCDSpecOutputter sharedOutputter] readOutput];
   NSArray *lines = [[output stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] ] componentsSeparatedByString:@"\n"];
   NSString *outputException = [lines lastObject];
   return outputException;
 }
 
--(void) cleanupTestOutput
-{
-  // Need an 'after'    
-  DeleteTemporaryFile();
-  outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
-}
-
--(void) setUp 
-{
-  [self redirectTestOutputToFile];
-}
-
--(void) tearDown 
-{
-  [self cleanupTestOutput];
-}
-
 -(OCDSpecExample *) testFinalResultOfMultipleDescribeMacrosFailing 
 {
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
-    [self setUp];
-    
-    OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
-    [runner runAllDescriptions];
+    __block NSString *outputException;
+    [OCDSpecOutputter withRedirectedOutput: ^{
+      OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+      [runner runAllDescriptions];
      
-    NSString *outputException = [self readResultFromFile];
-
-    [self tearDown];
-
-    // Make the TemporaryFile stuff in to part of the Spec of the Spec not the Spec itself
-    // Maybe it's a library object
+      outputException = [self readResultFromFile];
+    }];
+    
     if ([outputException compare:@"Tests ran with 0 passing tests and 3 failing tests"] != 0)
     {
       NSLog(@"Exception was: %@", outputException);
