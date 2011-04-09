@@ -1,6 +1,5 @@
 #import "OCDSpec/OCDSpec.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
-#import "TemporaryFileStuff.h"
 
 CONTEXT(OCDSpecOutputter_RedirectOutput)
 {

@@ -1,6 +1,5 @@
 #import "OCDSpec/OCDSpec.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
-#import "Specs/Utils/TemporaryFileStuff.h"
 
 CONTEXT(OCDSpecFail)
 {
@@ -31,12 +30,6 @@ CONTEXT(OCDSpecFail)
 @end
 
 @implementation TestClass
-
--(void) redirectTestOutputToFile 
-{
-  outputter = [OCDSpecOutputter sharedOutputter];
-  outputter.fileHandle = GetTemporaryFileHandle();
-}
 
 -(NSString *) readResultFromFile 
 {

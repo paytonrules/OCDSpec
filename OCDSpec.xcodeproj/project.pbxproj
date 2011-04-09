@@ -48,10 +48,6 @@
 		07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C0C18812CCD140008B4D42 /* testMultipleDescriptions.m */; };
 		07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07DD9D3D1347534F0034EA52 /* OCDSpecOutputterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */; };
-		07E417CC12D2D833001647F8 /* TemporaryFileStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */; };
-		07E4180D12D2DB25001647F8 /* TemporaryFileStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */; };
-		07E4180E12D2DB26001647F8 /* TemporaryFileStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */; };
-		07E4180F12D2DB27001647F8 /* TemporaryFileStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,8 +111,6 @@
 		07C2DDF4128442EA009E03F7 /* MockExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockExample.m; sourceTree = "<group>"; };
 		07C2DE3712844CDE009E03F7 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
 		07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecOutputterSpec.m; sourceTree = "<group>"; };
-		07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemporaryFileStuff.m; sourceTree = "<group>"; };
-		07E417CD12D2D850001647F8 /* TemporaryFileStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryFileStuff.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -162,15 +156,6 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		073A6F9412F1D444003EC052 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				07E417CB12D2D833001647F8 /* TemporaryFileStuff.m */,
-				07E417CD12D2D850001647F8 /* TemporaryFileStuff.h */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		073A6FCA12F1D7C3003EC052 /* OCDSpec */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +189,6 @@
 				07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */,
 				0794AE46134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m */,
 				073A6F9312F1D43C003EC052 /* Mocks */,
-				073A6F9412F1D444003EC052 /* Utils */,
 				073A6FCC12F1D7DF003EC052 /* Programs */,
 			);
 			path = Specs;
@@ -455,7 +439,6 @@
 			files = (
 				07550BAB126A2C5400C4A7FF /* unitTestMain.m in Sources */,
 				07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */,
-				07E417CC12D2D833001647F8 /* TemporaryFileStuff.m in Sources */,
 				077CF00C12DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
 				077CF00D12DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
 				077CF00E12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
@@ -478,7 +461,6 @@
 			files = (
 				07120E19134FD04B00B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */,
-				07E4180F12D2DB27001647F8 /* TemporaryFileStuff.m in Sources */,
 				077CF01E12DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
 				077CF01F12DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
 				077CF02012DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
@@ -495,7 +477,6 @@
 			files = (
 				07120DFD134FCEE500B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */,
-				07E4180D12D2DB25001647F8 /* TemporaryFileStuff.m in Sources */,
 				077CF01812DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
 				077CF01912DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
 				077CF01A12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
@@ -510,7 +491,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */,
-				07E4180E12D2DB26001647F8 /* TemporaryFileStuff.m in Sources */,
 				077CF02412DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
 				077CF02512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
 				077CF02612DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,

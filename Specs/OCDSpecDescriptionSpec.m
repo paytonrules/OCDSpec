@@ -1,6 +1,5 @@
 #import "OCDSpec/OCDSpec.h"
 #import "Specs/Mocks/MockExample.h"
-#import "Specs/Utils/TemporaryFileStuff.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 
 CONTEXT(OCDSpecDescription)

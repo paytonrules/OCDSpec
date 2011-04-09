@@ -1,12 +1,21 @@
-#import "TemporaryFileStuff.h"
 #import "OCDSpecOutputter+RedirectOutput.h"
 
+@interface OCDSpecOutputter()
++(NSFileHandle *) temporaryFileHandle;
+@end
+
 @implementation OCDSpecOutputter (RedirectOutput)
+
++(NSFileHandle *) temporaryFileHandle
+{
+  [[NSFileManager defaultManager] createFileAtPath:[OCDSpecOutputter temporaryDirectory] contents: nil attributes: nil];
+  return [NSFileHandle fileHandleForWritingAtPath:[OCDSpecOutputter temporaryDirectory]];
+}
 
 +(void) withRedirectedOutput:(void (^)(void))context
 {
   OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
-  outputter.fileHandle = GetTemporaryFileHandle();
+  outputter.fileHandle = [self temporaryFileHandle];
   
   @try
   {

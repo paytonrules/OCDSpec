@@ -2,7 +2,6 @@
 #import "OCDSpec/OCDSpecFail.h"
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
-#import "Specs/Utils/TemporaryFileStuff.h"
 
 CONTEXT(OCDSpecExample)
 {
