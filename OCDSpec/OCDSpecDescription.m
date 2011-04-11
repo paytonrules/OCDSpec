@@ -2,7 +2,6 @@
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
 
-// Warning - untested code
 void describe(NSString *descriptionName, ...)
 {
   va_list         variableArgumentList;
@@ -16,14 +15,17 @@ void describe(NSString *descriptionName, ...)
   }
   va_end(variableArgumentList);
 
+  
+  
   OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
   [description describe];
+
+  
   
   OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
   results.successes = description.successes;
   results.failures = description.failures;
 }
-// End untested code
 
 @implementation OCDSpecDescription
 

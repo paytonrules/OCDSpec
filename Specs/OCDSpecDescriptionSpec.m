@@ -96,5 +96,58 @@ CONTEXT(OCDSpecDescription)
               }
             }),
           nil
+        );
+}
+
+CONTEXT(DescribeMethod)
+{
+  describe(@"The describe helper method", 
+           it(@"has no shared results changes on a nil list", 
+              ^{
+                describe(@"Empty List", nil);
+                
+                OCDSpecSharedResults *sharedResults = [OCDSpecSharedResults sharedResults];
+                OCDSpecSharedResults *expectedResults = [[OCDSpecSharedResults alloc] init];
+                
+                if (![expectedResults equalTo:sharedResults])
+                  FAIL(@"Actual results were not empty");
+              }),
+           
+           it(@"has one failure on a list with one failure",
+              ^{
+                [OCDSpecOutputter withRedirectedOutput:
+                 ^{
+                   describe(@"one failure",
+                            it(@"Failure", 
+                               ^{
+                                 FAIL(@"FAIL");
+                               }),
+                            nil);
+                 }];
+                
+                if ([OCDSpecSharedResults sharedResults].failures != 1)
+                {
+                  FAIL(@"Should have one failure - but doesn't");
+                }
+              }),
+           
+           it(@"has one success on a list with one success", 
+              ^{
+                [OCDSpecOutputter withRedirectedOutput:
+                 ^{
+                   describe(@"one success",
+                            it(@"Succeeds", 
+                               ^{
+                               }),
+                            nil);
+                 }];
+                
+                if ([OCDSpecSharedResults sharedResults].successes != 1)
+                {
+                  FAIL(@"Should have one success - but doesn't");
+                }
+              }),
+             
+           nil
            );
 }

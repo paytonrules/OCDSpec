@@ -18,4 +18,5 @@
 @property(assign) int failures;
 @property(assign) int successes;
 +(OCDSpecSharedResults *)sharedResults;
+-(BOOL) equalTo:(OCDSpecSharedResults *)otherResults;
 @end
