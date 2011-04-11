@@ -14,13 +14,9 @@ void describe(NSString *descriptionName, ...)
     [exampleList addObject: example];
   }
   va_end(variableArgumentList);
-
-  
   
   OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
   [description describe];
-
-  
   
   OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
   results.successes = description.successes;
