@@ -8,6 +8,25 @@
 
 @end
 
+@implementation EmptyClass
+
++(void) run
+{
+}
+
++(int) getSuccesses
+{
+  return 0;
+}
+
++(int) getFailures
+{
+  return 0;
+}
+
+@end
+
+
 CONTEXT(OCDSpecDescriptionRunner)
 {
   describe(@"Running descriptions based on a protocol", 
@@ -17,9 +36,7 @@ CONTEXT(OCDSpecDescriptionRunner)
                  runner.specProtocol = @protocol(EmptyProtocol);
                  
                  [runner runAllDescriptions];
-                 
-                 FAIL(@"This should fail cause the EmptyClass class doesn't have a run method, but isn't casue it's a dick");
-                 
+                  
                  if (runner.failures != 0 || runner.successes != 0)
                    FAIL(@"There were failures or successes, and there shouldn't be");
                }),
