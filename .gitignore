@@ -3,3 +3,5 @@
 build
 *.swp
 .DS_Store
+OCDSpec.xcodeproj/xcuserdata
+OCDSpec.xcodeproj/project.xcworkspace/xcuserdata/
