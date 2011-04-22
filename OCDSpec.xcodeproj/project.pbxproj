@@ -49,7 +49,7 @@
 		07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C0C18812CCD140008B4D42 /* testMultipleDescriptions.m */; };
 		07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
-		07C3DBA81362234D00CADEDB /* OCDSpecShouldObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBA71362234D00CADEDB /* OCDSpecShouldObject.m */; };
+		07C3DBA81362234D00CADEDB /* OCDSpecExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */; };
 		07C3DBAB13622CE600CADEDB /* MockObjectWithEquals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */; };
 		07DD9D3D1347534F0034EA52 /* OCDSpecOutputterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */; };
 /* End PBXBuildFile section */
@@ -92,8 +92,8 @@
 		07C2DDF3128442EA009E03F7 /* MockExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockExample.h; sourceTree = "<group>"; };
 		07C2DDF4128442EA009E03F7 /* MockExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockExample.m; sourceTree = "<group>"; };
 		07C2DE3712844CDE009E03F7 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
-		07C3DBA61362234D00CADEDB /* OCDSpecShouldObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecShouldObject.h; sourceTree = "<group>"; };
-		07C3DBA71362234D00CADEDB /* OCDSpecShouldObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecShouldObject.m; sourceTree = "<group>"; };
+		07C3DBA61362234D00CADEDB /* OCDSpecExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; path = OCDSpecExpectation.h; sourceTree = "<group>"; };
+		07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecExpectation.m; sourceTree = "<group>"; };
 		07C3DBA913622CE600CADEDB /* MockObjectWithEquals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockObjectWithEquals.h; sourceTree = "<group>"; };
 		07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockObjectWithEquals.m; sourceTree = "<group>"; };
 		07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecOutputterSpec.m; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 				0794AE4D134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m */,
 				0794ADB5134AC55100A484D6 /* OCDSpecSharedResults.h */,
 				0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */,
-				07C3DBA61362234D00CADEDB /* OCDSpecShouldObject.h */,
-				07C3DBA71362234D00CADEDB /* OCDSpecShouldObject.m */,
+				07C3DBA61362234D00CADEDB /* OCDSpecExpectation.h */,
+				07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */,
 			);
 			path = OCDSpec;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 				0794AE4E134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				07602F82135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m in Sources */,
 				0761B5241359E48C00FE98CC /* OCDSpecShouldObjectSpec.m in Sources */,
-				07C3DBA81362234D00CADEDB /* OCDSpecShouldObject.m in Sources */,
+				07C3DBA81362234D00CADEDB /* OCDSpecExpectation.m in Sources */,
 				07C3DBAB13622CE600CADEDB /* MockObjectWithEquals.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

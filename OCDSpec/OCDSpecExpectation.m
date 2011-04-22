@@ -1,7 +1,7 @@
-#import "OCDSpecShouldObject.h"
+#import "OCDSpecExpectation.h"
 #import "OCDSpec/OCDSpecFail.h"
 
-@implementation OCDSpecShouldObject
+@implementation OCDSpecExpectation
 
 -(id) initWithObject:(id) object andLineNumber:(int) lineNumber
 {

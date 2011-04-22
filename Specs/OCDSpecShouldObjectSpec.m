@@ -1,20 +1,20 @@
 #import "OCDSpec/OCDSpec.h"
-#import "OCDSpec/OCDSpecShouldObject.h"
+#import "OCDSpec/OCDSpecExpectation.h"
 #import "Specs/Mocks/MockObjectWithEquals.h"
 
-CONTEXT(OCDSpecShouldObject)
+CONTEXT(OCDSpecExpectation)
 {
     describe(@"The Should object", 
              it(@"delegates beEqualTo to equalTo on the object its holding", 
                 ^{
-                    MockObjectWithEquals *genericObject = [[[MockObjectWithEquals alloc] init] autorelease];
-                    MockObjectWithEquals *secondObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    MockObjectWithEquals *actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    MockObjectWithEquals *expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
 
-                    OCDSpecShouldObject *shouldAh = [[[OCDSpecShouldObject alloc] initWithObject:genericObject andLineNumber:0] autorelease];
+                    OCDSpecExpectation *shouldAh = [[[OCDSpecExpectation alloc] initWithObject:actualObject andLineNumber:0] autorelease];
                     
-                    [shouldAh beEqualTo:secondObject];
+                    [shouldAh beEqualTo:expectedObject];
                     
-                    if (genericObject.expected != secondObject)
+                    if (actualObject.expected != expectedObject)
                         FAIL(@"The beEqualTo object did not delegate to the wrapped objects isEqual method");
 
               }),
@@ -24,7 +24,7 @@ CONTEXT(OCDSpecShouldObject)
                     MockObjectWithEquals *actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
                     MockObjectWithEquals *expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
                     
-                    OCDSpecShouldObject *shouldAh = [[[OCDSpecShouldObject alloc] initWithObject:actualObject andLineNumber:0] autorelease];
+                    OCDSpecExpectation *shouldAh = [[[OCDSpecExpectation alloc] initWithObject:actualObject andLineNumber:0] autorelease];
                     
                     @try
                     {
