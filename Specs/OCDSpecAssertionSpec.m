@@ -1,10 +1,14 @@
 #import "OCDSpec/OCDSpec.h"
 
-CONTEXT(OCDSpecAssertions)
+CONTEXT(OCDSpecShouldObject)
 {
-  describe(@"Assertions", 
-           it(@"has the basic expectation",
+  describe(@"The Should object", 
+           it(@"is created holding another object, which it proxies to",
               ^{
-                }),
+                NSObject *genericObject = [[[NSObject alloc] init] autorelease];
+                OCDSpecShouldObject *shouldAh = [[[OCDSpecShouldObject alloc] initWithObject:genericObject] autorelease];
+                
+                
+              }),
            nil);
 }
