@@ -7,16 +7,26 @@
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        equal = TRUE;
     }
     
     return self;
 }
 
+-(id) initAsNotEqual
+{
+    self = [super init];
+    if (self) {
+        equal = FALSE;
+    }
+    
+    return self;    
+}
+
 -(BOOL) isEqual:(id) object
 {
     self.expected = object;
-    return TRUE;
+    return equal;
 }
 
 -(void) dealloc

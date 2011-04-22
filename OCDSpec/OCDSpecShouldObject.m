@@ -1,4 +1,5 @@
 #import "OCDSpecShouldObject.h"
+#import "OCDSpec/OCDSpecFail.h"
 
 @implementation OCDSpecShouldObject
 
@@ -15,7 +16,8 @@
 
 -(void) beEqualTo:(id) expectedObject
 {
-    [actualObject isEqual:expectedObject];
+    if (![actualObject isEqual:expectedObject])
+        FAIL(@"Error");
 }
 
 -(void) dealloc
