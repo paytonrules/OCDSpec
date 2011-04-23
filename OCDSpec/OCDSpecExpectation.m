@@ -3,11 +3,14 @@
 
 @implementation OCDSpecExpectation
 
--(id) initWithObject:(id) object andLineNumber:(int) lineNumber
+-(id) initWithObject:(id) object inFile:(NSString*) fileName atLineNumber:(int) lineNumber
 {
     self = [super init];
     if (self) {
         actualObject = object;
+        line = lineNumber;
+        file = fileName;
+        [file retain];
         [actualObject retain];
     }
     
@@ -17,12 +20,17 @@
 -(void) beEqualTo:(id) expectedObject
 {
     if (![actualObject isEqual:expectedObject])
-        FAIL(@"Error");
+    {
+        [OCDSpecFail fail:[NSString stringWithFormat:@"%@ was expected to be equal to %@, and isn't", actualObject, expectedObject] 
+                   atLine:line 
+                   inFile:file];
+    }
 }
 
 -(void) dealloc
 {
     [actualObject release];
+    [file release];
     [super dealloc];
 }
 
