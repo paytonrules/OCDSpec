@@ -72,7 +72,5 @@ CONTEXT(OCDSpecExpectation)
                     
                     [expect(expectation.file) toBeEqualTo:[NSString stringWithUTF8String:__FILE__]];
                 }),
-                
-             // [expect(object.blah) toBeEqualTo:object.blah]
            nil);
 }
