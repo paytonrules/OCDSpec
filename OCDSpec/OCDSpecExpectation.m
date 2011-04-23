@@ -3,6 +3,8 @@
 
 @implementation OCDSpecExpectation
 
+@synthesize line, file;
+
 -(id) initWithObject:(id) object inFile:(NSString*) fileName atLineNumber:(int) lineNumber
 {
     self = [super init];
@@ -17,7 +19,7 @@
     return self;
 }
 
--(void) beEqualTo:(id) expectedObject
+-(void) toBeEqualTo:(id) expectedObject
 {
     if (![actualObject isEqual:expectedObject])
     {
