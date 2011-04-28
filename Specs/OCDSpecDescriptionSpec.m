@@ -108,7 +108,7 @@ CONTEXT(DescribeMethod)
                 describe(@"Empty List", nil);
                 
                 OCDSpecSharedResults *sharedResults = [OCDSpecSharedResults sharedResults];
-                OCDSpecSharedResults *expectedResults = [[OCDSpecSharedResults alloc] init];
+                OCDSpecSharedResults *expectedResults = [[[OCDSpecSharedResults alloc] init] autorelease];
                 
                 if (![expectedResults equalTo:sharedResults])
                   FAIL(@"Actual results were not empty");
