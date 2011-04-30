@@ -7,7 +7,6 @@ CONTEXT(OCDSpecExpectation)
 {
     __block MockObjectWithEquals *actualObject;
     __block MockObjectWithEquals *expectedObject;
-    __block OCDSpecExpectation *expectation;
     
     describe(@"The Expecation",                    
              it(@"delegates beEqualTo to equalTo on the object its holding", 
@@ -15,7 +14,7 @@ CONTEXT(OCDSpecExpectation)
                     actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
                     expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
 
-                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+                    OCDSpecExpectation *expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
                     
                     [expectation toBeEqualTo:expectedObject];
                     
@@ -28,7 +27,7 @@ CONTEXT(OCDSpecExpectation)
                     actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
                     expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
                     
-                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+                    OCDSpecExpectation *expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
                     
                     @try
                     {
@@ -48,7 +47,7 @@ CONTEXT(OCDSpecExpectation)
                     actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
                     expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
                     
-                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"FILENAME" atLineNumber:120] autorelease];
+                    OCDSpecExpectation *expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"FILENAME" atLineNumber:120] autorelease];
                     
                     @try
                     {
@@ -67,7 +66,7 @@ CONTEXT(OCDSpecExpectation)
                 ^{
                     NSObject *innerObject;
                     
-                    expectation = expect(innerObject);
+                    OCDSpecExpectation *expectation = expect(innerObject);
                     
                     if (expectation.line != __LINE__ -2)
                         FAIL(@"Line Number is wrong");
