@@ -10,6 +10,7 @@
 
 -(id) initWithObject:(id) object inFile:(NSString*) fileName atLineNumber:(int) lineNumber;
 -(void) toBeEqualTo:(id) expectedObject;
+-(void) toBe:(id) expectedObject;
 
 @end
 

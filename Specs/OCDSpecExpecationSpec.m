@@ -8,7 +8,7 @@ CONTEXT(OCDSpecExpectation)
     __block MockObjectWithEquals *actualObject;
     __block MockObjectWithEquals *expectedObject;
     
-    describe(@"The Expecation",                    
+    describe(@"The Expectation",
              it(@"delegates beEqualTo to equalTo on the object its holding", 
                 ^{
                     actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
@@ -22,7 +22,7 @@ CONTEXT(OCDSpecExpectation)
 
               }),
              
-             it(@"throws a failure when the objects aren't equal with an explanatory reason if the two objects are not equal to each other",
+             it(@"throws a failure when the objects aren't equal with an explanatory reason if matcher fails",
                 ^{
                     actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
                     expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
@@ -74,4 +74,33 @@ CONTEXT(OCDSpecExpectation)
                     [expect(expectation.file) toBeEqualTo:[NSString stringWithUTF8String:__FILE__]];
                 }),
            nil);
+
+    describe(@"toBe", 
+             it(@"fails if two objects are not the same object",
+                ^{
+                    actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    
+                    @try
+                    {
+                        [expect(actualObject) toBe: expectedObject];
+                        FAIL(@"Should have thrown an exception, but didn't");
+                    }
+                    @catch (NSException *exception)
+                    {
+                        NSString *expectedReason = [NSString stringWithFormat:@"%@ was expected to be the same object as %@, but wasn't", actualObject, expectedObject];
+                        
+                        [expect([exception reason]) toBeEqualTo:expectedReason];
+                    }
+                }),
+             
+             it(@"does not fail if the two objects are the same",
+                ^{
+                    actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    
+                    [expect(actualObject) toBe: actualObject];
+                }),
+             
+             nil);
+    
 }

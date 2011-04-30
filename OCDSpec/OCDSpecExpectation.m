@@ -1,6 +1,10 @@
 #import "OCDSpecExpectation.h"
 #import "OCDSpec/OCDSpecFail.h"
 
+@interface OCDSpecExpectation(private)
+-(void) fail:(NSString *)errorFormat with: (id) expectedObject;
+@end
+
 @implementation OCDSpecExpectation
 
 @synthesize line, file;
@@ -22,11 +26,20 @@
 -(void) toBeEqualTo:(id) expectedObject
 {
     if (![actualObject isEqual:expectedObject])
-    {
-        [OCDSpecFail fail:[NSString stringWithFormat:@"%@ was expected to be equal to %@, and isn't", actualObject, expectedObject] 
-                   atLine:line 
-                   inFile:file];
-    }
+        [self fail:@"%@ was expected to be equal to %@, and isn't" with:expectedObject];
+}
+
+-(void) toBe:(id) expectedObject
+{
+    if (actualObject != expectedObject)
+        [self fail:@"%@ was expected to be the same object as %@, but wasn't" with:expectedObject];
+}
+
+-(void) fail:(NSString *)errorFormat with:(id)expectedObject
+{
+    [OCDSpecFail fail:[NSString stringWithFormat:errorFormat, actualObject, expectedObject]
+               atLine:line
+               inFile:file];
 }
 
 -(void) dealloc
