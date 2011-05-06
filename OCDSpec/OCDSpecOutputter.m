@@ -8,7 +8,7 @@ static OCDSpecOutputter *sharedOutputter = nil;
 
 -(id) init
 {
-  if (self = [super init]) 
+  if ((self = [super init]))
   {
     fileHandle = [NSFileHandle fileHandleWithStandardError];
   }
@@ -33,8 +33,5 @@ static OCDSpecOutputter *sharedOutputter = nil;
 {
   [fileHandle writeData:[message dataUsingEncoding:NSUTF8StringEncoding]];
 }
-
-// I intentionally do not override alloc with zone etc, because I want to be able to test this. 
-
 
 @end

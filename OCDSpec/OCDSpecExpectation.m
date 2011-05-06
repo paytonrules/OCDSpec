@@ -11,8 +11,7 @@
 
 -(id) initWithObject:(id) object inFile:(NSString*) fileName atLineNumber:(int) lineNumber
 {
-    self = [super init];
-    if (self) {
+    if ((self = [super init])) {
         actualObject = object;
         line = lineNumber;
         file = fileName;
@@ -35,6 +34,11 @@
         [self fail:@"%@ was expected to be the same object as %@, but wasn't" with:expectedObject];
 }
 
+-(void) toBeTrue
+{
+    [OCDSpecFail fail:[NSString stringWithFormat:@"%b was expected to be true, but was false", actualObject] atLine:line inFile:file];
+}
+
 -(void) fail:(NSString *)errorFormat with:(id)expectedObject
 {
     [OCDSpecFail fail:[NSString stringWithFormat:errorFormat, actualObject, expectedObject]
@@ -48,5 +52,4 @@
     [file release];
     [super dealloc];
 }
-
 @end

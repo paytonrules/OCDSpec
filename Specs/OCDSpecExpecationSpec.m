@@ -1,5 +1,4 @@
 #import "OCDSpec/OCDSpec.h"
-#import "OCDSpec/OCDSpecExpectation.h"
 #import "OCDSpec/OCDSpecFail.h"
 #import "Specs/Mocks/MockObjectWithEquals.h"
 
@@ -7,6 +6,7 @@ CONTEXT(OCDSpecExpectation)
 {
     __block MockObjectWithEquals *actualObject;
     __block MockObjectWithEquals *expectedObject;
+    __block OCDSpecExpectation *expectation;
     
     describe(@"The Expectation",
              it(@"delegates beEqualTo to equalTo on the object its holding", 
@@ -14,12 +14,11 @@ CONTEXT(OCDSpecExpectation)
                     actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
                     expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
 
-                    OCDSpecExpectation *expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
                     
                     [expectation toBeEqualTo:expectedObject];
                     
                     [expect(actualObject) toBeEqualTo:expectedObject];
-
               }),
              
              it(@"throws a failure when the objects aren't equal with an explanatory reason if matcher fails",
@@ -27,7 +26,7 @@ CONTEXT(OCDSpecExpectation)
                     actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
                     expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
                     
-                    OCDSpecExpectation *expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
                     
                     @try
                     {
@@ -103,4 +102,21 @@ CONTEXT(OCDSpecExpectation)
              
              nil);
     
+    describe(@"toBeTrue",
+             it(@"fails if the value is not truthy",
+                ^{
+                    @try
+                    {
+                        expectTruth(FALSE);
+                        FAIL(@"Should have thrown an exception, but didn't");
+                    }
+                    @catch (NSException *exception)
+                    {
+                        NSString *expectedReason = [NSString stringWithFormat:@"%b was expected to be true, but was false", FALSE];
+                        
+                        [expect([exception reason]) toBeEqualTo:expectedReason];
+                    }
+                }),
+             
+             nil);
 }

@@ -11,7 +11,9 @@
 -(id) initWithObject:(id) object inFile:(NSString*) fileName atLineNumber:(int) lineNumber;
 -(void) toBeEqualTo:(id) expectedObject;
 -(void) toBe:(id) expectedObject;
+-(void) toBeTrue;
 
 @end
 
-#define expect(obj) [[[OCDSpecExpectation alloc] initWithObject:obj inFile:[NSString stringWithUTF8String:__FILE__] atLineNumber:__LINE__] autorelease]
+#define expect(obj)       [[[OCDSpecExpectation alloc] initWithObject:obj inFile:[NSString stringWithUTF8String:__FILE__] atLineNumber:__LINE__] autorelease]
+#define expectTruth(obj)  [[[[OCDSpecExpectation alloc] initWithObject:obj inFile:[NSString stringWithUTF8String:__FILE__] atLineNumber:__LINE__] autorelease] toBeTrue]

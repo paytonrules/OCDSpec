@@ -1,4 +1,5 @@
 #import "OCDSpec/OCDSpec.h"
+#import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 
 @protocol EmptyProtocol
   
@@ -29,16 +30,18 @@
 
 CONTEXT(OCDSpecDescriptionRunner)
 {
-  describe(@"Running descriptions based on a protocol", 
-            it(@"Has no successes or failures when the there are no matching protocols", 
-               ^{
-                 OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
-                 runner.specProtocol = @protocol(EmptyProtocol);
-                 
-                 [runner runAllDescriptions];
-                  
-                 if (runner.failures != 0 || runner.successes != 0)
-                   FAIL(@"There were failures or successes, and there shouldn't be");
+    describe(@"Running descriptions based on a protocol", 
+             it(@"Has no successes or failures when the there are no matching protocols", 
+                ^{
+                    OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+                    runner.specProtocol = @protocol(EmptyProtocol);
+                    
+                    [OCDSpecOutputter withRedirectedOutput: ^{
+                        [runner runAllDescriptions];
+                    }];
+                   
+                    [expect([NSNumber numberWithInt:runner.failures]) toBeEqualTo:[NSNumber numberWithInt:0]];
+                    [expect([NSNumber numberWithInt:runner.successes]) toBeEqualTo:[NSNumber numberWithInt:0]];
                }),
            nil);
 }

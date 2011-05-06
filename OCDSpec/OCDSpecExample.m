@@ -7,7 +7,7 @@
 
 -(id) init
 {
-  if (self = [super init]) 
+  if ((self = [super init]))
   {
     failed = NO;
   }
@@ -16,7 +16,7 @@
 
 -(id) initWithBlock:(void (^)(void))example
 {
-  if (self = [super init])
+  if ((self = [super init]))
   {
     [self init];
     itsExample = [example copy];

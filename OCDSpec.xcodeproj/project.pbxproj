@@ -15,15 +15,20 @@
 		0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757F8B612C9B4460004134A /* testFailureinDescribeBlock.m */; };
 		07602F82135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */; };
 		0761B5241359E48C00FE98CC /* OCDSpecExpecationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0761B5231359E48C00FE98CC /* OCDSpecExpecationSpec.m */; };
-		07763E7D131881160059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
+		07679CD8137499B60013D81B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		07679CDF13749A100013D81B /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
+		07679CE013749A100013D81B /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
+		07679CE113749A100013D81B /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
+		07679CE213749A100013D81B /* OCDSpecFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */; };
+		07679CE313749A100013D81B /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
+		07679CE413749A100013D81B /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
+		07679CE513749A100013D81B /* OCDSpecExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */; };
+		07679CE813749A9A0013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
+		07679CE913749C060013D81B /* OCDSpecOutputter+RedirectOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE4D134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m */; };
 		07763E7E131881170059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
 		07763E7F131881170059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
 		07763E80131881180059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
-		077CF00C12DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
-		077CF00D12DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
-		077CF00E12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
 		077CF00F12DDE01E00F7B1C5 /* OCDSpecExampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */; };
-		077CF01012DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */; };
 		077CF01112DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00B12DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m */; };
 		077CF01812DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
 		077CF01912DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
@@ -38,21 +43,28 @@
 		077CF02612DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
 		077CF02812DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */; };
 		0794ADB2134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */; };
-		0794ADB7134AC55100A484D6 /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
 		0794ADD6134AC9A500A484D6 /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
 		0794ADD7134AC9A600A484D6 /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
 		0794ADD8134AC9A600A484D6 /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
 		0794AE47134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE46134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m */; };
-		0794AE4E134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE4D134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m */; };
 		0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0795714812BA504200281A44 /* testSuccessInDescribeBlock.m */; };
 		07B90FBB12EA5AB400FC388F /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C0C18812CCD140008B4D42 /* testMultipleDescriptions.m */; };
 		07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
-		07C3DBA81362234D00CADEDB /* OCDSpecExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */; };
 		07C3DBAB13622CE600CADEDB /* MockObjectWithEquals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */; };
 		07DD9D3D1347534F0034EA52 /* OCDSpecOutputterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07679CE613749A600013D81B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07679CD6137499B60013D81B;
+			remoteInfo = IOSStaticLibrary;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecFailSpec.m; sourceTree = "<group>"; };
@@ -63,6 +75,8 @@
 		0757F8BD12C9B4980004134A /* TestDescribeMacroFailing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TestDescribeMacroFailing-Info.plist"; path = "Specs/Programs/TestDescribeMacroFailing-Info.plist"; sourceTree = "<group>"; };
 		07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescriptionRunnerSpec.m; sourceTree = "<group>"; };
 		0761B5231359E48C00FE98CC /* OCDSpecExpecationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecExpecationSpec.m; sourceTree = "<group>"; };
+		07679CD7137499B60013D81B /* libIOSStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIOSStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		07679CDB137499B60013D81B /* IOSStaticLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSStaticLibrary-Prefix.pch"; sourceTree = "<group>"; };
 		07763E79131880620059DA1D /* OCDSpecOutputter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecOutputter.h; sourceTree = "<group>"; };
 		07763E7A131880620059DA1D /* OCDSpecOutputter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecOutputter.m; sourceTree = "<group>"; };
 		077CEFF912DDDFBC00F7B1C5 /* OCDSpecDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecDescription.h; sourceTree = "<group>"; };
@@ -92,7 +106,7 @@
 		07C2DDF3128442EA009E03F7 /* MockExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockExample.h; sourceTree = "<group>"; };
 		07C2DDF4128442EA009E03F7 /* MockExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockExample.m; sourceTree = "<group>"; };
 		07C2DE3712844CDE009E03F7 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
-		07C3DBA61362234D00CADEDB /* OCDSpecExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; path = OCDSpecExpectation.h; sourceTree = "<group>"; };
+		07C3DBA61362234D00CADEDB /* OCDSpecExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecExpectation.h; sourceTree = "<group>"; };
 		07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecExpectation.m; sourceTree = "<group>"; };
 		07C3DBA913622CE600CADEDB /* MockObjectWithEquals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockObjectWithEquals.h; sourceTree = "<group>"; };
 		07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockObjectWithEquals.m; sourceTree = "<group>"; };
@@ -106,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07679CE813749A9A0013D81B /* libIOSStaticLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +128,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07679CD4137499B60013D81B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07679CD8137499B60013D81B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +220,22 @@
 			path = Programs;
 			sourceTree = "<group>";
 		};
+		07679CD9137499B60013D81B /* IOSStaticLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				07679CDA137499B60013D81B /* Supporting Files */,
+			);
+			path = IOSStaticLibrary;
+			sourceTree = "<group>";
+		};
+		07679CDA137499B60013D81B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07679CDB137499B60013D81B /* IOSStaticLibrary-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		07C2DE3512844C33009E03F7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +259,10 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				07679CD7137499B60013D81B /* libIOSStaticLibrary.a */,
 				073A6FCB12F1D7CB003EC052 /* Specs */,
 				073A6FCA12F1D7C3003EC052 /* OCDSpec */,
+				07679CD9137499B60013D81B /* IOSStaticLibrary */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				0795715912BA51A700281A44 /* TestDescribeMacro-Info.plist */,
@@ -242,6 +283,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		07679CD5137499B60013D81B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		07550BA3126A2BBB00C4A7FF /* OCDSpecUnitTests */ = {
 			isa = PBXNativeTarget;
@@ -255,6 +306,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				07679CE713749A600013D81B /* PBXTargetDependency */,
 			);
 			name = OCDSpecUnitTests;
 			productName = UnitTests;
@@ -278,6 +330,23 @@
 			productName = TestDescribeMacroFailing;
 			productReference = 0757F8BB12C9B4980004134A /* TestDescribeMacroFailing.app */;
 			productType = "com.apple.product-type.application";
+		};
+		07679CD6137499B60013D81B /* IOSStaticLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07679CDE137499B60013D81B /* Build configuration list for PBXNativeTarget "IOSStaticLibrary" */;
+			buildPhases = (
+				07679CD3137499B60013D81B /* Sources */,
+				07679CD4137499B60013D81B /* Frameworks */,
+				07679CD5137499B60013D81B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IOSStaticLibrary;
+			productName = IOSStaticLibrary;
+			productReference = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		0795715612BA51A700281A44 /* TestDescribeMacro */ = {
 			isa = PBXNativeTarget;
@@ -335,6 +404,7 @@
 				0795715612BA51A700281A44 /* TestDescribeMacro */,
 				0757F8BA12C9B4980004134A /* TestDescribeMacroFailing */,
 				07C0C17812CCD091008B4D42 /* TestMultipleDescriptions */,
+				07679CD6137499B60013D81B /* IOSStaticLibrary */,
 			);
 		};
 /* End PBXProject section */
@@ -430,24 +500,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07679CE913749C060013D81B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				07550BAB126A2C5400C4A7FF /* unitTestMain.m in Sources */,
 				07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */,
-				077CF00C12DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
-				077CF00D12DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
-				077CF00E12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
 				077CF00F12DDE01E00F7B1C5 /* OCDSpecExampleSpec.m in Sources */,
-				077CF01012DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
 				077CF01112DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m in Sources */,
 				073A6F7612F1D0A0003EC052 /* OCDSpecFailSpec.m in Sources */,
-				07763E7D131881160059DA1D /* OCDSpecOutputter.m in Sources */,
 				07DD9D3D1347534F0034EA52 /* OCDSpecOutputterSpec.m in Sources */,
 				0794ADB2134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m in Sources */,
-				0794ADB7134AC55100A484D6 /* OCDSpecSharedResults.m in Sources */,
 				0794AE47134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */,
-				0794AE4E134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				07602F82135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m in Sources */,
 				0761B5241359E48C00FE98CC /* OCDSpecExpecationSpec.m in Sources */,
-				07C3DBA81362234D00CADEDB /* OCDSpecExpectation.m in Sources */,
 				07C3DBAB13622CE600CADEDB /* MockObjectWithEquals.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +528,20 @@
 				07B90FBB12EA5AB400FC388F /* MockExample.m in Sources */,
 				07763E7F131881170059DA1D /* OCDSpecOutputter.m in Sources */,
 				0794ADD7134AC9A600A484D6 /* OCDSpecSharedResults.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07679CD3137499B60013D81B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07679CDF13749A100013D81B /* OCDSpecDescription.m in Sources */,
+				07679CE013749A100013D81B /* OCDSpecDescriptionRunner.m in Sources */,
+				07679CE113749A100013D81B /* OCDSpecExample.m in Sources */,
+				07679CE213749A100013D81B /* OCDSpecFail.m in Sources */,
+				07679CE313749A100013D81B /* OCDSpecOutputter.m in Sources */,
+				07679CE413749A100013D81B /* OCDSpecSharedResults.m in Sources */,
+				07679CE513749A100013D81B /* OCDSpecExpectation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +577,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07679CE713749A600013D81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07679CD6137499B60013D81B /* IOSStaticLibrary */;
+			targetProxy = 07679CE613749A600013D81B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		07550BA7126A2BBB00C4A7FF /* Debug */ = {
@@ -599,6 +684,38 @@
 				PRODUCT_NAME = TestDescribeMacroFailing;
 				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		07679CDC137499B60013D81B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/IOSStaticLibrary.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IOSStaticLibrary/IOSStaticLibrary-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		07679CDD137499B60013D81B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/IOSStaticLibrary.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IOSStaticLibrary/IOSStaticLibrary-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -751,6 +868,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		07679CDE137499B60013D81B /* Build configuration list for PBXNativeTarget "IOSStaticLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07679CDC137499B60013D81B /* Debug */,
+				07679CDD137499B60013D81B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		0795715C12BA51A700281A44 /* Build configuration list for PBXNativeTarget "TestDescribeMacro" */ = {
 			isa = XCConfigurationList;

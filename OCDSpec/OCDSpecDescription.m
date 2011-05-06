@@ -29,7 +29,7 @@ void describe(NSString *descriptionName, ...)
 
 -(id) initWithName:(NSString *) name examples:(NSArray *)examples
 {
-  if (self = [self init])
+  if ((self = [self init]))
   {
     itsExamples = examples;
     itsName = name;
