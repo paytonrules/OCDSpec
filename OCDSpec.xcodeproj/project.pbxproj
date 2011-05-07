@@ -25,30 +25,14 @@
 		07679CE513749A100013D81B /* OCDSpecExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */; };
 		07679CE813749A9A0013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
 		07679CE913749C060013D81B /* OCDSpecOutputter+RedirectOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE4D134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m */; };
-		07763E7E131881170059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
-		07763E7F131881170059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
-		07763E80131881180059DA1D /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
+		07679CEC1375E9E60013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
+		07679CEF1375EA450013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
+		07679CF01375EA730013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
 		077CF00F12DDE01E00F7B1C5 /* OCDSpecExampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */; };
 		077CF01112DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00B12DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m */; };
-		077CF01812DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
-		077CF01912DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
-		077CF01A12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
-		077CF01C12DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */; };
-		077CF01E12DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
-		077CF01F12DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
-		077CF02012DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
-		077CF02212DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */; };
-		077CF02412DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
-		077CF02512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
-		077CF02612DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
-		077CF02812DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */; };
 		0794ADB2134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */; };
-		0794ADD6134AC9A500A484D6 /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
-		0794ADD7134AC9A600A484D6 /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
-		0794ADD8134AC9A600A484D6 /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
 		0794AE47134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE46134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m */; };
 		0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0795714812BA504200281A44 /* testSuccessInDescribeBlock.m */; };
-		07B90FBB12EA5AB400FC388F /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C0C18812CCD140008B4D42 /* testMultipleDescriptions.m */; };
 		07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
@@ -58,6 +42,27 @@
 
 /* Begin PBXContainerItemProxy section */
 		07679CE613749A600013D81B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07679CD6137499B60013D81B;
+			remoteInfo = IOSStaticLibrary;
+		};
+		07679CEA1375E9E00013D81B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07679CD6137499B60013D81B;
+			remoteInfo = IOSStaticLibrary;
+		};
+		07679CED1375EA410013D81B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07679CD6137499B60013D81B;
+			remoteInfo = IOSStaticLibrary;
+		};
+		07679CF11375EA770013D81B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
@@ -128,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07679CEF1375EA450013D81B /* libIOSStaticLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07679CEC1375E9E60013D81B /* libIOSStaticLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07679CF01375EA730013D81B /* libIOSStaticLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +333,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				07679CEE1375EA410013D81B /* PBXTargetDependency */,
 			);
 			name = TestDescribeMacroFailing;
 			productName = TestDescribeMacroFailing;
@@ -360,6 +369,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				07679CEB1375E9E00013D81B /* PBXTargetDependency */,
 			);
 			name = TestDescribeMacro;
 			productName = TestDescribeMacro;
@@ -378,6 +388,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				07679CF21375EA770013D81B /* PBXTargetDependency */,
 			);
 			name = TestMultipleDescriptions;
 			productName = TestMultipleDescriptions;
@@ -521,13 +532,6 @@
 			files = (
 				07120E19134FD04B00B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */,
-				077CF01E12DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
-				077CF01F12DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
-				077CF02012DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
-				077CF02212DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
-				07B90FBB12EA5AB400FC388F /* MockExample.m in Sources */,
-				07763E7F131881170059DA1D /* OCDSpecOutputter.m in Sources */,
-				0794ADD7134AC9A600A484D6 /* OCDSpecSharedResults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,12 +555,6 @@
 			files = (
 				07120DFD134FCEE500B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */,
-				077CF01812DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
-				077CF01912DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
-				077CF01A12DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
-				077CF01C12DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
-				07763E7E131881170059DA1D /* OCDSpecOutputter.m in Sources */,
-				0794ADD8134AC9A600A484D6 /* OCDSpecSharedResults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,13 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */,
-				077CF02412DDE01E00F7B1C5 /* OCDSpecDescription.m in Sources */,
-				077CF02512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m in Sources */,
-				077CF02612DDE01E00F7B1C5 /* OCDSpecExample.m in Sources */,
-				077CF02812DDE01E00F7B1C5 /* OCDSpecFail.m in Sources */,
 				07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */,
-				07763E80131881180059DA1D /* OCDSpecOutputter.m in Sources */,
-				0794ADD6134AC9A500A484D6 /* OCDSpecSharedResults.m in Sources */,
 				07120E1D134FD0D600B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +575,21 @@
 			isa = PBXTargetDependency;
 			target = 07679CD6137499B60013D81B /* IOSStaticLibrary */;
 			targetProxy = 07679CE613749A600013D81B /* PBXContainerItemProxy */;
+		};
+		07679CEB1375E9E00013D81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07679CD6137499B60013D81B /* IOSStaticLibrary */;
+			targetProxy = 07679CEA1375E9E00013D81B /* PBXContainerItemProxy */;
+		};
+		07679CEE1375EA410013D81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07679CD6137499B60013D81B /* IOSStaticLibrary */;
+			targetProxy = 07679CED1375EA410013D81B /* PBXContainerItemProxy */;
+		};
+		07679CF21375EA770013D81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07679CD6137499B60013D81B /* IOSStaticLibrary */;
+			targetProxy = 07679CF11375EA770013D81B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
