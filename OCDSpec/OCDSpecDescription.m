@@ -9,7 +9,7 @@ void describe(NSString *descriptionName, ...)
   NSMutableArray  *exampleList = [NSMutableArray arrayWithCapacity:20];
   
   va_start(variableArgumentList, descriptionName);
-  while (example = va_arg(variableArgumentList, OCDSpecExample*) )
+  while ((example = va_arg(variableArgumentList, OCDSpecExample*) ) )
   {
     [exampleList addObject: example];
   }

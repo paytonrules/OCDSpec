@@ -1,6 +1,3 @@
-#import <UIKit/UIKit.h>
-
-
 @protocol Example
 @property(readonly) BOOL failed;
 

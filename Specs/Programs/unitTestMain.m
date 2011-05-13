@@ -14,8 +14,6 @@
   
   [runner runAllDescriptions];
   
-  NSLog(@"Tests ran with %d passing tests and %d failing tests", runner.successes, runner.failures);
-  
   [app performSelector:@selector(_terminateWithStatus:) withObject:(id) runner.failures];
 }
 

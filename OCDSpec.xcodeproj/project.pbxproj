@@ -28,6 +28,28 @@
 		07679CEC1375E9E60013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
 		07679CEF1375EA450013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
 		07679CF01375EA730013D81B /* libIOSStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */; };
+		07679CF91375EB5D0013D81B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		07679CFC1375EB5D0013D81B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07679CFB1375EB5D0013D81B /* main.m */; };
+		07679D051375EC490013D81B /* OCDSpecFailSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */; };
+		07679D061375EC490013D81B /* OCDSpecSharedResultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */; };
+		07679D071375EC490013D81B /* OCDSpecExampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */; };
+		07679D081375EC490013D81B /* OCDSpecDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00B12DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m */; };
+		07679D091375EC490013D81B /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */; };
+		07679D0A1375EC490013D81B /* OCDSpecOutputterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */; };
+		07679D0B1375EC490013D81B /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE46134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m */; };
+		07679D0C1375EC490013D81B /* OCDSpecExpecationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0761B5231359E48C00FE98CC /* OCDSpecExpecationSpec.m */; };
+		07679D0E1375EC490013D81B /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
+		07679D101375EC490013D81B /* MockObjectWithEquals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */; };
+		07679D121375EC490013D81B /* OCDSpecOutputter+RedirectOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE4D134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m */; };
+		07679D191375EC5D0013D81B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679D181375EC5D0013D81B /* Cocoa.framework */; };
+		07679D241375EC710013D81B /* OCDSpecDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00312DDE01E00F7B1C5 /* OCDSpecDescription.m */; };
+		07679D251375EC710013D81B /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00512DDE01E00F7B1C5 /* OCDSpecDescriptionRunner.m */; };
+		07679D261375EC7C0013D81B /* OCDSpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00712DDE01E00F7B1C5 /* OCDSpecExample.m */; };
+		07679D271375EC7C0013D81B /* OCDSpecFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00A12DDE01E00F7B1C5 /* OCDSpecFail.m */; };
+		07679D281375EC7C0013D81B /* OCDSpecOutputter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07763E7A131880620059DA1D /* OCDSpecOutputter.m */; };
+		07679D2A1375EC7C0013D81B /* OCDSpecSharedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB6134AC55100A484D6 /* OCDSpecSharedResults.m */; };
+		07679D2B1375EC7C0013D81B /* OCDSpecExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */; };
+		07679D2E1375ECDB0013D81B /* libMACStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07679D171375EC5D0013D81B /* libMACStaticLibrary.a */; };
 		077CF00F12DDE01E00F7B1C5 /* OCDSpecExampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */; };
 		077CF01112DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00B12DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m */; };
 		0794ADB2134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */; };
@@ -69,7 +91,26 @@
 			remoteGlobalIDString = 07679CD6137499B60013D81B;
 			remoteInfo = IOSStaticLibrary;
 		};
+		07679D2C1375ECD70013D81B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07679D161375EC5D0013D81B;
+			remoteInfo = MACStaticLibrary;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07679CF51375EB5D0013D81B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecFailSpec.m; sourceTree = "<group>"; };
@@ -82,6 +123,16 @@
 		0761B5231359E48C00FE98CC /* OCDSpecExpecationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecExpecationSpec.m; sourceTree = "<group>"; };
 		07679CD7137499B60013D81B /* libIOSStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIOSStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07679CDB137499B60013D81B /* IOSStaticLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSStaticLibrary-Prefix.pch"; sourceTree = "<group>"; };
+		07679CF71375EB5D0013D81B /* TestMacVersion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestMacVersion; sourceTree = BUILT_PRODUCTS_DIR; };
+		07679CFB1375EB5D0013D81B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07679CFE1375EB5D0013D81B /* TestMacVersion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMacVersion-Prefix.pch"; sourceTree = "<group>"; };
+		07679CFF1375EB5D0013D81B /* TestMacVersion.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TestMacVersion.1; sourceTree = "<group>"; };
+		07679D171375EC5D0013D81B /* libMACStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMACStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		07679D181375EC5D0013D81B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		07679D1B1375EC5D0013D81B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		07679D1C1375EC5D0013D81B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		07679D1D1375EC5D0013D81B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07679D201375EC5D0013D81B /* MACStaticLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MACStaticLibrary-Prefix.pch"; sourceTree = "<group>"; };
 		07763E79131880620059DA1D /* OCDSpecOutputter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecOutputter.h; sourceTree = "<group>"; };
 		07763E7A131880620059DA1D /* OCDSpecOutputter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecOutputter.m; sourceTree = "<group>"; };
 		077CEFF912DDDFBC00F7B1C5 /* OCDSpecDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecDescription.h; sourceTree = "<group>"; };
@@ -142,6 +193,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				07679CD8137499B60013D81B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07679CF41375EB5D0013D81B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07679D2E1375ECDB0013D81B /* libMACStaticLibrary.a in Frameworks */,
+				07679CF91375EB5D0013D81B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07679D141375EC5D0013D81B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07679D191375EC5D0013D81B /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +312,50 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		07679CFA1375EB5D0013D81B /* TestMacVersion */ = {
+			isa = PBXGroup;
+			children = (
+				07679CFB1375EB5D0013D81B /* main.m */,
+				07679CFF1375EB5D0013D81B /* TestMacVersion.1 */,
+				07679CFD1375EB5D0013D81B /* Supporting Files */,
+			);
+			path = TestMacVersion;
+			sourceTree = "<group>";
+		};
+		07679CFD1375EB5D0013D81B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07679CFE1375EB5D0013D81B /* TestMacVersion-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07679D1A1375EC5D0013D81B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07679D1B1375EC5D0013D81B /* AppKit.framework */,
+				07679D1C1375EC5D0013D81B /* CoreData.framework */,
+				07679D1D1375EC5D0013D81B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		07679D1E1375EC5D0013D81B /* MACStaticLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				07679D1F1375EC5D0013D81B /* Supporting Files */,
+			);
+			path = MACStaticLibrary;
+			sourceTree = "<group>";
+		};
+		07679D1F1375EC5D0013D81B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07679D201375EC5D0013D81B /* MACStaticLibrary-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		07C2DE3512844C33009E03F7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +372,7 @@
 				0795715712BA51A700281A44 /* TestDescribeMacro.app */,
 				0757F8BB12C9B4980004134A /* TestDescribeMacroFailing.app */,
 				07C0C17912CCD091008B4D42 /* TestMultipleDescriptions.app */,
+				07679CF71375EB5D0013D81B /* TestMacVersion */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,10 +380,13 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				07679D171375EC5D0013D81B /* libMACStaticLibrary.a */,
 				07679CD7137499B60013D81B /* libIOSStaticLibrary.a */,
 				073A6FCB12F1D7CB003EC052 /* Specs */,
 				073A6FCA12F1D7C3003EC052 /* OCDSpec */,
 				07679CD9137499B60013D81B /* IOSStaticLibrary */,
+				07679CFA1375EB5D0013D81B /* TestMacVersion */,
+				07679D1E1375EC5D0013D81B /* MACStaticLibrary */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				0795715912BA51A700281A44 /* TestDescribeMacro-Info.plist */,
@@ -285,6 +401,8 @@
 			children = (
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				07679D181375EC5D0013D81B /* Cocoa.framework */,
+				07679D1A1375EC5D0013D81B /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -293,6 +411,13 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		07679CD5137499B60013D81B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07679D151375EC5D0013D81B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,6 +482,42 @@
 			productReference = 07679CD7137499B60013D81B /* libIOSStaticLibrary.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		07679CF61375EB5D0013D81B /* TestMacVersion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07679D001375EB5D0013D81B /* Build configuration list for PBXNativeTarget "TestMacVersion" */;
+			buildPhases = (
+				07679CF31375EB5D0013D81B /* Sources */,
+				07679CF41375EB5D0013D81B /* Frameworks */,
+				07679CF51375EB5D0013D81B /* CopyFiles */,
+				078EAFF7137DCB8000954339 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07679D2D1375ECD70013D81B /* PBXTargetDependency */,
+			);
+			name = TestMacVersion;
+			productName = TestMacVersion;
+			productReference = 07679CF71375EB5D0013D81B /* TestMacVersion */;
+			productType = "com.apple.product-type.tool";
+		};
+		07679D161375EC5D0013D81B /* MACStaticLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07679D211375EC5D0013D81B /* Build configuration list for PBXNativeTarget "MACStaticLibrary" */;
+			buildPhases = (
+				07679D131375EC5D0013D81B /* Sources */,
+				07679D141375EC5D0013D81B /* Frameworks */,
+				07679D151375EC5D0013D81B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MACStaticLibrary;
+			productName = MACStaticLibrary;
+			productReference = 07679D171375EC5D0013D81B /* libMACStaticLibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		0795715612BA51A700281A44 /* TestDescribeMacro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0795715C12BA51A700281A44 /* Build configuration list for PBXNativeTarget "TestDescribeMacro" */;
@@ -416,6 +577,8 @@
 				0757F8BA12C9B4980004134A /* TestDescribeMacroFailing */,
 				07C0C17812CCD091008B4D42 /* TestMultipleDescriptions */,
 				07679CD6137499B60013D81B /* IOSStaticLibrary */,
+				07679CF61375EB5D0013D81B /* TestMacVersion */,
+				07679D161375EC5D0013D81B /* MACStaticLibrary */,
 			);
 		};
 /* End PBXProject section */
@@ -491,6 +654,19 @@
 			shellPath = /bin/sh;
 			shellScript = ./Specs/Programs/RunIPhoneUnitTest.sh;
 		};
+		078EAFF7137DCB8000954339 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $TARGET_BUILD_DIR/$EXECUTABLE_PATH;
+		};
 		07C0C18012CCD0F7008B4D42 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -549,6 +725,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07679CF31375EB5D0013D81B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07679D051375EC490013D81B /* OCDSpecFailSpec.m in Sources */,
+				07679D061375EC490013D81B /* OCDSpecSharedResultsSpec.m in Sources */,
+				07679D071375EC490013D81B /* OCDSpecExampleSpec.m in Sources */,
+				07679D081375EC490013D81B /* OCDSpecDescriptionSpec.m in Sources */,
+				07679D091375EC490013D81B /* OCDSpecDescriptionRunnerSpec.m in Sources */,
+				07679D0A1375EC490013D81B /* OCDSpecOutputterSpec.m in Sources */,
+				07679D0B1375EC490013D81B /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */,
+				07679D0C1375EC490013D81B /* OCDSpecExpecationSpec.m in Sources */,
+				07679D0E1375EC490013D81B /* MockExample.m in Sources */,
+				07679D101375EC490013D81B /* MockObjectWithEquals.m in Sources */,
+				07679D121375EC490013D81B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
+				07679CFC1375EB5D0013D81B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07679D131375EC5D0013D81B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07679D261375EC7C0013D81B /* OCDSpecExample.m in Sources */,
+				07679D271375EC7C0013D81B /* OCDSpecFail.m in Sources */,
+				07679D281375EC7C0013D81B /* OCDSpecOutputter.m in Sources */,
+				07679D2A1375EC7C0013D81B /* OCDSpecSharedResults.m in Sources */,
+				07679D2B1375EC7C0013D81B /* OCDSpecExpectation.m in Sources */,
+				07679D241375EC710013D81B /* OCDSpecDescription.m in Sources */,
+				07679D251375EC710013D81B /* OCDSpecDescriptionRunner.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0795715412BA51A700281A44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -590,6 +799,11 @@
 			isa = PBXTargetDependency;
 			target = 07679CD6137499B60013D81B /* IOSStaticLibrary */;
 			targetProxy = 07679CF11375EA770013D81B /* PBXContainerItemProxy */;
+		};
+		07679D2D1375ECD70013D81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07679D161375EC5D0013D81B /* MACStaticLibrary */;
+			targetProxy = 07679D2C1375ECD70013D81B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -723,6 +937,88 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		07679D011375EB5D0013D81B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestMacVersion/TestMacVersion-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		07679D021375EB5D0013D81B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestMacVersion/TestMacVersion-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		07679D221375EC5D0013D81B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MACStaticLibrary/MACStaticLibrary-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		07679D231375EC5D0013D81B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MACStaticLibrary/MACStaticLibrary-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -883,6 +1179,25 @@
 				07679CDD137499B60013D81B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07679D001375EB5D0013D81B /* Build configuration list for PBXNativeTarget "TestMacVersion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07679D011375EB5D0013D81B /* Debug */,
+				07679D021375EB5D0013D81B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07679D211375EC5D0013D81B /* Build configuration list for PBXNativeTarget "MACStaticLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07679D221375EC5D0013D81B /* Debug */,
+				07679D231375EC5D0013D81B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0795715C12BA51A700281A44 /* Build configuration list for PBXNativeTarget "TestDescribeMacro" */ = {
 			isa = XCConfigurationList;
