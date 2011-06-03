@@ -7,20 +7,20 @@ void describe(NSString *descriptionName, ...)
     va_list         variableArgumentList;
     OCDSpecExample  *example;
     NSMutableArray  *exampleList = [NSMutableArray arrayWithCapacity:20];
-  
+    
     va_start(variableArgumentList, descriptionName);
     while ((example = va_arg(variableArgumentList, OCDSpecExample*) ) )
     {
-      [exampleList addObject: example];
+        [exampleList addObject: example];
     }
     va_end(variableArgumentList);
-  
+    
     OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
     [description describe];
-  
+    
     OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
-    results.successes = [NSNumber numberWithInt:description.successes];
-    results.failures = [NSNumber numberWithInt:description.failures];
+    results.successes = description.successes;
+    results.failures = description.failures;
 }
 
 @implementation OCDSpecDescription
@@ -29,39 +29,40 @@ void describe(NSString *descriptionName, ...)
 
 -(id) initWithName:(NSString *) name examples:(NSArray *)examples
 {
-  if ((self = [self init]))
-  {
-    itsExamples = examples;
-    itsName = name;
-  }
-  return self;
+    if ((self = [self init]))
+    {
+        itsExamples = examples;
+        itsName = name;
+        successes = [NSNumber numberWithInt:0];
+        failures = [NSNumber numberWithInt:0];
+    }
+    return self;
 }
 
 -(void) describe:(NSString *)name onArrayOfExamples:(NSArray *)examples
 {
-  itsExamples = examples;
-  itsName = name;
-  [self describe];
+    itsExamples = examples;
+    itsName = name;
+    [self describe];
 }
 
 -(void) describe
 {
-  // Write the name here
-  
-  [itsExamples enumerateObjectsUsingBlock: ^(id obj, NSUInteger idx, BOOL *stop)
-  {
-    OCDSpecExample *example = (OCDSpecExample *) obj;
-     
-    [example run];
-    if (example.failed)
-    {
-      self.failures++;
-    }
-    else 
-    {
-      self.successes++;
-    }
-  }];
+    // Write the name here
+    [itsExamples enumerateObjectsUsingBlock: ^(id obj, NSUInteger idx, BOOL *stop)
+     {
+         OCDSpecExample *example = (OCDSpecExample *) obj;
+         
+         [example run];
+         if (example.failed)
+         {
+             self.failures = [NSNumber numberWithInt:[failures intValue] + 1];
+         }
+         else 
+         {
+             self.successes = [NSNumber numberWithInt:[successes intValue] + 1];
+         }
+     }];
 }
 
 // TEST DEALLOC

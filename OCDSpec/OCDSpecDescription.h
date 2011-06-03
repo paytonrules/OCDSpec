@@ -4,14 +4,14 @@
 
 @interface OCDSpecDescription : NSObject 
 {
-  int         failures;
-  int         successes;
+  NSNumber    *failures;
+  NSNumber    *successes;
   NSArray     *itsExamples;
   NSString    *itsName;
 }
 
-@property(assign) int failures;
-@property(assign) int successes;
+@property(nonatomic, retain) NSNumber *failures;
+@property(nonatomic, retain) NSNumber *successes;
 
 // NOTE - this describe is probably deletable!
 -(void) describe:(NSString *)name onArrayOfExamples:(NSArray *) examples;
