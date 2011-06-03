@@ -10,10 +10,8 @@ CONTEXT(OCDSpecDescription)
                     OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
                     
                     [description describe:@"It Should Do Something" onArrayOfExamples: [[[NSArray alloc] init] autorelease]];
-                    
-                    if ([description.failures intValue] != 0) {
-                        FAIL(@"Should have had 0 failures.  Did not");
-                    }
+                                        
+                    [expect(description.failures) toBeEqualTo:[NSNumber numberWithInt:0]];
                 }),
              
              it(@"describes an example with one error",

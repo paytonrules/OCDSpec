@@ -27,14 +27,23 @@ void describe(NSString *descriptionName, ...)
 
 @synthesize failures, successes;
 
+-(id) init
+{
+    if ((self = [super init]))
+    {
+        successes = [NSNumber numberWithInt:0];
+        failures = [NSNumber numberWithInt:0];
+    }
+    
+    return self;
+}
+
 -(id) initWithName:(NSString *) name examples:(NSArray *)examples
 {
     if ((self = [self init]))
     {
         itsExamples = examples;
         itsName = name;
-        successes = [NSNumber numberWithInt:0];
-        failures = [NSNumber numberWithInt:0];
     }
     return self;
 }
