@@ -27,7 +27,7 @@ static OCDSpecSharedResults *sharedResults = nil;
     return self;
 }
 
--(BOOL) equalTo:(OCDSpecSharedResults *)otherResults
+-(BOOL) isEqual:(OCDSpecSharedResults *)otherResults
 {
     if (otherResults != nil &&
         [otherResults.failures isEqualToNumber:self.failures] &&

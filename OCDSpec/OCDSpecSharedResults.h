@@ -9,5 +9,5 @@
 @property(nonatomic, retain) NSNumber *failures;
 @property(nonatomic, retain) NSNumber *successes;
 +(OCDSpecSharedResults *)sharedResults;
--(BOOL) equalTo:(OCDSpecSharedResults *)otherResults;
+-(BOOL) isEqual:(OCDSpecSharedResults *)otherResults;
 @end

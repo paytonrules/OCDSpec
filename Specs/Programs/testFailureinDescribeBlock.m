@@ -52,7 +52,6 @@ CONTEXT(OCDSpecFail)
     
     if ([outputException compare:@"Tests ran with 0 passing tests and 3 failing tests"] != 0)
     {
-      NSLog(@"Exception was: %@", outputException);
       FAIL(@"The wrong number of failing tests was written");
     }
   }];
