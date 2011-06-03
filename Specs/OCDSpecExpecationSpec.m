@@ -63,13 +63,11 @@ CONTEXT(OCDSpecExpectation)
              
              it(@"Is created helpfully by the expect macro",
                 ^{
-                    NSObject *innerObject;
+                    NSObject *innerObject = nil;
                     
                     OCDSpecExpectation *expectation = expect(innerObject);
                     
-                    if (expectation.line != __LINE__ -2)
-                        FAIL(@"Line Number is wrong");
-                    
+                    [expect([NSNumber numberWithInt:expectation.line]) toBeEqualTo:[NSNumber numberWithInt: (__LINE__ - 2)]];
                     [expect(expectation.file) toBeEqualTo:[NSString stringWithUTF8String:__FILE__]];
                 }),
            nil);

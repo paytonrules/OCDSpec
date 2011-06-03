@@ -111,7 +111,7 @@ CONTEXT(DescribeMethod)
                 OCDSpecSharedResults *expectedResults = [[[OCDSpecSharedResults alloc] init] autorelease];
                 
                 if (![expectedResults equalTo:sharedResults])
-                  FAIL(@"Actual results were not empty");
+                  FAIL(@"Actual result objects were not the same");
               }),
            
            it(@"has one failure on a list with one failure",
@@ -126,7 +126,7 @@ CONTEXT(DescribeMethod)
                             nil);
                  }];
                 
-                if ([OCDSpecSharedResults sharedResults].failures != 1)
+                if ([[OCDSpecSharedResults sharedResults].failures intValue] != 1)
                 {
                   FAIL(@"Should have one failure - but doesn't");
                 }
@@ -143,7 +143,7 @@ CONTEXT(DescribeMethod)
                             nil);
                  }];
                 
-                if ([OCDSpecSharedResults sharedResults].successes != 1)
+                if ([[OCDSpecSharedResults sharedResults].successes intValue] != 1)
                 {
                   FAIL(@"Should have one success - but doesn't");
                 }

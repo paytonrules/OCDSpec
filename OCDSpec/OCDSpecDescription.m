@@ -4,23 +4,23 @@
 
 void describe(NSString *descriptionName, ...)
 {
-  va_list         variableArgumentList;
-  OCDSpecExample  *example;
-  NSMutableArray  *exampleList = [NSMutableArray arrayWithCapacity:20];
+    va_list         variableArgumentList;
+    OCDSpecExample  *example;
+    NSMutableArray  *exampleList = [NSMutableArray arrayWithCapacity:20];
   
-  va_start(variableArgumentList, descriptionName);
-  while ((example = va_arg(variableArgumentList, OCDSpecExample*) ) )
-  {
-    [exampleList addObject: example];
-  }
-  va_end(variableArgumentList);
+    va_start(variableArgumentList, descriptionName);
+    while ((example = va_arg(variableArgumentList, OCDSpecExample*) ) )
+    {
+      [exampleList addObject: example];
+    }
+    va_end(variableArgumentList);
   
-  OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
-  [description describe];
+    OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
+    [description describe];
   
-  OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
-  results.successes = description.successes;
-  results.failures = description.failures;
+    OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
+    results.successes = [NSNumber numberWithInt:description.successes];
+    results.failures = [NSNumber numberWithInt:description.failures];
 }
 
 @implementation OCDSpecDescription

@@ -1,22 +1,13 @@
-//
-//  OCDSpecSharedResults.h
-//  OCDSpec
-//
-//  Created by Eric Smith on 4/4/11.
-//  Copyright 2011 8th Light. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-
 
 @interface OCDSpecSharedResults : NSObject 
 {
-  int failures;
-  int successes;
+  NSNumber *failures;
+  NSNumber *successes;
 }
 
-@property(assign) int failures;
-@property(assign) int successes;
+@property(nonatomic, retain) NSNumber *failures;
+@property(nonatomic, retain) NSNumber *successes;
 +(OCDSpecSharedResults *)sharedResults;
 -(BOOL) equalTo:(OCDSpecSharedResults *)otherResults;
 @end

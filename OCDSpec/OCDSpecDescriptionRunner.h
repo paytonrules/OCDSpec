@@ -26,11 +26,11 @@ void descriptionOf##classname();\
 @implementation TestRunner##classname\
 +(int) getFailures \
 { \
-  return [OCDSpecSharedResults sharedResults].failures;\
+  return [[OCDSpecSharedResults sharedResults].failures intValue];\
 } \
 +(int)getSuccesses \
 { \
-  return [OCDSpecSharedResults sharedResults].successes;\
+  return [[OCDSpecSharedResults sharedResults].successes intValue];\
 } \
 +(void) run \
 { \

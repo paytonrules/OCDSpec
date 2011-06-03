@@ -9,21 +9,34 @@ static OCDSpecSharedResults *sharedResults = nil;
 
 +(OCDSpecSharedResults *)sharedResults
 {
-  if (sharedResults == nil) 
-  {
-    sharedResults = [[super alloc] init];
-  }
-  return sharedResults;
+    if (sharedResults == nil) 
+    {
+        sharedResults = [[super alloc] init];
+    }
+    return sharedResults;
+}
+
+-(id) init
+{
+    if ((self = [super init]))
+    {
+        failures = [[NSNumber alloc] initWithInt:0];
+        successes = [[NSNumber alloc] initWithInt:0];
+    }
+    
+    return self;
 }
 
 -(BOOL) equalTo:(OCDSpecSharedResults *)otherResults
 {
-  if (sharedResults != nil &&
-      sharedResults.failures == self.failures &&
-      sharedResults.successes == self.successes)
-    return YES;
+    if (otherResults != nil &&
+        [otherResults.failures isEqualToNumber:self.failures] &&
+        [otherResults.successes isEqualToNumber:self.successes])
+    {
+        return YES;
+    }
   
-  return NO;
+    return NO;
 }
 
 @end
