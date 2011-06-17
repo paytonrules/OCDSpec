@@ -10,7 +10,7 @@ CONTEXT(OCDSpecDescription)
                     OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
                     
                     [description describe:@"It Should Do Something" onArrayOfExamples: [[[NSArray alloc] init] autorelease]];
-                                        
+                    
                     [expect(description.failures) toBeEqualTo:[NSNumber numberWithInt:0]];
                 }),
              
@@ -27,10 +27,7 @@ CONTEXT(OCDSpecDescription)
                     
                     outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
                     
-                    if ([description.failures intValue] != 1)
-                    {
-                        FAIL(@"Should have had 1 error, did not");
-                    }
+                    [expect(description.failures) toBeEqualTo:[NSNumber numberWithInt:1]];
                 }),
              
              it(@"writes the exceptions to the shared outputter", 
@@ -67,10 +64,7 @@ CONTEXT(OCDSpecDescription)
                     
                     outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
                     
-                    if ([description.failures intValue] != 2)
-                    {
-                        FAIL(@"Should have had two errors, didn't");
-                    }
+                    [expect(description.failures) toBeEqualTo:[NSNumber numberWithInt:2]];
                 }),
              
              it(@"can describe multiple successes",
@@ -88,10 +82,7 @@ CONTEXT(OCDSpecDescription)
                     
                     outputter.fileHandle = [NSFileHandle fileHandleWithStandardError];
                     
-                    if ([description.successes intValue] != 2)
-                    {
-                        FAIL(@"Should have had two successes, didn't");
-                    }
+                    [expect(description.successes) toBeEqualTo:[NSNumber numberWithInt:2]];
                 }),
              nil
              );
