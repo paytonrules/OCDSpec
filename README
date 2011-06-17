@@ -20,7 +20,8 @@ This setup applies to iOS projects, that use git as a repository.  If you cannot
 
 1.  Create your project using XCode.
     
-    Or use an existing one. Do not check the "Use Unit Tests" button. 
+    Or use an existing one. Do not check the "Use Unit Tests" button.
+2.  Initialize it as a git repository.
 2.  Use git to install OCDSpec as a submodule:
 
     <pre>
