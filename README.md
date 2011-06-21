@@ -53,7 +53,7 @@ Coming Soon.
 Ditto
 
 ### Contributors ###
-* [Skim] (http://github.com/skim)
+* [Skim] (http://github.com/sl4m)
 
 ### Issues ###
 
