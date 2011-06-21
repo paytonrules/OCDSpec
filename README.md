@@ -12,7 +12,7 @@ A developer that cares
 
 ### Setup ###
 
-For the latest release install the template here:
+Templates for XCode are in development that make this much much easier.  They are recommended when finished.
 
 ### Bleeding Edge Setup ###
 
@@ -51,6 +51,9 @@ Coming Soon.
 ### Contribution Guide ###
 
 Ditto
+
+### Contributors ###
+* [Skim] (http://github.com/skim)
 
 ### Issues ###
 
