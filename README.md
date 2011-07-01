@@ -39,7 +39,7 @@ Command line runners exist for iOS and Mac development.  Development is very act
 
 * __toBeEqualTo:__ Check that two objects are equal, using the equalTo message.
 * __tBe:__ Check that two objects are the same object in memory.
-* __
+* __toBeTrue:__ Check that the value is "truthy" - TRUE, YES, true, non-zero, not nil.  You can also just use `expectTruth` such as `expectTruth([object initialized])`
 
 ### Requirements
 
@@ -49,11 +49,11 @@ Command line runners exist for iOS and Mac development.  Development is very act
 
 ### Setup
 
-Templates for XCode are in development that make this much much easier.  They are recommended when finished.
+Templates for XCode are in development that make this much much easier.  They are recommended when finished.  In the meantime please follow the directions below.
 
-### Bleeding Edge Setup (not so friendly right now)
+### Bleeding Edge Setup for iOS (not so friendly right now)
 
-This setup applies to iOS projects, that use git as a repository.  If you cannot use git (so sorry) you can download OCDSpec instead of installing it as a submodule, but then you will not get the latest updates unless you redownload, and if that's the case you might as well just use the provided release templates (once they're available).
+This setup applies to iOS projects, that use git as a repository, running in XCode 4.  Running OSX tests is quite similar, using only a different shell script to run the tests and a different main.  If you cannot use git (so sorry) you can download OCDSpec instead of installing it as a submodule, but then you will not get the latest updates unless you redownload, and if that's the case you might as well just use the provided release templates (once they're available).
 
 1.  Create your project in XCode.  Be sure to uncheck the `Include Unit Tests` checkbox.
 
@@ -81,17 +81,32 @@ This setup applies to iOS projects, that use git as a repository.  If you cannot
 
 <img src="https://img.skitch.com/20110528-f6r1d914qe5a8s28du6ssqcsbb.jpg" alt="StringCalculator" />
 
-### Debugging ###
+### Upcoming Features
 
-Coming Soon.
+In a rough order:
+* XCode templates for getting started.
+* More obvious successes.
+* beforeEach and afterEach
+* NOT for checking that something is not expected
+* Automatic memory leak detection
+
+### Debugging
+
+Building the project runs the shell script for a command line runner, but if you need to debug the project it is a runnable executable and you can set breakpoints. 
 
 ### Contribution Guide ###
 
-Ditto
+Clone the repo, make a pull request.  I will not accept features without tests.
 
-### Contributors ###
-* [skim] (http://github.com/sl4m)
+### Contributors
+* [skim] (http://github.com/sl4m)  Who has helped with directions.
 
-### Issues ###
+### Issues
 
 OCDSpec uses GitHub issues for issue tracking.  Use it!
+
+### License
+
+Copyright (C) 2011 Eric Smith All Rights Reserved.
+
+Distributed under the The MIT License.

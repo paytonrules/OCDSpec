@@ -101,7 +101,7 @@ CONTEXT(OCDSpecExpectation)
              
              nil);
     
-    describe(@"toBeTrue",
+    describe(@"toBeTrue",             
              it(@"fails if the value is not truthy",
                 ^{
                     @try
@@ -116,6 +116,38 @@ CONTEXT(OCDSpecExpectation)
                         [expect([exception reason]) toBeEqualTo:expectedReason];
                     }
                 }),
+
+             it(@"does not fail if the value is TRUE",
+                ^{
+                    expectTruth(TRUE);
+                }),
+             
+             it(@"Passes with YES, fails with NO",
+                ^{
+                    expectTruth(YES);
+                    @try
+                    {
+                        expectTruth(NO);
+                        FAIL(@"Did not fail for NO");
+                    }
+                    @catch (NSException *exception)
+                    {
+                    }
+                }),
+             
+             it(@"Passes with true, fails with false",
+                ^{
+                    expectTruth(true);
+                    @try
+                    {
+                        expectTruth(false);
+                        FAIL(@"Did not fail for false");
+                    }
+                    @catch (NSException *exception)
+                    {
+                    }
+                }),
+                
              
              nil);
 }

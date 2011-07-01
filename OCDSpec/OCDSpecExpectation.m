@@ -36,7 +36,8 @@
 
 -(void) toBeTrue
 {
-    [OCDSpecFail fail:[NSString stringWithFormat:@"%b was expected to be true, but was false", actualObject] atLine:line inFile:file];
+    if (![actualObject boolValue])
+        [OCDSpecFail fail:[NSString stringWithFormat:@"%b was expected to be true, but was false", actualObject] atLine:line inFile:file];
 }
 
 -(void) fail:(NSString *)errorFormat with:(id)expectedObject
