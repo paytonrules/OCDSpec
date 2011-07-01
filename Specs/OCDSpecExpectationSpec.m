@@ -8,39 +8,8 @@ CONTEXT(OCDSpecExpectation)
     __block OCDSpecExpectation *expectation;
     
     describe(@"The Expectation",
-             it(@"delegates beEqualTo to equalTo on the object its holding", 
-                ^{
-                    actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
-                    expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
-
-                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
-                    
-                    [expectation toBeEqualTo:expectedObject];
-                    
-                    [expect(actualObject) toBeEqualTo:expectedObject];
-              }),
              
-             it(@"throws a failure when the objects aren't equal with an explanatory reason if matcher fails",
-                ^{
-                    actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
-                    expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
-                    
-                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
-                    
-                    @try
-                    {
-                        [expectation toBeEqualTo:expectedObject];
-                        FAIL(@"Code did not throw a failure exception");
-                    }
-                    @catch (NSException *exception)
-                    {
-                        NSString *expectedReason = [NSString stringWithFormat:@"%@ was expected to be equal to %@, and isn't", actualObject, expectedObject];
-                        
-                        [expect([exception reason]) toBeEqualTo:expectedReason];
-                    }
-                }),
-             
-             it(@"throws a failure with the line and file passed in - i.e. uses OCDSpecFail", 
+             it(@"throws its failures with the line and file passed in", 
                 ^{
                     actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
                     expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
@@ -69,8 +38,41 @@ CONTEXT(OCDSpecExpectation)
                     [expect([NSNumber numberWithInt:expectation.line]) toBeEqualTo:[NSNumber numberWithInt: (__LINE__ - 2)]];
                     [expect(expectation.file) toBeEqualTo:[NSString stringWithUTF8String:__FILE__]];
                 }),
-           nil);
-
+             nil);
+    
+    describe(@"toBeEqualTo",
+             it(@"passes when two objects are equal",
+                ^{
+                    actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    
+                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+                    
+                    [expectation toBeEqualTo:expectedObject];
+                }),
+             
+             it(@"fails if the two objects are not equal using equalTo",
+                ^{
+                    actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
+                    expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    
+                    expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+                    
+                    @try
+                    {
+                        [expectation toBeEqualTo:expectedObject];
+                        FAIL(@"Code did not throw a failure exception");
+                    }
+                    @catch (NSException *exception)
+                    {
+                        NSString *expectedReason = [NSString stringWithFormat:@"%@ was expected to be equal to %@, and isn't", actualObject, expectedObject];
+                        
+                        [expect([exception reason]) toBeEqualTo:expectedReason];
+                    }
+                }),
+             nil);
+    
+    
     describe(@"toBe", 
              it(@"fails if two objects are not the same object",
                 ^{

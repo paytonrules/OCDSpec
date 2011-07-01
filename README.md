@@ -1,8 +1,45 @@
 ## OCDSpec
+### The Objective-C Unit Testing framework for the Obsessive Compulsive.  
 
-The Objective-C Unit Testing framework for the Obsessive Compulsive.  OCDSpec is a Unit Test framework that is meant to be easy to setup, easy to use, and a joy to work with.  Inspired by both RSpec and Jasmine it has a friendly syntax that should easy to pick up for any developer familiar with BDD frameworks and uses Objective-C features rather than simply porting another XUnit.  A sample spec looks as follows:
+OCDSpec is meant to be easy to setup, easy to use, and a joy to work with.  Inspired by both RSpec and Jasmine it has a friendly syntax that should easy to pick up for any developer familiar with BDD frameworks and uses Objective-C features rather than simply porting another XUnit.  A sample spec looks as follows:
 
-########  INSERT COOL STUFF HERE #######################
+<pre>
+#import "OCDSpec/OCDSpec.h"
+
+CONTEXT(OCDSpecExpectation)
+{
+    __block MockObjectWithEquals *actualObject;
+
+    describe(@"toBe", 
+            
+             it(@"does not fail if the two objects are the same",
+                ^{
+                    actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
+                    
+                    [expect(actualObject) toBe: actualObject];
+                }),
+             
+             nil);
+}
+</pre>
+
+This is taken out of OCDSpecExpectation - OCDSpec is tested in itself - and demonstrates your basic test.  Let's walk through the commands:
+
+1.  `#import "OCDSpec/OCDSpec.h"` - Every test imports OCDSpec.h.
+2.  `CONTEXT(OCDSpecExpectation)` - Each specification requires a context - the name of the context (in this case OCDSpecExpectation) must be unique. 
+3.  `__block MockObjectWithEquals` - A variable that will be avalilable to all the descriptions in this context.  OCDSpec uses Objective-C closures, so if you want to modify an object in the any it blocks you need to prefix it with the `__block` directive.
+4.  `describe(@"toBe"` - This is a description of what you are testing - it takes a string and is followed by it blocks. For the time being it only descriptive.
+5.  `it(@"does not fail if the two objects are the same", - the beginning of an it "block."  `it` is actually a function that takes a string naming the intent of the spec, and an Objective-C block, and are called it blocks for short.  The Objective-C block is started with the ^{
+6.  `[expect(actualObject) toBe: actualObject];` This is the assertion.   toBe means that actualObject should be the same as the expected object.  Important Note: The parameter to expect() **must** be an object so to use integers, booleans and other primitives they should be wrapped in a number.
+7.  `nil` describe takes nil terminated array of it blocks, and as such must end with nil.
+
+Command line runners exist for iOS and Mac development.  Development is very active, including adding templates and GUI test runners.
+
+### Matchers
+
+* __toBeEqualTo:__ Check that two objects are equal, using the equalTo message.
+* __tBe:__ Check that two objects are the same object in memory.
+* __
 
 ### Requirements
 
