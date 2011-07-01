@@ -2,6 +2,7 @@
 #import "OCDSpec/OCDSpecFail.h"
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
+#import "OCDSpecExpectation.h"
 
 CONTEXT(OCDSpecExample)
 {
@@ -9,7 +10,7 @@ CONTEXT(OCDSpecExample)
              it(@"Should Fail One Test",
                 ^{
                     BOOL caughtFailure = NO;
-                    @try 
+                    @try
                     {
                         FAIL(@"You have failed");
                     }
@@ -17,13 +18,10 @@ CONTEXT(OCDSpecExample)
                     {
                         caughtFailure = YES;
                     }
-                    
-                    if (caughtFailure != YES) 
-                    {
-                        FAIL(@"This should have raised a failure");
-                    }
+
+                    [expect([NSNumber numberWithBool:caughtFailure]) toBeEqualTo:[NSNumber numberWithBool:YES]];
                 }),
-             
+
              it(@"Should Pass An empty Test",
                 ^{
                 }),

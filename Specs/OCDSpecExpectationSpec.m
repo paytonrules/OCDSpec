@@ -1,5 +1,4 @@
 #import "OCDSpec/OCDSpec.h"
-#import "OCDSpec/OCDSpecFail.h"
 #import "Specs/Mocks/MockObjectWithEquals.h"
 
 CONTEXT(OCDSpecExpectation)

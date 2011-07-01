@@ -1,5 +1,4 @@
 #import "OCDSpec/OCDSpec.h"
-#import "OCDSpec/OCDSpecSharedResults.h"
 
 // I don't care for this class, but I need to communicate from a C function back to a macro.
 CONTEXT(OCDSpecSharedResults)
