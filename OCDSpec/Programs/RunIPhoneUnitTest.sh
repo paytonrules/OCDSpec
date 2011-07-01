@@ -45,7 +45,7 @@ GTM_DISABLE_ZOMBIES=${GTM_DISABLE_ZOMBIES:=1}
 
 # GTM_REMOVE_GCOV_DATA
 #   Before starting the test, remove any *.gcda files for the current run so
-#   you won't get errors when the source file has changed and the data can't
+#   you won't get failures when the source file has changed and the data can't
 #   be merged.
 #
 GTM_REMOVE_GCOV_DATA=${GTM_REMOVE_GCOV_DATA:=0}
