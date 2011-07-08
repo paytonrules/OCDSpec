@@ -38,7 +38,7 @@ Command line runners exist for iOS and Mac development.  Development is very act
 ### Matchers
 
 * __toBeEqualTo:__ Check that two objects are equal, using the equalTo message.
-* __tBe:__ Check that two objects are the same object in memory.
+* __toBe:__ Check that two objects are the same object in memory.
 * __toBeTrue:__ Check that the value is "truthy" - TRUE, YES, true, non-zero, not nil.  You can also just use `expectTruth` such as `expectTruth([object initialized])`
 
 ### Requirements
