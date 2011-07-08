@@ -40,6 +40,8 @@ Command line runners exist for iOS and Mac development.  Development is very act
 * __toBeEqualTo:__ Check that two objects are equal, using the equalTo message.
 * __toBe:__ Check that two objects are the same object in memory.
 * __toBeTrue:__ Check that the value is "truthy" - TRUE, YES, true, non-zero, not nil.  You can also just use `expectTruth` such as `expectTruth([object initialized])`
+* __toBeFalse:__ Check that the value is "falsy" - FALSE, NO, false and nil.  You can use `expectFalse`.  Both `expectTruth` and `expectFalse` can be used without turning the boolean into an object.
+* __FAIL__ Pass the Fail macro a string to fail arbitrarily.  Handy for exception testing.
 
 ### Requirements
 
@@ -49,42 +51,19 @@ Command line runners exist for iOS and Mac development.  Development is very act
 
 ### Setup
 
-Templates for XCode are in development that make this much much easier.  They are recommended when finished.  In the meantime please follow the directions below.
+The templates for XCode are highly recommended, and will get you up and running with OCDSpec extremely quickly.  They can be downloaded here:
 
-### Bleeding Edge Setup for iOS (not so friendly right now)
+https://github.com/paytonrules/OCDSpec-Template
 
-This setup applies to iOS projects, that use git as a repository, running in XCode 4.  Running OSX tests is quite similar, using only a different shell script to run the tests and a different main.  If you cannot use git (so sorry) you can download OCDSpec instead of installing it as a submodule, but then you will not get the latest updates unless you redownload, and if that's the case you might as well just use the provided release templates (once they're available).
+### Bleeding Edge Setup 
 
-1.  Create your project in XCode.  Be sure to uncheck the `Include Unit Tests` checkbox.
+If you want the latest and greatest version of OCDSpec you can use the bleeding edge setup, but I warn you, it's not easy.
 
-    Or use an existing project (you may need to delete `<projectName>Test` directory in Project Navigator as well as `<projectName>Test` target in Project Editor).
-2.  Initialize it as a git repository (if not already done).
-3.  Use git to install OCDSpec as a submodule:
-
-    `git submodule add git://github.com/paytonrules/OCDSpec.git`
-
-    You will update OCDSpec in your project by running this command:
-
-    `git submodule update`
-4.  Create a new iOS target; use the Window-based application template since we'll be deleting everything anyway.  Again do NOT check `Include Unit Tests`.  This is where our specs and OCDSpec will go, so call it something nice like "Specs".
-5.  This will have created a group directory called "Specs" (or however you named it).  Delete everything from this group directory (e.g., iPhone, iPad, delegate files) and everything in Supporting Files directory EXCEPT the "Specs-Prefix.pch" file.
-6.  Assuming that OCDSpec was added as a submodule (or cloned into `${SOURCE_ROOT}/OCDSpec`), right-click the "Specs" group directory and select `Add Files to <projectName>...`.  Navigate to the submodule, and only select the files.  Do not select Protocols and Programs directories.  Do not check `Copy items into destination group's folder (if needed)`.  Make sure to check "Specs" under `Add to targets` and uncheck `<projectName>` target.
-7.  Repeat Step 6, but add `unitTestMain.m` from OCDSpec/OCDSpec/Programs.
-8.  In the "Specs" target Build Settings tab, change the `Info.plist File` exactly to an empty string.  Use the search field to find this setting.
-9.  Do another search for `Header Search Paths` and change the value exactly to `${SRCROOT}/OCDSpec`
-10. Go to the Build Phases tab and make sure UIKit.framework and Foundation.framework appear in the `Link Binary With Libraries` section.
-11. In the same tab, click the `Add Build Phase` button and select `Add Run Script`.  Expand the Run Script section and add the following to the area where it says "Type a script or drag a script file from your workspace":
-
-`./OCDSpec/OCDSpec/Programs/RunIPhoneUnitTest.sh`
-
-12. Build the project by selecting Specs | iPhone 4.3 Simulator or Specs | iPad 4.3 Simulator in the Scheme drop-down and navigate to Product -> Build (or Command+B).  Now look in the log navigator (Command+7).  You should see a message like:
-
-<img src="https://img.skitch.com/20110528-f6r1d914qe5a8s28du6ssqcsbb.jpg" alt="StringCalculator" />
+http://github.com/paytonrules/OCDSpec/wiki/Bleeding-Edge-Setup-iOS
 
 ### Upcoming Features
 
 In a rough order:
-* XCode templates for getting started.
 * More obvious successes.
 * beforeEach and afterEach
 * NOT for checking that something is not expected
@@ -100,6 +79,7 @@ Clone the repo, make a pull request.  I will not accept features without tests.
 
 ### Contributors
 * [skim] (http://github.com/sl4m)  Who has helped with directions.
+* [Eric Meyer] (http://github.com/emeyer) Who wrote expectFalse.
 
 ### Issues
 
