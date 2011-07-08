@@ -40,6 +40,13 @@
         [OCDSpecFail fail:[NSString stringWithFormat:@"%b was expected to be true, but was false", actualObject] atLine:line inFile:file];
 }
 
+-(void) toBeFalse
+{
+    if ([actualObject boolValue]) {
+        [OCDSpecFail fail:[NSString stringWithFormat:@"%b was expected to be false, but was true", actualObject] atLine:line inFile:file];
+    }
+}
+
 -(void) fail:(NSString *)errorFormat with:(id)expectedObject
 {
     [OCDSpecFail fail:[NSString stringWithFormat:errorFormat, actualObject, expectedObject]

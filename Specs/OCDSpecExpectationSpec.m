@@ -150,4 +150,30 @@ CONTEXT(OCDSpecExpectation)
                 
              
              nil);
+    
+    describe(@"expectFalse",
+             it(@"fails if the value is truthy",
+                ^{
+                    @try
+                    {
+                        expectFalse(YES);
+                        FAIL(@"Should have thrown an exception, but didn't");
+                    }
+                    @catch (NSException *exception)
+                    {
+                        NSString *expectedReason = [NSString stringWithFormat:@"%b was expected to be false, but was true", FALSE];
+                        
+                        [expect([exception reason]) toBeEqualTo:expectedReason];
+                    }
+                }),
+             it(@"passes if the value is false",
+                ^{
+                    expectFalse(false);
+                }),
+             it(@"passes if the value is NO",
+                ^{
+                    expectFalse(NO);
+                }),
+             nil);
+
 }
