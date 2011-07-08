@@ -53,7 +53,7 @@ Command line runners exist for iOS and Mac development.  Development is very act
 
 The templates for XCode are highly recommended, and will get you up and running with OCDSpec extremely quickly.  They can be downloaded here:
 
-https://github.com/paytonrules/OCDSpec-Template
+http://github.com/paytonrules/OCDSpec-Templates
 
 ### Bleeding Edge Setup 
 
