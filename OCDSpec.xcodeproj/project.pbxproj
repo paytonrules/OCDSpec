@@ -96,7 +96,6 @@
 		0757F8BD12C9B4980004134A /* TestDescribeMacroFailing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TestDescribeMacroFailing-Info.plist"; path = "Specs/Programs/TestDescribeMacroFailing-Info.plist"; sourceTree = "<group>"; };
 		07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescriptionRunnerSpec.m; sourceTree = "<group>"; };
 		0761B5231359E48C00FE98CC /* OCDSpecExpectationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecExpectationSpec.m; sourceTree = "<group>"; };
-		07679CDB137499B60013D81B /* IOSStaticLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSStaticLibrary-Prefix.pch"; sourceTree = "<group>"; };
 		07679CF71375EB5D0013D81B /* TestMacVersion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestMacVersion; sourceTree = BUILT_PRODUCTS_DIR; };
 		07679CFE1375EB5D0013D81B /* TestMacVersion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMacVersion-Prefix.pch"; sourceTree = "<group>"; };
 		07679CFF1375EB5D0013D81B /* TestMacVersion.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TestMacVersion.1; sourceTree = "<group>"; };
@@ -249,22 +248,6 @@
 			path = Programs;
 			sourceTree = "<group>";
 		};
-		07679CD9137499B60013D81B /* IOSStaticLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				07679CDA137499B60013D81B /* Supporting Files */,
-			);
-			path = IOSStaticLibrary;
-			sourceTree = "<group>";
-		};
-		07679CDA137499B60013D81B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				07679CDB137499B60013D81B /* IOSStaticLibrary-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		07679CFA1375EB5D0013D81B /* TestMacVersion */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,7 +326,6 @@
 			children = (
 				073A6FCB12F1D7CB003EC052 /* Specs */,
 				073A6FCA12F1D7C3003EC052 /* OCDSpec */,
-				07679CD9137499B60013D81B /* IOSStaticLibrary */,
 				07679CFA1375EB5D0013D81B /* TestMacVersion */,
 				07679D1E1375EC5D0013D81B /* MACStaticLibrary */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
