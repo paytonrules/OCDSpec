@@ -2,20 +2,49 @@
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
 
+@interface OCDSpecPostCondition : NSObject {
+@private
+    VOIDBLOCK condition;
+}
+@property(readwrite, copy) VOIDBLOCK condition;
+@end
+
+@implementation OCDSpecPostCondition
+
+@synthesize condition;
+
+@end
+
 void describe(NSString *descriptionName, ...)
 {
     va_list         variableArgumentList;
-    OCDSpecExample  *example;
+    id              example;
     NSMutableArray  *exampleList = [NSMutableArray arrayWithCapacity:20];
+    VOIDBLOCK       precondition = ^{};
+    VOIDBLOCK       postcondition = ^{};
     
     va_start(variableArgumentList, descriptionName);
-    while ((example = va_arg(variableArgumentList, OCDSpecExample*) ) )
+    while ((example = va_arg(variableArgumentList, id) ) )
     {
-        [exampleList addObject: example];
+        if([example isKindOfClass:[OCDSpecExample class]])
+        {
+            [exampleList addObject: example];    
+        }
+        else if([example isKindOfClass:[OCDSpecPostCondition class]])
+        {
+            postcondition = ((OCDSpecPostCondition *) example).condition;
+        }
+        else
+        {
+            precondition = example;
+        }
+        
     }
     va_end(variableArgumentList);
     
     OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
+    description.precondition = precondition;
+    description.postcondition = postcondition;
     [description describe];
     
     OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
@@ -23,9 +52,22 @@ void describe(NSString *descriptionName, ...)
     results.failures = description.failures;
 }
 
+VOIDBLOCK beforeEach(VOIDBLOCK precondition)
+{
+    return precondition;
+}
+
+OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition)
+{
+    OCDSpecPostCondition * cond = [[[OCDSpecPostCondition alloc] init] autorelease];
+    cond.condition = postcondition;
+    
+    return cond;
+}
+
 @implementation OCDSpecDescription
 
-@synthesize failures, successes;
+@synthesize failures, successes, precondition, postcondition;
 
 -(id) init
 {
@@ -33,6 +75,7 @@ void describe(NSString *descriptionName, ...)
     {
         successes = [NSNumber numberWithInt:0];
         failures = [NSNumber numberWithInt:0];
+        precondition = postcondition = ^{};
     }
     
     return self;
@@ -62,6 +105,7 @@ void describe(NSString *descriptionName, ...)
      {
          OCDSpecExample *example = (OCDSpecExample *) obj;
          
+         precondition();
          [example run];
          if (example.failed)
          {
@@ -71,6 +115,7 @@ void describe(NSString *descriptionName, ...)
          {
              self.successes = [NSNumber numberWithInt:[successes intValue] + 1];
          }
+         postcondition();
      }];
 }
 

@@ -103,7 +103,6 @@
 		07679D1B1375EC5D0013D81B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		07679D1C1375EC5D0013D81B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		07679D1D1375EC5D0013D81B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		07679D201375EC5D0013D81B /* MACStaticLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MACStaticLibrary-Prefix.pch"; sourceTree = "<group>"; };
 		07763E79131880620059DA1D /* OCDSpecOutputter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecOutputter.h; sourceTree = "<group>"; };
 		07763E7A131880620059DA1D /* OCDSpecOutputter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecOutputter.m; sourceTree = "<group>"; };
 		077CEFF912DDDFBC00F7B1C5 /* OCDSpecDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecDescription.h; sourceTree = "<group>"; };
@@ -275,22 +274,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		07679D1E1375EC5D0013D81B /* MACStaticLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				07679D1F1375EC5D0013D81B /* Supporting Files */,
-			);
-			path = MACStaticLibrary;
-			sourceTree = "<group>";
-		};
-		07679D1F1375EC5D0013D81B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				07679D201375EC5D0013D81B /* MACStaticLibrary-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		07893DEE139052590060214F /* Programs */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +310,6 @@
 				073A6FCB12F1D7CB003EC052 /* Specs */,
 				073A6FCA12F1D7C3003EC052 /* OCDSpec */,
 				07679CFA1375EB5D0013D81B /* TestMacVersion */,
-				07679D1E1375EC5D0013D81B /* MACStaticLibrary */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				0795715912BA51A700281A44 /* TestDescribeMacro-Info.plist */,
@@ -920,7 +902,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SRCROOT}";
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -935,7 +917,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
