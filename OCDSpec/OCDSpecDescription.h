@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
-
-typedef void (^VOIDBLOCK)();
+#import "OCDSpec/VoidBlock.h"
 
 @class OCDSpecExample;
 @class OCDSpecPostCondition;
+@class OCDSpecPreCondition;
 
 @interface OCDSpecDescription : NSObject 
 {
@@ -29,5 +29,5 @@ typedef void (^VOIDBLOCK)();
 @end
 
 void describe(NSString *description,  ...);
-VOIDBLOCK beforeEach(VOIDBLOCK precondition);
+OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition);
 OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition);

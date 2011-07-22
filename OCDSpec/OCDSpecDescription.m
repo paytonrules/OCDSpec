@@ -1,19 +1,8 @@
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
-
-@interface OCDSpecPostCondition : NSObject {
-@private
-    VOIDBLOCK condition;
-}
-@property(readwrite, copy) VOIDBLOCK condition;
-@end
-
-@implementation OCDSpecPostCondition
-
-@synthesize condition;
-
-@end
+#import "OCDSpec/Contract/OCDSpecPreCondition.h"
+#import "OCDSpec/Contract/OCDSpecPostCondition.h"
 
 void describe(NSString *descriptionName, ...)
 {
@@ -34,9 +23,9 @@ void describe(NSString *descriptionName, ...)
         {
             postcondition = ((OCDSpecPostCondition *) example).condition;
         }
-        else
+        else if([example isKindOfClass:[OCDSpecPreCondition class]])
         {
-            precondition = example;
+            precondition = ((OCDSpecPostCondition *) example).condition;
         }
         
     }
@@ -52,14 +41,17 @@ void describe(NSString *descriptionName, ...)
     results.failures = description.failures;
 }
 
-VOIDBLOCK beforeEach(VOIDBLOCK precondition)
+OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition)
 {
-    return precondition;
+    OCDSpecPreCondition *cond = [[[OCDSpecPreCondition alloc] init] autorelease];
+    cond.condition = precondition;
+    
+    return cond;
 }
 
 OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition)
 {
-    OCDSpecPostCondition * cond = [[[OCDSpecPostCondition alloc] init] autorelease];
+    OCDSpecPostCondition *cond = [[[OCDSpecPostCondition alloc] init] autorelease];
     cond.condition = postcondition;
     
     return cond;
