@@ -25,7 +25,7 @@ void describe(NSString *descriptionName, ...)
         }
         else if([example isKindOfClass:[OCDSpecPreCondition class]])
         {
-            precondition = ((OCDSpecPostCondition *) example).condition;
+            precondition = ((OCDSpecPreCondition *) example).condition;
         }
         
     }
@@ -45,7 +45,7 @@ OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition)
 {
     OCDSpecPreCondition *cond = [[[OCDSpecPreCondition alloc] init] autorelease];
     cond.condition = precondition;
-    
+
     return cond;
 }
 
@@ -92,12 +92,11 @@ OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition)
 
 -(void) describe
 {
-    // Write the name here
     [itsExamples enumerateObjectsUsingBlock: ^(id obj, NSUInteger idx, BOOL *stop)
      {
          OCDSpecExample *example = (OCDSpecExample *) obj;
-         
-         precondition();
+
+         self.precondition();
          [example run];
          if (example.failed)
          {
@@ -107,7 +106,7 @@ OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition)
          {
              self.successes = [NSNumber numberWithInt:[successes intValue] + 1];
          }
-         postcondition();
+         self.postcondition();
      }];
 }
 
