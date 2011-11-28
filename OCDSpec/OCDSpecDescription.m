@@ -35,7 +35,7 @@ void describe(NSString *descriptionName, ...)
     description.precondition = precondition;
     description.postcondition = postcondition;
     [description describe];
-    
+
     OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
     results.successes = description.successes;
     results.failures = description.failures;

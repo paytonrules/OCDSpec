@@ -84,62 +84,7 @@ CONTEXT(OCDSpecDescription)
                     
                     [expect(description.successes) toBeEqualTo:[NSNumber numberWithInt:2]];
                 }),
-             
-             it(@"will run the precondition BEFORE each example", 
-                ^{
-                    __block int counter = 0;
-                    OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: 
-                                                   ^{ 
-                                                       [expect([NSNumber numberWithInt:counter]) toBeEqualTo:[NSNumber numberWithInt:1]];
-                                                   }] autorelease];
-                    
-                    OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: 
-                                                   ^{ 
-                                                       [expect([NSNumber numberWithInt:counter]) toBeEqualTo:[NSNumber numberWithInt:2]];
-                                                       
-                                                   }] autorelease];
-                    
-                    NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
-                    
-                    OCDSpecDescription *desc = [[OCDSpecDescription alloc] initWithName:@"test"
-                                                                               examples:tests];
-                    [desc autorelease];
-                    
-                    desc.precondition = ^{
-                        counter++;
-                    };
-                    
-                    [desc describe];
-                }),
-             
-             it(@"will run the postcondition AFTER each example",
-                ^{
-                    __block int counter = 0;
-                    
-                    OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock: 
-                                                   ^{ 
-                                                       [expect([NSNumber numberWithInt:counter]) toBeEqualTo:[NSNumber numberWithInt:0]];
-                                                   }] autorelease];
-                    
-                    OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock: 
-                                                   ^{ 
-                                                       [expect([NSNumber numberWithInt:counter]) toBeEqualTo:[NSNumber numberWithInt:1]];
-                                                       
-                                                   }] autorelease];
-                    
-                    NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
-                    
-                    OCDSpecDescription *desc = [[OCDSpecDescription alloc] initWithName:@"test"
-                                                                               examples:tests];
-                    [desc autorelease];
-                    
-                    desc.postcondition = ^{
-                        counter++;
-                    };
-                    
-                    [desc describe];
-                }),
-             
+
              it(@"Will still run the postcondition even if the example throws an exception",
                 ^{
                     __block bool calledPost = NO;
@@ -221,9 +166,8 @@ CONTEXT(DescribeMethodWithBeforeAndAfter)
 {
     __block int beforeCounter = 0;
     __block int afterCounter = 0;
-    
+
     describe(@"The before each on describe",
-             
              beforeEach(
                         ^{
                             beforeCounter++;  
