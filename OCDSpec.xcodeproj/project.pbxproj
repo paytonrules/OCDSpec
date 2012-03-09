@@ -80,6 +80,14 @@
 		07C2DDF5128442EA009E03F7 /* MockExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2DDF4128442EA009E03F7 /* MockExample.m */; };
 		07C3DBAB13622CE600CADEDB /* MockObjectWithEquals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */; };
 		07DD9D3D1347534F0034EA52 /* OCDSpecOutputterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */; };
+		F8D62D7B150A4C0E00F6E64B /* OCDCustomMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D7A150A4C0E00F6E64B /* OCDCustomMatcherSpec.m */; };
+		F8D62D81150A4C6B00F6E64B /* OCDSpecExpectation+CustomMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D80150A4C6B00F6E64B /* OCDSpecExpectation+CustomMatcher.m */; };
+		F8D62D83150A4E5100F6E64B /* OCDSpecExpectation+StringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D82150A4E5100F6E64B /* OCDSpecExpectation+StringSpec.m */; };
+		F8D62D86150A4E7300F6E64B /* OCDSpecExpectation+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D85150A4E7300F6E64B /* OCDSpecExpectation+NSString.m */; };
+		F8D62D87150A4ED500F6E64B /* OCDSpecExpectation+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D85150A4E7300F6E64B /* OCDSpecExpectation+NSString.m */; };
+		F8D62D88150A4ED600F6E64B /* OCDSpecExpectation+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D85150A4E7300F6E64B /* OCDSpecExpectation+NSString.m */; };
+		F8D62D89150A4ED700F6E64B /* OCDSpecExpectation+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D85150A4E7300F6E64B /* OCDSpecExpectation+NSString.m */; };
+		F8D62D8A150A4ED700F6E64B /* OCDSpecExpectation+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62D85150A4E7300F6E64B /* OCDSpecExpectation+NSString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,6 +162,12 @@
 		07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecOutputterSpec.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F8D62D7A150A4C0E00F6E64B /* OCDCustomMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDCustomMatcherSpec.m; sourceTree = "<group>"; };
+		F8D62D7F150A4C6B00F6E64B /* OCDSpecExpectation+CustomMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCDSpecExpectation+CustomMatcher.h"; sourceTree = "<group>"; };
+		F8D62D80150A4C6B00F6E64B /* OCDSpecExpectation+CustomMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCDSpecExpectation+CustomMatcher.m"; sourceTree = "<group>"; };
+		F8D62D82150A4E5100F6E64B /* OCDSpecExpectation+StringSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCDSpecExpectation+StringSpec.m"; sourceTree = "<group>"; };
+		F8D62D84150A4E7300F6E64B /* OCDSpecExpectation+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCDSpecExpectation+NSString.h"; sourceTree = "<group>"; };
+		F8D62D85150A4E7300F6E64B /* OCDSpecExpectation+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCDSpecExpectation+NSString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +217,8 @@
 				07C2DDF4128442EA009E03F7 /* MockExample.m */,
 				07C3DBA913622CE600CADEDB /* MockObjectWithEquals.h */,
 				07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */,
+				F8D62D7F150A4C6B00F6E64B /* OCDSpecExpectation+CustomMatcher.h */,
+				F8D62D80150A4C6B00F6E64B /* OCDSpecExpectation+CustomMatcher.m */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -231,6 +247,8 @@
 				07C3DBA61362234D00CADEDB /* OCDSpecExpectation.h */,
 				07C3DBA71362234D00CADEDB /* OCDSpecExpectation.m */,
 				0792749513DA1BE900F94421 /* VoidBlock.h */,
+				F8D62D84150A4E7300F6E64B /* OCDSpecExpectation+NSString.h */,
+				F8D62D85150A4E7300F6E64B /* OCDSpecExpectation+NSString.m */,
 			);
 			path = OCDSpec;
 			sourceTree = "<group>";
@@ -248,6 +266,8 @@
 				0761B5231359E48C00FE98CC /* OCDSpecExpectationSpec.m */,
 				073A6F9312F1D43C003EC052 /* Mocks */,
 				073A6FCC12F1D7DF003EC052 /* Programs */,
+				F8D62D7A150A4C0E00F6E64B /* OCDCustomMatcherSpec.m */,
+				F8D62D82150A4E5100F6E64B /* OCDSpecExpectation+StringSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -605,6 +625,10 @@
 				0792748F13DA1A7400F94421 /* OCDSpecCondition.m in Sources */,
 				0792749713DA1DAF00F94421 /* OCDSpecPostCondition.m in Sources */,
 				0792749A13DA1DD500F94421 /* OCDSpecPreCondition.m in Sources */,
+				F8D62D7B150A4C0E00F6E64B /* OCDCustomMatcherSpec.m in Sources */,
+				F8D62D81150A4C6B00F6E64B /* OCDSpecExpectation+CustomMatcher.m in Sources */,
+				F8D62D83150A4E5100F6E64B /* OCDSpecExpectation+StringSpec.m in Sources */,
+				F8D62D86150A4E7300F6E64B /* OCDSpecExpectation+NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +645,7 @@
 				07893DDF13904C730060214F /* OCDSpecExpectation.m in Sources */,
 				07120E19134FD04B00B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */,
+				F8D62D88150A4ED600F6E64B /* OCDSpecExpectation+NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +675,7 @@
 				0792749213DA1AC600F94421 /* OCDSpecCondition.m in Sources */,
 				0792749813DA1DAF00F94421 /* OCDSpecPostCondition.m in Sources */,
 				0792749B13DA1E0900F94421 /* OCDSpecPreCondition.m in Sources */,
+				F8D62D8A150A4ED700F6E64B /* OCDSpecExpectation+NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +692,7 @@
 				07893DED13904D890060214F /* OCDSpecExpectation.m in Sources */,
 				07120DFD134FCEE500B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */,
+				F8D62D87150A4ED500F6E64B /* OCDSpecExpectation+NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +710,7 @@
 				07C0C18A12CCD2E8008B4D42 /* testMultipleDescriptions.m in Sources */,
 				07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */,
 				07120E1D134FD0D600B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
+				F8D62D89150A4ED700F6E64B /* OCDSpecExpectation+NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
