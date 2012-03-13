@@ -79,7 +79,7 @@ Clone the repo, make a pull request.  I will not accept features without tests.
 
 ### Contributors
 * [skim] (http://github.com/sl4m)  Who has helped with directions.
-* [Eric Meyer] (http://github.com/emeyer) Who wrote expectFalse.
+* [Eric Meyer] (http://github.com/ericmeyer) Who wrote expectFalse.
 
 ### Issues
 
@@ -87,6 +87,6 @@ OCDSpec uses GitHub issues for issue tracking.  Use it!
 
 ### License
 
-Copyright (C) 2011 Eric Smith All Rights Reserved.
+Copyright (C) 2012 Eric Smith All Rights Reserved.
 
 Distributed under the The MIT License.
