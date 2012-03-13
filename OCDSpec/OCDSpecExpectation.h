@@ -14,6 +14,8 @@
 -(void) toBeTrue;
 -(void) toBeFalse;
 
+-(void) failWithMessage:(NSString *)message;
+
 @end
 
 #define expect(obj)       [[[OCDSpecExpectation alloc] initWithObject:obj inFile:[NSString stringWithUTF8String:__FILE__] atLineNumber:__LINE__] autorelease]
