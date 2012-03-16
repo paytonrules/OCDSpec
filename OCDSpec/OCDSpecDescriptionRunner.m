@@ -14,7 +14,7 @@
   if ((self = [super init]))
   {
     specProtocol = @protocol(DescriptionRunner);
-    baseClass = [AbstractDescriptionRunner class];
+    baseClass = [OCDSpecAbstractDescriptionRunner class];
   }
 
   return self;

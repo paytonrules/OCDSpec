@@ -2,7 +2,7 @@
 #import "OCDSpec/Protocols/DescriptionRunner.h"
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
-#import "OCDSpec/Abstract/AbstractDescriptionRunner.h"
+#import "OCDSpec/Abstract/OCDSpecAbstractDescriptionRunner.h"
 
 @interface OCDSpecDescriptionRunner : NSObject 
 {
@@ -24,7 +24,7 @@
 
 #define CONTEXT(classname) \
 void descriptionOf##classname();\
-@interface TestRunner##classname : AbstractDescriptionRunner \
+@interface TestRunner##classname : OCDSpecAbstractDescriptionRunner \
 @end\
 @implementation TestRunner##classname\
 +(int) getFailures \
