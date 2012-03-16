@@ -2,7 +2,7 @@
 #import "OCDSpec/Protocols/DescriptionRunner.h"
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
-#import "OCDSpec/AbstractDescriptionRunner.h"
+#import "OCDSpec/Abstract/AbstractDescriptionRunner.h"
 
 @interface OCDSpecDescriptionRunner : NSObject 
 {
