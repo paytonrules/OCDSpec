@@ -1,47 +1,54 @@
 #import "OCDSpec/OCDSpec.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 
-@protocol EmptyProtocol
-  
+static bool validClassWasRun = false;
+
+@interface AbstractBaseClass : NSObject<DescriptionRunner>
 @end
 
-@interface EmptyClass : NSObject<EmptyProtocol>
-
+@implementation AbstractBaseClass
 @end
 
-@implementation EmptyClass
+@interface ValidClass : AbstractBaseClass
+@end
+
+@implementation ValidClass
 
 +(void) run
 {
+  validClassWasRun = true;
+}
+
++(bool) wasRun
+{
+  return validClassWasRun;
 }
 
 +(int) getSuccesses
 {
   return 0;
 }
-
-+(int) getFailures
++(int)getFailures
 {
   return 0;
 }
-
 @end
 
+CONTEXT(OCDSpecDescriptionRunner){
+  describe(@"Running descriptions",
+          it(@"it runs classes based on the base class", ^{
+            OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+            runner.baseClass = [AbstractBaseClass class];
+            [OCDSpecOutputter withRedirectedOutput:^{
+              [runner runAllDescriptions];
+            }];
 
-CONTEXT(OCDSpecDescriptionRunner)
-{
-    describe(@"Running descriptions based on a protocol", 
-             it(@"Has no successes or failures when the there are no matching protocols", 
-                ^{
-                    OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
-                    runner.specProtocol = @protocol(EmptyProtocol);
-                    
-                    [OCDSpecOutputter withRedirectedOutput: ^{
-                        [runner runAllDescriptions];
-                    }];
-                   
-                    [expect([NSNumber numberWithInt:runner.failures]) toBeEqualTo:[NSNumber numberWithInt:0]];
-                    [expect([NSNumber numberWithInt:runner.successes]) toBeEqualTo:[NSNumber numberWithInt:0]];
-               }),
-           nil);
+            expectTruth([ValidClass wasRun]);
+          }),
+
+          // Doesn't run other classes
+          // Counting
+          // Cleanup
+          nil);
 }
+

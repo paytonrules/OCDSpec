@@ -2,17 +2,20 @@
 #import "OCDSpec/Protocols/DescriptionRunner.h"
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
+#import "OCDSpec/AbstractDescriptionRunner.h"
 
 @interface OCDSpecDescriptionRunner : NSObject 
 {
   Class         *classes;
   int           classCount;
   id            specProtocol;
+  id            baseClass;
   int           successes;
   int           failures;
 }
 
 @property(nonatomic, assign) id specProtocol;
+@property(nonatomic, assign) id baseClass;
 @property(readonly) int successes;
 @property(readonly) int failures;
 
@@ -21,7 +24,7 @@
 
 #define CONTEXT(classname) \
 void descriptionOf##classname();\
-@interface TestRunner##classname : NSObject<DescriptionRunner>\
+@interface TestRunner##classname : AbstractDescriptionRunner \
 @end\
 @implementation TestRunner##classname\
 +(int) getFailures \
