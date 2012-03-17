@@ -2,8 +2,9 @@
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
 
 static bool validClassWasRun = false;
+static bool inValidClassWasRun = false;
 
-@interface AbstractBaseClass : NSObject<DescriptionRunner>
+@interface AbstractBaseClass : NSObject <DescriptionRunner>
 @end
 
 @implementation AbstractBaseClass
@@ -14,31 +15,59 @@ static bool validClassWasRun = false;
 
 @implementation ValidClass
 
-+(void) run
++ (void)run
 {
   validClassWasRun = true;
 }
 
-+(bool) wasRun
++ (bool)wasRun
 {
   return validClassWasRun;
 }
 
-+(int) getSuccesses
++ (int)getSuccesses
 {
   return 0;
 }
-+(int)getFailures
+
++ (int)getFailures
 {
   return 0;
 }
 @end
 
+@interface InvalidClass : NSObject
+@end
+
+@implementation InvalidClass
+
++ (void)run
+{
+  inValidClassWasRun = true;
+}
+
++ (bool)wasRun
+{
+  return inValidClassWasRun;
+}
+
+@end
+
 CONTEXT(OCDSpecDescriptionRunner){
+  __block OCDSpecDescriptionRunner *runner;
+
   describe(@"Running descriptions",
-          it(@"it runs classes based on the base class", ^{
-            OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+          beforeEach(^{
+             runner = [[OCDSpecDescriptionRunner alloc] init];
+          }),
+
+          afterEach(^{
+            [runner release];
+          }),
+
+          it(@"runs classes based on the base class", ^{
             runner.baseClass = [AbstractBaseClass class];
+
             [OCDSpecOutputter withRedirectedOutput:^{
               [runner runAllDescriptions];
             }];
@@ -46,9 +75,17 @@ CONTEXT(OCDSpecDescriptionRunner){
             expectTruth([ValidClass wasRun]);
           }),
 
-          // Doesn't run other classes
+          it(@"runs classes based on the base class", ^{
+            runner.baseClass = [AbstractBaseClass class];
+
+            [OCDSpecOutputter withRedirectedOutput:^{
+              [runner runAllDescriptions];
+            }];
+
+            expectFalse([InvalidClass wasRun]);
+          }),
           // Counting
-          // Cleanup
+          // Cleanup - I don't know what this means
           nil);
 }
 

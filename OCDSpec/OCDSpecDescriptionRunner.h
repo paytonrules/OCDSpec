@@ -23,21 +23,15 @@
 @end
 
 #define CONTEXT(classname) \
-void descriptionOf##classname();\
+void descriptionOf##classname(void);\
+void (*funcPtr)(void); \
 @interface TestRunner##classname : OCDSpecAbstractDescriptionRunner \
 @end\
 @implementation TestRunner##classname\
-+(int) getFailures \
-{ \
-  return [[OCDSpecSharedResults sharedResults].failures intValue];\
-} \
-+(int)getSuccesses \
-{ \
-  return [[OCDSpecSharedResults sharedResults].successes intValue];\
-} \
 +(void) run \
 { \
-  descriptionOf##classname(); \
+  TestRunner##classname *runner = [[[TestRunner##classname alloc] init] autorelease]; \
+  [runner runDescription: &descriptionOf##classname]; \
 } \
 @end \
-void descriptionOf##classname()
+void descriptionOf##classname(void)
