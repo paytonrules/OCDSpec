@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
-#import "OCDSpec/OCDSpecDescriptionRunner.h"
+#import "OCDSpecSuiteRunner.h"
 
 int main (int argc, const char * argv[])
 {
 
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-    OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+    OCDSpecSuiteRunner *runner = [[[OCDSpecSuiteRunner alloc] init] autorelease];
     
     [runner runAllDescriptions];
 

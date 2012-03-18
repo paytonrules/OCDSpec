@@ -1,4 +1,4 @@
-#import "OCDSpec/OCDSpecDescriptionRunner.h"
+#import "OCDSpecSuiteRunner.h"
 #import "OCDSpec/OCDSpecFail.h"
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"

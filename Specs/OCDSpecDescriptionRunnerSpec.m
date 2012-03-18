@@ -53,12 +53,12 @@ static bool inValidClassWasRun = false;
 
 @end
 
-CONTEXT(OCDSpecDescriptionRunner){
-  __block OCDSpecDescriptionRunner *runner;
+CONTEXT(OCDSpecSuiteRunner){
+  __block OCDSpecSuiteRunner *runner;
 
   describe(@"Running descriptions",
           beforeEach(^{
-             runner = [[OCDSpecDescriptionRunner alloc] init];
+             runner = [[OCDSpecSuiteRunner alloc] init];
           }),
 
           afterEach(^{

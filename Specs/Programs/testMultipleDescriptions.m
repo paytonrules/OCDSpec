@@ -33,7 +33,7 @@ CONTEXT(Test2)
 -(void) applicationDidFinishLaunching:(UIApplication *)app
 {
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
-    OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+    OCDSpecSuiteRunner *runner = [[[OCDSpecSuiteRunner alloc] init] autorelease];
     [OCDSpecOutputter withRedirectedOutput: ^{
       [runner runAllDescriptions];
     }];

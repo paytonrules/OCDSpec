@@ -4,7 +4,7 @@
 #import "OCDSpec/OCDSpecSharedResults.h"
 #import "OCDSpec/Abstract/OCDSpecAbstractDescriptionRunner.h"
 
-@interface OCDSpecDescriptionRunner : NSObject 
+@interface OCDSpecSuiteRunner : NSObject
 {
   Class         *classes;
   int           classCount;

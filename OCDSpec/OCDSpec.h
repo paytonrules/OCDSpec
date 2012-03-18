@@ -1,7 +1,7 @@
 #import "OCDSpec/Abstract/OCDSpecAbstractDescriptionRunner.h"
 #import "OCDSpec/Contract/OCDSpecPreCondition.h"
 #import "OCDSpec/Contract/OCDSpecPostCondition.h"
-#import "OCDSpec/OCDSpecDescriptionRunner.h"
+#import "OCDSpecSuiteRunner.h"
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecFail.h"
 #import "OCDSpec/OCDSpecExpectation.h"

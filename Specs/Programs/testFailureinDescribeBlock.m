@@ -44,7 +44,7 @@ CONTEXT(OCDSpecFail)
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
     __block NSString *outputException;
     [OCDSpecOutputter withRedirectedOutput: ^{
-      OCDSpecDescriptionRunner *runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+      OCDSpecSuiteRunner *runner = [[[OCDSpecSuiteRunner alloc] init] autorelease];
       [runner runAllDescriptions];
      
       outputException = [self readResultFromFile];
