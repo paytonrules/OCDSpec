@@ -232,6 +232,8 @@
 		073A6FCA12F1D7C3003EC052 /* OCDSpec */ = {
 			isa = PBXGroup;
 			children = (
+				C01FCF5008A954540054248C /* OCDSpecDescriptionRunner.m */,
+				C01FCF5008A954540054248B /* OCDSpecDescriptionRunner.h */,
 				0792748813DA1A7400F94421 /* Contract */,
 				07893DEE139052590060214F /* Programs */,
 				07C2DE3512844C33009E03F7 /* Protocols */,
@@ -385,8 +387,6 @@
 		C01FCF5008A954540054248A /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				C01FCF5008A954540054248C /* OCDSpecDescriptionRunner.m */,
-				C01FCF5008A954540054248B /* OCDSpecDescriptionRunner.h */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
