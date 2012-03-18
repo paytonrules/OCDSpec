@@ -1,10 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "OCDSpec/VoidBlock.h"
 
-@class OCDSpecExample;
-@class OCDSpecPostCondition;
-@class OCDSpecPreCondition;
-
 @interface OCDSpecDescription : NSObject 
 {
     NSNumber        *failures;

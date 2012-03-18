@@ -8,7 +8,6 @@
 
 @synthesize successes, failures, baseClass;
 
-
 - (id)init
 {
   if ((self = [super init]))

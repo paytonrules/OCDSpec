@@ -1,9 +1,5 @@
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecExample.h"
-#import "OCDSpec/OCDSpecSharedResults.h"
-#import "OCDSpec/Contract/OCDSpecPreCondition.h"
-#import "OCDSpec/Contract/OCDSpecPostCondition.h"
-#import "OCDSpec/Abstract/OCDSpecAbstractDescriptionRunner.h"
 
 @implementation OCDSpecDescription
 
@@ -15,8 +11,7 @@
   {
     successes = [NSNumber numberWithInt:0];
     failures = [NSNumber numberWithInt:0];
-    precondition = postcondition = ^{
-    };
+    precondition = postcondition = ^{};
   }
 
   return self;
