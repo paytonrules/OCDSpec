@@ -2,7 +2,7 @@
 #import "OCDSpec/Protocols/DescriptionRunner.h"
 #import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
-#import "OCDSpec/Abstract/OCDSpecAbstractDescriptionRunner.h"
+#import "OCDSpecDescriptionRunner.h"
 
 @interface OCDSpecSuiteRunner : NSObject
 {
@@ -23,7 +23,7 @@
 #define CONTEXT(classname) \
 void descriptionOf##classname(void);\
 void (*funcPtr)(void); \
-@interface TestRunner##classname : OCDSpecAbstractDescriptionRunner \
+@interface TestRunner##classname : OCDSpecDescriptionRunner \
 @end\
 @implementation TestRunner##classname\
 +(void) run \

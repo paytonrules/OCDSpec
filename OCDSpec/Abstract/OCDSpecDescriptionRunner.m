@@ -1,11 +1,11 @@
-#import "OCDSpecAbstractDescriptionRunner.h"
+#import "OCDSpecDescriptionRunner.h"
 #import "OCDSpec/OCDSpecSharedResults.h"
 #import "OCDSpec/Contract/OCDSpecPostCondition.h"
 #import "OCDSpec/Contract/OCDSpecPreCondition.h"
 #import "OCDSpec/OCDSpecExample.h"
 #import "OCDSpec/OCDSpecDescription.h"
 
-@implementation OCDSpecAbstractDescriptionRunner
+@implementation OCDSpecDescriptionRunner
 
 + (int)getFailures
 {
@@ -63,6 +63,6 @@ void describe(NSString *descriptionName, ...)
   va_list variableArgumentList;
 
   va_start(variableArgumentList, descriptionName);
-  [OCDSpecAbstractDescriptionRunner describe:descriptionName withExamples: variableArgumentList];
+  [OCDSpecDescriptionRunner describe:descriptionName withExamples: variableArgumentList];
   va_end(variableArgumentList);
 }

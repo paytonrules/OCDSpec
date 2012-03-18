@@ -12,7 +12,7 @@
 {
   if ((self = [super init]))
   {
-    baseClass = [OCDSpecAbstractDescriptionRunner class];
+    baseClass = [OCDSpecDescriptionRunner class];
   }
 
   return self;
