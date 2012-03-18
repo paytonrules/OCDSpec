@@ -3,3 +3,5 @@
 @interface OCDSpecPostCondition : OCDSpecCondition {
 }
 @end
+
+OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition);

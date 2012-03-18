@@ -27,5 +27,3 @@
 -(id) initWithName:(NSString *) name examples:(NSArray *)examples;
 
 @end
-
-OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition);
