@@ -28,6 +28,5 @@
 
 @end
 
-void describe(NSString *description,  ...);
 OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition);
 OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition);

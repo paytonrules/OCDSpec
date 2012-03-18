@@ -5,3 +5,5 @@
 -(void) runDescription:(void(*)(void)) desc;
 +(void) describe: (NSString *) descriptionName withExamples: (va_list) examples;
 @end
+
+void describe(NSString *description,  ...);

@@ -5,15 +5,6 @@
 #import "OCDSpec/Contract/OCDSpecPostCondition.h"
 #import "OCDSpec/Abstract/OCDSpecAbstractDescriptionRunner.h"
 
-void describe(NSString *descriptionName, ...)
-{
-  va_list variableArgumentList;
-
-  va_start(variableArgumentList, descriptionName);
-  [OCDSpecAbstractDescriptionRunner describe:descriptionName withExamples: variableArgumentList];
-  va_end(variableArgumentList);
-}
-
 OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition) {
   OCDSpecPreCondition *cond = [[[OCDSpecPreCondition alloc] init] autorelease];
   cond.condition = precondition;

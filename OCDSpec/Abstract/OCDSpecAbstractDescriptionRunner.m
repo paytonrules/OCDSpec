@@ -44,7 +44,6 @@
     {
       precondition = ((OCDSpecPreCondition *) example).condition;
     }
-
   }
 
   OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
@@ -57,5 +56,13 @@
   results.failures = description.failures;
 }
 
-
 @end
+
+void describe(NSString *descriptionName, ...)
+{
+  va_list variableArgumentList;
+
+  va_start(variableArgumentList, descriptionName);
+  [OCDSpecAbstractDescriptionRunner describe:descriptionName withExamples: variableArgumentList];
+  va_end(variableArgumentList);
+}
