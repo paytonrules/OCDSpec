@@ -6,14 +6,13 @@
 
 @implementation OCDSpecDescriptionRunner
 
-@synthesize specProtocol, successes, failures, baseClass;
+@synthesize successes, failures, baseClass;
 
 
 - (id)init
 {
   if ((self = [super init]))
   {
-    specProtocol = @protocol(DescriptionRunner);
     baseClass = [OCDSpecAbstractDescriptionRunner class];
   }
 

@@ -85,6 +85,11 @@
 		C01FCF5008A954540054248F /* OCDSpecAbstractDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A954540054248C /* OCDSpecAbstractDescriptionRunner.m */; };
 		C01FCF5008A9545400542490 /* OCDSpecAbstractDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A954540054248C /* OCDSpecAbstractDescriptionRunner.m */; };
 		C01FCF5008A9545400542491 /* OCDSpecAbstractDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A954540054248C /* OCDSpecAbstractDescriptionRunner.m */; };
+		C01FCF5008A9545400542494 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542495 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542496 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542497 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542498 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,6 +166,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C01FCF5008A954540054248B /* OCDSpecAbstractDescriptionRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecAbstractDescriptionRunner.h; sourceTree = "<group>"; };
 		C01FCF5008A954540054248C /* OCDSpecAbstractDescriptionRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecAbstractDescriptionRunner.m; sourceTree = "<group>"; };
+		C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecAbstractDescriptionRunnerSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +252,7 @@
 		073A6FCB12F1D7CB003EC052 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */,
 				073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */,
 				0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */,
 				077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */,
@@ -620,6 +627,7 @@
 				0792749713DA1DAF00F94421 /* OCDSpecPostCondition.m in Sources */,
 				0792749A13DA1DD500F94421 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054248D /* OCDSpecAbstractDescriptionRunner.m in Sources */,
+				C01FCF5008A9545400542494 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +645,7 @@
 				07120E19134FD04B00B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */,
 				C01FCF5008A954540054248F /* OCDSpecAbstractDescriptionRunner.m in Sources */,
+				C01FCF5008A9545400542496 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +676,7 @@
 				0792749813DA1DAF00F94421 /* OCDSpecPostCondition.m in Sources */,
 				0792749B13DA1E0900F94421 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A9545400542491 /* OCDSpecAbstractDescriptionRunner.m in Sources */,
+				C01FCF5008A9545400542498 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +694,7 @@
 				07120DFD134FCEE500B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */,
 				C01FCF5008A954540054248E /* OCDSpecAbstractDescriptionRunner.m in Sources */,
+				C01FCF5008A9545400542495 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +713,7 @@
 				07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */,
 				07120E1D134FD0D600B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				C01FCF5008A9545400542490 /* OCDSpecAbstractDescriptionRunner.m in Sources */,
+				C01FCF5008A9545400542497 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

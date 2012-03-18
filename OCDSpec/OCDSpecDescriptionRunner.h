@@ -8,13 +8,11 @@
 {
   Class         *classes;
   int           classCount;
-  id            specProtocol;
   id            baseClass;
   int           successes;
   int           failures;
 }
 
-@property(nonatomic, assign) id specProtocol;
 @property(nonatomic, assign) id baseClass;
 @property(readonly) int successes;
 @property(readonly) int failures;
