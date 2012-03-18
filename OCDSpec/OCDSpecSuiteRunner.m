@@ -44,9 +44,10 @@
     // Check if it conforms our protocol
     if ([self isDescriptionRunner:currClass])
     {
-      [currClass run];
-      successes += [currClass getSuccesses];
-      failures += [currClass getFailures];
+      OCDSpecSharedResults *  results = [currClass run];
+
+      successes += [results.successes intValue];
+      failures += [results.failures intValue];
     }
   }
 }

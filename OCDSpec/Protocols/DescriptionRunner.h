@@ -1,6 +1,7 @@
+@class OCDSpecSharedResults;
 @protocol DescriptionRunner
 
-+(void) run;
++(OCDSpecSharedResults *) run;
 +(int) getSuccesses;
 +(int) getFailures;
 

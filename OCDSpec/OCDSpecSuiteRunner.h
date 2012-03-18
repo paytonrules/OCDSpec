@@ -19,17 +19,3 @@
 
 -(void) runAllDescriptions;
 @end
-
-#define CONTEXT(classname) \
-void descriptionOf##classname(void);\
-void (*funcPtr)(void); \
-@interface TestRunner##classname : OCDSpecDescriptionRunner \
-@end\
-@implementation TestRunner##classname\
-+(void) run \
-{ \
-  TestRunner##classname *runner = [[[TestRunner##classname alloc] init] autorelease]; \
-  [runner runDescription: &descriptionOf##classname]; \
-} \
-@end \
-void descriptionOf##classname(void)

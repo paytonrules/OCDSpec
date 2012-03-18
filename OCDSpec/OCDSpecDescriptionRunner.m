@@ -17,10 +17,10 @@
   return [[OCDSpecSharedResults sharedResults].successes intValue];\
 
 }
-
-- (void)runDescription:(void( *)(void))desc
+- (OCDSpecSharedResults *)runDescription:(void( *)(void))desc
 {
   (*desc)();
+  return [OCDSpecSharedResults sharedResults];
 }
 
 + (void)describe:(NSString *)descriptionName withExamples:(va_list)examples

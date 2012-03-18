@@ -12,7 +12,7 @@
 		07120E1D134FD0D600B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE4D134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m */; };
 		073A6F7612F1D0A0003EC052 /* OCDSpecFailSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */; };
 		0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757F8B612C9B4460004134A /* testFailureinDescribeBlock.m */; };
-		07602F82135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */; };
+		07602F82135385D800BE911D /* OCDSpecSuiteRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602F81135385D800BE911D /* OCDSpecSuiteRunnerSpec.m */; };
 		0761B5241359E48C00FE98CC /* OCDSpecExpectationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0761B5231359E48C00FE98CC /* OCDSpecExpectationSpec.m */; };
 		07679CE913749C060013D81B /* OCDSpecOutputter+RedirectOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE4D134B5E2E00A484D6 /* OCDSpecOutputter+RedirectOutput.m */; };
 		07679CF91375EB5D0013D81B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -20,7 +20,7 @@
 		07679D061375EC490013D81B /* OCDSpecSharedResultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */; };
 		07679D071375EC490013D81B /* OCDSpecExampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */; };
 		07679D081375EC490013D81B /* OCDSpecDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CF00B12DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m */; };
-		07679D091375EC490013D81B /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */; };
+		07679D091375EC490013D81B /* OCDSpecSuiteRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602F81135385D800BE911D /* OCDSpecSuiteRunnerSpec.m */; };
 		07679D0A1375EC490013D81B /* OCDSpecOutputterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */; };
 		07679D0B1375EC490013D81B /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794AE46134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m */; };
 		07679D0C1375EC490013D81B /* OCDSpecExpectationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0761B5231359E48C00FE98CC /* OCDSpecExpectationSpec.m */; };
@@ -85,11 +85,11 @@
 		C01FCF5008A954540054248F /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A954540054248C /* OCDSpecDescriptionRunner.m */; };
 		C01FCF5008A9545400542490 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A954540054248C /* OCDSpecDescriptionRunner.m */; };
 		C01FCF5008A9545400542491 /* OCDSpecDescriptionRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A954540054248C /* OCDSpecDescriptionRunner.m */; };
-		C01FCF5008A9545400542494 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
-		C01FCF5008A9545400542495 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
-		C01FCF5008A9545400542496 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
-		C01FCF5008A9545400542497 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
-		C01FCF5008A9545400542498 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542494 /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542495 /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542496 /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542497 /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542498 /* OCDSpecDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */; };
 		C01FCF5008A9545400542499 /* OCDSpecPreCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749913DA1DD500F94421 /* OCDSpecPreCondition.m */; };
 		C01FCF5008A954540054249A /* OCDSpecPreCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749913DA1DD500F94421 /* OCDSpecPreCondition.m */; };
 		C01FCF5008A954540054249B /* OCDSpecPreCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749913DA1DD500F94421 /* OCDSpecPreCondition.m */; };
@@ -119,7 +119,7 @@
 		0757F8B612C9B4460004134A /* testFailureinDescribeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testFailureinDescribeBlock.m; sourceTree = "<group>"; tabWidth = 0; };
 		0757F8BB12C9B4980004134A /* TestDescribeMacroFailing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDescribeMacroFailing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0757F8BD12C9B4980004134A /* TestDescribeMacroFailing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TestDescribeMacroFailing-Info.plist"; path = "Specs/Programs/TestDescribeMacroFailing-Info.plist"; sourceTree = "<group>"; };
-		07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescriptionRunnerSpec.m; sourceTree = "<group>"; };
+		07602F81135385D800BE911D /* OCDSpecSuiteRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecSuiteRunnerSpec.m; sourceTree = "<group>"; };
 		0761B5231359E48C00FE98CC /* OCDSpecExpectationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecExpectationSpec.m; sourceTree = "<group>"; };
 		07679CF71375EB5D0013D81B /* TestMacVersion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestMacVersion; sourceTree = BUILT_PRODUCTS_DIR; };
 		07679CFE1375EB5D0013D81B /* TestMacVersion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMacVersion-Prefix.pch"; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C01FCF5008A954540054248B /* OCDSpecDescriptionRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecDescriptionRunner.h; sourceTree = "<group>"; };
 		C01FCF5008A954540054248C /* OCDSpecDescriptionRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescriptionRunner.m; sourceTree = "<group>"; };
-		C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecAbstractDescriptionRunnerSpec.m; sourceTree = "<group>"; };
+		C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescriptionRunnerSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,12 +263,12 @@
 		073A6FCB12F1D7CB003EC052 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */,
+				C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */,
 				073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */,
 				0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */,
 				077CF00812DDE01E00F7B1C5 /* OCDSpecExampleSpec.m */,
 				077CF00B12DDE01E00F7B1C5 /* OCDSpecDescriptionSpec.m */,
-				07602F81135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m */,
+				07602F81135385D800BE911D /* OCDSpecSuiteRunnerSpec.m */,
 				07DD9D3C1347534F0034EA52 /* OCDSpecOutputterSpec.m */,
 				0794AE46134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m */,
 				0761B5231359E48C00FE98CC /* OCDSpecExpectationSpec.m */,
@@ -628,7 +628,7 @@
 				07DD9D3D1347534F0034EA52 /* OCDSpecOutputterSpec.m in Sources */,
 				0794ADB2134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m in Sources */,
 				0794AE47134B5B0D00A484D6 /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */,
-				07602F82135385D800BE911D /* OCDSpecDescriptionRunnerSpec.m in Sources */,
+				07602F82135385D800BE911D /* OCDSpecSuiteRunnerSpec.m in Sources */,
 				0761B5241359E48C00FE98CC /* OCDSpecExpectationSpec.m in Sources */,
 				07C3DBAB13622CE600CADEDB /* MockObjectWithEquals.m in Sources */,
 				07893DF0139052EB0060214F /* unitTestMain.m in Sources */,
@@ -636,7 +636,7 @@
 				0792749713DA1DAF00F94421 /* OCDSpecPostCondition.m in Sources */,
 				0792749A13DA1DD500F94421 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054248D /* OCDSpecDescriptionRunner.m in Sources */,
-				C01FCF5008A9545400542494 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A9545400542494 /* OCDSpecDescriptionRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +654,7 @@
 				07120E19134FD04B00B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */,
 				C01FCF5008A954540054248F /* OCDSpecDescriptionRunner.m in Sources */,
-				C01FCF5008A9545400542496 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A9545400542496 /* OCDSpecDescriptionRunnerSpec.m in Sources */,
 				C01FCF5008A954540054249A /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054249D /* OCDSpecPostCondition.m in Sources */,
 				C01FCF5008A95454005424A0 /* OCDSpecCondition.m in Sources */,
@@ -676,7 +676,7 @@
 				07679D061375EC490013D81B /* OCDSpecSharedResultsSpec.m in Sources */,
 				07679D071375EC490013D81B /* OCDSpecExampleSpec.m in Sources */,
 				07679D081375EC490013D81B /* OCDSpecDescriptionSpec.m in Sources */,
-				07679D091375EC490013D81B /* OCDSpecDescriptionRunnerSpec.m in Sources */,
+				07679D091375EC490013D81B /* OCDSpecSuiteRunnerSpec.m in Sources */,
 				07679D0A1375EC490013D81B /* OCDSpecOutputterSpec.m in Sources */,
 				07679D0B1375EC490013D81B /* OCDSpecOutputter+RedirectOutputSpec.m in Sources */,
 				07679D0C1375EC490013D81B /* OCDSpecExpectationSpec.m in Sources */,
@@ -688,7 +688,7 @@
 				0792749813DA1DAF00F94421 /* OCDSpecPostCondition.m in Sources */,
 				0792749B13DA1E0900F94421 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A9545400542491 /* OCDSpecDescriptionRunner.m in Sources */,
-				C01FCF5008A9545400542498 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A9545400542498 /* OCDSpecDescriptionRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,7 +706,7 @@
 				07120DFD134FCEE500B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */,
 				C01FCF5008A954540054248E /* OCDSpecDescriptionRunner.m in Sources */,
-				C01FCF5008A9545400542495 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A9545400542495 /* OCDSpecDescriptionRunnerSpec.m in Sources */,
 				C01FCF5008A9545400542499 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054249C /* OCDSpecPostCondition.m in Sources */,
 				C01FCF5008A954540054249F /* OCDSpecCondition.m in Sources */,
@@ -728,7 +728,7 @@
 				07B90FCC12EBBBC500FC388F /* MockExample.m in Sources */,
 				07120E1D134FD0D600B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				C01FCF5008A9545400542490 /* OCDSpecDescriptionRunner.m in Sources */,
-				C01FCF5008A9545400542497 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A9545400542497 /* OCDSpecDescriptionRunnerSpec.m in Sources */,
 				C01FCF5008A954540054249B /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054249E /* OCDSpecPostCondition.m in Sources */,
 				C01FCF5008A95454005424A1 /* OCDSpecCondition.m in Sources */,
