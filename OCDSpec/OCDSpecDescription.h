@@ -28,5 +28,4 @@
 
 @end
 
-OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition);
 OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition);

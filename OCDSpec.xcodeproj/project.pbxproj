@@ -90,6 +90,15 @@
 		C01FCF5008A9545400542496 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
 		C01FCF5008A9545400542497 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
 		C01FCF5008A9545400542498 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A9545400542493 /* OCDSpecAbstractDescriptionRunnerSpec.m */; };
+		C01FCF5008A9545400542499 /* OCDSpecPreCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749913DA1DD500F94421 /* OCDSpecPreCondition.m */; };
+		C01FCF5008A954540054249A /* OCDSpecPreCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749913DA1DD500F94421 /* OCDSpecPreCondition.m */; };
+		C01FCF5008A954540054249B /* OCDSpecPreCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749913DA1DD500F94421 /* OCDSpecPreCondition.m */; };
+		C01FCF5008A954540054249C /* OCDSpecPostCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749613DA1DAF00F94421 /* OCDSpecPostCondition.m */; };
+		C01FCF5008A954540054249D /* OCDSpecPostCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749613DA1DAF00F94421 /* OCDSpecPostCondition.m */; };
+		C01FCF5008A954540054249E /* OCDSpecPostCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792749613DA1DAF00F94421 /* OCDSpecPostCondition.m */; };
+		C01FCF5008A954540054249F /* OCDSpecCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792748A13DA1A7400F94421 /* OCDSpecCondition.m */; };
+		C01FCF5008A95454005424A0 /* OCDSpecCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792748A13DA1A7400F94421 /* OCDSpecCondition.m */; };
+		C01FCF5008A95454005424A1 /* OCDSpecCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792748A13DA1A7400F94421 /* OCDSpecCondition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -646,6 +655,9 @@
 				0757F8C112C9B4AA0004134A /* testFailureinDescribeBlock.m in Sources */,
 				C01FCF5008A954540054248F /* OCDSpecAbstractDescriptionRunner.m in Sources */,
 				C01FCF5008A9545400542496 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A954540054249A /* OCDSpecPreCondition.m in Sources */,
+				C01FCF5008A954540054249D /* OCDSpecPostCondition.m in Sources */,
+				C01FCF5008A95454005424A0 /* OCDSpecCondition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +707,9 @@
 				0795716312BA51D800281A44 /* testSuccessInDescribeBlock.m in Sources */,
 				C01FCF5008A954540054248E /* OCDSpecAbstractDescriptionRunner.m in Sources */,
 				C01FCF5008A9545400542495 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A9545400542499 /* OCDSpecPreCondition.m in Sources */,
+				C01FCF5008A954540054249C /* OCDSpecPostCondition.m in Sources */,
+				C01FCF5008A954540054249F /* OCDSpecCondition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +729,9 @@
 				07120E1D134FD0D600B8869B /* OCDSpecOutputter+RedirectOutput.m in Sources */,
 				C01FCF5008A9545400542490 /* OCDSpecAbstractDescriptionRunner.m in Sources */,
 				C01FCF5008A9545400542497 /* OCDSpecAbstractDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A954540054249B /* OCDSpecPreCondition.m in Sources */,
+				C01FCF5008A954540054249E /* OCDSpecPostCondition.m in Sources */,
+				C01FCF5008A95454005424A1 /* OCDSpecCondition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

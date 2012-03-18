@@ -5,13 +5,6 @@
 #import "OCDSpec/Contract/OCDSpecPostCondition.h"
 #import "OCDSpec/Abstract/OCDSpecAbstractDescriptionRunner.h"
 
-OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition) {
-  OCDSpecPreCondition *cond = [[[OCDSpecPreCondition alloc] init] autorelease];
-  cond.condition = precondition;
-
-  return cond;
-}
-
 OCDSpecPostCondition *afterEach(VOIDBLOCK postcondition) {
   OCDSpecPostCondition *cond = [[[OCDSpecPostCondition alloc] init] autorelease];
   cond.condition = postcondition;

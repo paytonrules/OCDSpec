@@ -3,3 +3,5 @@
 @interface OCDSpecPreCondition : OCDSpecCondition {
 }
 @end
+
+OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition);
