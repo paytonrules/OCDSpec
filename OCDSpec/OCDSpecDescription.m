@@ -1,9 +1,40 @@
 #import "OCDSpec/OCDSpecDescription.h"
+#import "OCDSpec/Contract/OCDSpecPostCondition.h"
+#import "OCDSpec/Contract/OCDSpecPreCondition.h"
 #import "OCDSpec/OCDSpecExample.h"
 
 @implementation OCDSpecDescription
 
 @synthesize failures, successes, precondition, postcondition;
+
++(OCDSpecDescription *) descriptionFromName:(NSString *)descriptionName examples:(va_list)examples
+{
+  id example;
+  NSMutableArray *exampleList = [NSMutableArray arrayWithCapacity:20];
+  VOIDBLOCK precondition = ^{};
+  VOIDBLOCK postcondition = ^{};
+
+  while ((example = va_arg(examples, id)))
+  {
+    if ([example isKindOfClass:[OCDSpecExample class]])
+    {
+      [exampleList addObject:example];
+    }
+    else if ([example isKindOfClass:[OCDSpecPostCondition class]])
+    {
+      postcondition = ((OCDSpecPostCondition *) example).condition;
+    }
+    else if ([example isKindOfClass:[OCDSpecPreCondition class]])
+    {
+      precondition = ((OCDSpecPreCondition *) example).condition;
+    }
+  }
+
+  OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
+  description.precondition = precondition;
+  description.postcondition = postcondition;
+  return description;
+}
 
 - (id)init
 {

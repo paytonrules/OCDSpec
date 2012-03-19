@@ -44,7 +44,7 @@ CONTEXT(OCDSpecDescriptionRunner)
           }),
 
           it(@"stores the results of a describe on itself", ^{
-            [runner runDescription: description];
+            //[runner runDescription: description];
 
 
           }),
