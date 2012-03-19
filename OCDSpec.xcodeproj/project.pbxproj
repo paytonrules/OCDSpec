@@ -99,6 +99,21 @@
 		C01FCF5008A954540054249F /* OCDSpecCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792748A13DA1A7400F94421 /* OCDSpecCondition.m */; };
 		C01FCF5008A95454005424A0 /* OCDSpecCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792748A13DA1A7400F94421 /* OCDSpecCondition.m */; };
 		C01FCF5008A95454005424A1 /* OCDSpecCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792748A13DA1A7400F94421 /* OCDSpecCondition.m */; };
+		C01FCF5008A95454005424A3 /* ValidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A2 /* ValidClass.m */; };
+		C01FCF5008A95454005424A4 /* ValidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A2 /* ValidClass.m */; };
+		C01FCF5008A95454005424A5 /* ValidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A2 /* ValidClass.m */; };
+		C01FCF5008A95454005424A6 /* ValidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A2 /* ValidClass.m */; };
+		C01FCF5008A95454005424A7 /* ValidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A2 /* ValidClass.m */; };
+		C01FCF5008A95454005424AA /* InvalidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A9 /* InvalidClass.m */; };
+		C01FCF5008A95454005424AB /* InvalidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A9 /* InvalidClass.m */; };
+		C01FCF5008A95454005424AC /* InvalidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A9 /* InvalidClass.m */; };
+		C01FCF5008A95454005424AD /* InvalidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A9 /* InvalidClass.m */; };
+		C01FCF5008A95454005424AE /* InvalidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A9 /* InvalidClass.m */; };
+		C01FCF5008A95454005424B1 /* MultipleMatchingClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */; };
+		C01FCF5008A95454005424B2 /* MultipleMatchingClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */; };
+		C01FCF5008A95454005424B3 /* MultipleMatchingClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */; };
+		C01FCF5008A95454005424B4 /* MultipleMatchingClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */; };
+		C01FCF5008A95454005424B5 /* MultipleMatchingClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -176,6 +191,12 @@
 		C01FCF5008A954540054248B /* OCDSpecDescriptionRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSpecDescriptionRunner.h; sourceTree = "<group>"; };
 		C01FCF5008A954540054248C /* OCDSpecDescriptionRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescriptionRunner.m; sourceTree = "<group>"; };
 		C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSpecDescriptionRunnerSpec.m; sourceTree = "<group>"; };
+		C01FCF5008A95454005424A2 /* ValidClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValidClass.m; path = Helpers/ValidClass.m; sourceTree = "<group>"; };
+		C01FCF5008A95454005424A8 /* ValidClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValidClass.h; path = Helpers/ValidClass.h; sourceTree = "<group>"; };
+		C01FCF5008A95454005424A9 /* InvalidClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvalidClass.m; path = Helpers/InvalidClass.m; sourceTree = "<group>"; };
+		C01FCF5008A95454005424AF /* InvalidClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvalidClass.h; path = Helpers/InvalidClass.h; sourceTree = "<group>"; };
+		C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultipleMatchingClasses.m; path = Helpers/MultipleMatchingClasses.m; sourceTree = "<group>"; };
+		C01FCF5008A95454005424B6 /* MultipleMatchingClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleMatchingClasses.h; path = Helpers/MultipleMatchingClasses.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +284,12 @@
 		073A6FCB12F1D7CB003EC052 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				C01FCF5008A95454005424B6 /* MultipleMatchingClasses.h */,
+				C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */,
+				C01FCF5008A95454005424AF /* InvalidClass.h */,
+				C01FCF5008A95454005424A9 /* InvalidClass.m */,
+				C01FCF5008A95454005424A8 /* ValidClass.h */,
+				C01FCF5008A95454005424A2 /* ValidClass.m */,
 				C01FCF5008A9545400542493 /* OCDSpecDescriptionRunnerSpec.m */,
 				073A6F7512F1D0A0003EC052 /* OCDSpecFailSpec.m */,
 				0794ADB1134AC4BF00A484D6 /* OCDSpecSharedResultsSpec.m */,
@@ -637,6 +664,9 @@
 				0792749A13DA1DD500F94421 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054248D /* OCDSpecDescriptionRunner.m in Sources */,
 				C01FCF5008A9545400542494 /* OCDSpecDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A95454005424A3 /* ValidClass.m in Sources */,
+				C01FCF5008A95454005424AA /* InvalidClass.m in Sources */,
+				C01FCF5008A95454005424B1 /* MultipleMatchingClasses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +688,9 @@
 				C01FCF5008A954540054249A /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054249D /* OCDSpecPostCondition.m in Sources */,
 				C01FCF5008A95454005424A0 /* OCDSpecCondition.m in Sources */,
+				C01FCF5008A95454005424A5 /* ValidClass.m in Sources */,
+				C01FCF5008A95454005424AC /* InvalidClass.m in Sources */,
+				C01FCF5008A95454005424B3 /* MultipleMatchingClasses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +722,9 @@
 				0792749B13DA1E0900F94421 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A9545400542491 /* OCDSpecDescriptionRunner.m in Sources */,
 				C01FCF5008A9545400542498 /* OCDSpecDescriptionRunnerSpec.m in Sources */,
+				C01FCF5008A95454005424A7 /* ValidClass.m in Sources */,
+				C01FCF5008A95454005424AE /* InvalidClass.m in Sources */,
+				C01FCF5008A95454005424B5 /* MultipleMatchingClasses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +746,9 @@
 				C01FCF5008A9545400542499 /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054249C /* OCDSpecPostCondition.m in Sources */,
 				C01FCF5008A954540054249F /* OCDSpecCondition.m in Sources */,
+				C01FCF5008A95454005424A4 /* ValidClass.m in Sources */,
+				C01FCF5008A95454005424AB /* InvalidClass.m in Sources */,
+				C01FCF5008A95454005424B2 /* MultipleMatchingClasses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +771,9 @@
 				C01FCF5008A954540054249B /* OCDSpecPreCondition.m in Sources */,
 				C01FCF5008A954540054249E /* OCDSpecPostCondition.m in Sources */,
 				C01FCF5008A95454005424A1 /* OCDSpecCondition.m in Sources */,
+				C01FCF5008A95454005424A6 /* ValidClass.m in Sources */,
+				C01FCF5008A95454005424AD /* InvalidClass.m in Sources */,
+				C01FCF5008A95454005424B4 /* MultipleMatchingClasses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
