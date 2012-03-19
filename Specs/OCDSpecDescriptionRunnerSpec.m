@@ -116,8 +116,6 @@ CONTEXT(OCDSpecDescriptionRunner)
             [expect(results.successes) toBeEqualTo:[NSNumber numberWithInt:1]];
           }),
 
-
-          // Finally add a currentContext so you can use the describe function
           // This should fix the issue where you are miscounting success/failures.
           // Replace global shared results with a struct
           // Get describe method in the OCDSpecDescription method working
