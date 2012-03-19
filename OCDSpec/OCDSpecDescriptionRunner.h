@@ -1,9 +1,19 @@
 #import <Foundation/Foundation.h>
 #import "OCDSpec/Protocols/DescriptionRunner.h"
 @class OCDSpecSharedResults;
+@class OCDSpecDescription;
 
 @interface OCDSpecDescriptionRunner : NSObject<DescriptionRunner>
--(OCDSpecSharedResults *) runContext:(void(*)(void)) desc;
+{
+  NSNumber *failures;
+  NSNumber *successes;
+}
+
+@property(nonatomic, retain) NSNumber *failures;
+@property(nonatomic, retain) NSNumber *successes;
+-(OCDSpecSharedResults *) runContext:(void(*)(void)) context;
+-(OCDSpecSharedResults *) runDescription:(OCDSpecDescription *) desc;
+
 +(void) describe: (NSString *) descriptionName withExamples: (va_list) examples;
 @end
 

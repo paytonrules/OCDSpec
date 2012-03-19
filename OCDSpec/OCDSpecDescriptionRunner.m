@@ -4,23 +4,32 @@
 
 @implementation OCDSpecDescriptionRunner
 
-+ (int)getFailures
+@synthesize failures, successes;
+
++(int) getFailures
 {
   return [[OCDSpecSharedResults sharedResults].failures intValue];;
 }
 
-+ (int)getSuccesses
++(int) getSuccesses
 {
-  return [[OCDSpecSharedResults sharedResults].successes intValue];\
-
+  return [[OCDSpecSharedResults sharedResults].successes intValue];
 }
-- (OCDSpecSharedResults *) runContext:(void( *)(void))desc
+
+-(OCDSpecSharedResults *) runContext:(void( *)(void))context
 {
-  (*desc)();
+  (*context)();
   return [OCDSpecSharedResults sharedResults];
 }
 
-+ (void)describe:(NSString *)descriptionName withExamples:(va_list)examples
+-(void) runDescription:(OCDSpecDescription *)desc
+{
+  [desc describe];
+  failures = desc.failures;
+  successes = desc.successes;
+}
+
++(void) describe:(NSString *)descriptionName withExamples:(va_list)examples
 {
   OCDSpecDescription *description = [OCDSpecDescription descriptionFromName:descriptionName examples:examples];
 
@@ -33,11 +42,10 @@
 
 @end
 
-void describe(NSString *descriptionName, ...)
-{
+void describe(NSString *descriptionName, ...) {
   va_list variableArgumentList;
 
   va_start(variableArgumentList, descriptionName);
-  [OCDSpecDescriptionRunner describe:descriptionName withExamples: variableArgumentList];
+  [OCDSpecDescriptionRunner describe:descriptionName withExamples:variableArgumentList];
   va_end(variableArgumentList);
 }

@@ -20,6 +20,23 @@ void testDescription(void)
   }];
 }
 
+@interface FakeDescription : OCDSpecDescription
+{
+  bool wasRun;
+}
+
+@property(assign) bool wasRun;
+@end
+
+@implementation FakeDescription
+@synthesize wasRun;
+
+-(void) describe
+{
+  wasRun = true;
+}
+@end
+
 CONTEXT(OCDSpecDescriptionRunner)
 {
   __block OCDSpecDescriptionRunner *runner;
@@ -35,18 +52,31 @@ CONTEXT(OCDSpecDescriptionRunner)
             expectTruth(descriptionWasRun);
           }),
 
-          // runDescription
-          it(@"returns the results from runDescription", ^{
+          it(@"returns the results from runContext", ^{
             OCDSpecSharedResults *results = [runner runContext:testDescription];
 
             [expect(results.failures) toBeEqualTo:[NSNumber numberWithInt:1]];
             [expect(results.successes) toBeEqualTo:[NSNumber numberWithInt:1]];
           }),
 
-          it(@"stores the results of a describe on itself", ^{
-            //[runner runDescription: description];
+          it(@"Runs an individual description", ^{
+            FakeDescription *desc = [[[FakeDescription alloc] init]  autorelease];
+            desc.wasRun = false;
 
+            [runner runDescription: desc];
 
+            expectTruth(desc.wasRun);
+          }),
+
+          it(@"stores the results of a description on itself", ^{
+            OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+            description.failures = [NSNumber numberWithInt: 8 ];
+            description.successes = [NSNumber numberWithInt: 6 ];
+
+            [runner runDescription: description];
+
+            [expect(runner.failures) toBeEqualTo:[NSNumber numberWithInt:8] ];
+            [expect(runner.successes) toBeEqualTo:[NSNumber numberWithInt:6] ];
           }),
 
           // Those will return the global (make the tests not care)
