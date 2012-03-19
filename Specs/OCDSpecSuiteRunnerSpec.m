@@ -61,7 +61,20 @@ CONTEXT(OCDSpecSuiteRunner){
             [expect([NSNumber numberWithInt: runner.successes]) toBeEqualTo:[NSNumber numberWithInt: 3]];
             [expect([NSNumber numberWithInt: runner.failures]) toBeEqualTo:[NSNumber numberWithInt: 5]];
           }),
-          // Check the reporter.   You are done with the suite.
+
+          it(@"reports the results when it is done", ^{
+            __block NSString *report;
+            runner.baseClass = [AbstractBaseClass class];
+
+            [ValidClass setSuccesses:3 andFailures:4];
+
+            [OCDSpecOutputter withRedirectedOutput:^{
+              [runner runAllDescriptions];
+              report = [[OCDSpecOutputter sharedOutputter] readOutput];
+            }];
+
+            [expect(report) toBeEqualTo:@"Tests ran with 3 passing tests and 4 failing tests\n" ];
+          }),
 
           // After this you'll want to hit the describe method in OCDSpec DescriptionRunner, only returning results rather than
           // setting a global, adding whats in the context block to the the  class so that [self describe] is actually able to

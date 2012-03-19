@@ -8,7 +8,7 @@
 
 @synthesize successes, failures, baseClass;
 
-- (id)init
+-(id) init
 {
   if ((self = [super init]))
   {
@@ -18,12 +18,12 @@
   return self;
 }
 
-- (BOOL)isDescriptionRunner:(Class)klass
+-(BOOL) isDescriptionRunner:(Class)klass
 {
   return class_getSuperclass(klass) == baseClass;
 }
 
-- (void)getListOfClassesInBundle
+-(void) getListOfClassesInBundle
 {
   classCount = objc_getClassList(NULL, 0);
   NSMutableData *classData = [NSMutableData dataWithLength:sizeof(Class) * classCount];
@@ -35,7 +35,7 @@
   objc_getClassList(classes, classCount);
 }
 
-- (void)callRunOnEachStaticDescription
+-(void) callRunOnEachStaticDescription
 {
   for (int i = 0; i < classCount; ++i)
   {
@@ -44,7 +44,7 @@
     // Check if it conforms our protocol
     if ([self isDescriptionRunner:currClass])
     {
-      OCDSpecSharedResults *  results = [currClass run];
+      OCDSpecSharedResults *results = [currClass run];
 
       successes += [results.successes intValue];
       failures += [results.failures intValue];
@@ -52,13 +52,13 @@
   }
 }
 
-- (void)reportResults
+-(void) reportResults
 {
   NSString *resultsMessage = [NSString stringWithFormat:@"Tests ran with %d passing tests and %d failing tests\n", successes, failures];
   [[OCDSpecOutputter sharedOutputter] writeMessage:resultsMessage];
 }
 
-- (void)runAllDescriptions
+-(void) runAllDescriptions
 {
   successes = 0;
   failures = 0;

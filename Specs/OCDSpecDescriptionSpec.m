@@ -40,7 +40,7 @@ CONTEXT(OCDSpecDescription)
 
                         [description describe:@"It Should Do Something" onArrayOfExamples: tests];
 
-                        outputException = [[OCDSpecOutputter sharedOutputter] readOutput];;
+                        outputException = [[OCDSpecOutputter sharedOutputter] readOutput];
                     }];
 
                     if (outputException.length == 0)
