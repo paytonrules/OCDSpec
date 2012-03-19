@@ -20,6 +20,22 @@ void testDescription(void)
   }];
 }
 
+void testContextWithTwoDescribes(void)
+{
+  [OCDSpecOutputter withRedirectedOutput:^{
+    describe(@"MyFakeTest",
+            it(@"succeeds", ^{
+            }),
+            it(@"Fails", ^{
+              FAIL(@"FAILURE IN TEST");
+            }),
+            nil
+    );
+
+    describe(@"Empty Description", nil);
+  }];
+}
+
 @interface FakeDescription : OCDSpecDescription
 {
   bool wasRun;
@@ -79,15 +95,33 @@ CONTEXT(OCDSpecDescriptionRunner)
             [expect(runner.successes) toBeEqualTo:[NSNumber numberWithInt:6] ];
           }),
 
-          // Those will return the global (make the tests not care)
-          // self describe needs to get under test to match the describe method
-          //
-          // After this you'll want to hit the describe method in OCDSpec DescriptionRunner, only returning results rather than
-          // setting a global, adding whats in the context block to the the  class so that [self describe] is actually able to
-          // count stuff.
-          // Finally add a macro, which might be tricky.
+          it(@"Totals up the runDescriptions on multiple runs", ^{
+            OCDSpecDescription *descriptionOne = [[[OCDSpecDescription alloc] init] autorelease];
+            descriptionOne.failures = [NSNumber numberWithInt: 8 ];
+            descriptionOne.successes = [NSNumber numberWithInt: 1 ];
+            OCDSpecDescription *descriptionTwo = [[[OCDSpecDescription alloc] init] autorelease];
+            descriptionTwo.successes = [NSNumber numberWithInt: 8 ];
+
+            [runner runDescription: descriptionOne];
+            [runner runDescription: descriptionTwo];
+
+            [expect(runner.failures) toBeEqualTo:[NSNumber numberWithInt:8] ];
+            [expect(runner.successes) toBeEqualTo:[NSNumber numberWithInt:9] ];
+          }),
+
+          it(@"Does not overwrite counts when two describes are nested in a context", ^{
+            OCDSpecSharedResults *results = [runner runContext:testContextWithTwoDescribes];
+
+            [expect(results.failures) toBeEqualTo:[NSNumber numberWithInt:1]];
+            [expect(results.successes) toBeEqualTo:[NSNumber numberWithInt:1]];
+          }),
+
+
+          // Finally add a currentContext so you can use the describe function
           // This should fix the issue where you are miscounting success/failures.
-          // Then see if you can delete the global shared results
+          // Replace global shared results with a struct
+          // Get describe method in the OCDSpecDescription method working
+          // Look around for stray tests.  beforeEach, describe, you've got some stuff out there nowhere near the right spots.
           nil
   );
 }
