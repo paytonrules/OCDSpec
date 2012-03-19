@@ -3,7 +3,7 @@
 @class OCDSpecSharedResults;
 
 @interface OCDSpecDescriptionRunner : NSObject<DescriptionRunner>
--(OCDSpecSharedResults *) runDescription:(void(*)(void)) desc;
+-(OCDSpecSharedResults *) runContext:(void(*)(void)) desc;
 +(void) describe: (NSString *) descriptionName withExamples: (va_list) examples;
 @end
 
@@ -18,7 +18,7 @@ void (*funcPtr)(void); \
 +(OCDSpecSharedResults *) run \
 { \
   TestRunner##classname *runner = [[[TestRunner##classname alloc] init] autorelease]; \
-  return [runner runDescription: &descriptionOf##classname]; \
+  return [runner runContext: &descriptionOf##classname]; \
 } \
 @end \
 void descriptionOf##classname(void)

@@ -17,7 +17,7 @@
   return [[OCDSpecSharedResults sharedResults].successes intValue];\
 
 }
-- (OCDSpecSharedResults *)runDescription:(void( *)(void))desc
+- (OCDSpecSharedResults *) runContext:(void( *)(void))desc
 {
   (*desc)();
   return [OCDSpecSharedResults sharedResults];

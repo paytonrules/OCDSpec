@@ -75,13 +75,6 @@ CONTEXT(OCDSpecSuiteRunner){
 
             [expect(report) toBeEqualTo:@"Tests ran with 3 passing tests and 4 failing tests\n" ];
           }),
-
-          // After this you'll want to hit the describe method in OCDSpec DescriptionRunner, only returning results rather than
-          // setting a global, adding whats in the context block to the the  class so that [self describe] is actually able to
-          // count stuff.
-          // Finally add a macro, which might be tricky.
-          // This should fix the issue where you are miscounting success/failures.
-          // Then see if you can delete the global shared results
           nil);
 }
 
