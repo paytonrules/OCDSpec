@@ -1,5 +1,8 @@
+### NOTE: This is the bleeding edge link. For the official release go to http://paytonrules.com/OCDSpec/
+
 ## OCDSpec
 ### The Objective-C Unit Testing framework for the Obsessive Compulsive.  
+
 
 OCDSpec is meant to be easy to setup, easy to use, and a joy to work with.  Inspired by both RSpec and Jasmine it has a friendly syntax that should easy to pick up for any developer familiar with BDD frameworks and uses Objective-C features rather than simply porting another XUnit.  A sample spec looks as follows:
 
