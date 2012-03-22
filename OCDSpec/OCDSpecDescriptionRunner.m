@@ -1,5 +1,4 @@
 #import "OCDSpecDescriptionRunner.h"
-#import "OCDSpec/OCDSpecSharedResults.h"
 #import "OCDSpec/OCDSpecDescription.h"
 
 static OCDSpecDescriptionRunner *currentRunner = NULL;
@@ -8,23 +7,13 @@ static OCDSpecDescriptionRunner *currentRunner = NULL;
 
 @synthesize failures, successes;
 
-+(int) getFailures
+-(OCDSpecResults) runContext:(void( *)(void))context
 {
-  return [[OCDSpecSharedResults sharedResults].failures intValue];;
-}
-
-+(int) getSuccesses
-{
-  return [[OCDSpecSharedResults sharedResults].successes intValue];
-}
-
--(OCDSpecSharedResults *) runContext:(void( *)(void))context
-{
+  OCDSpecResults results;
   currentRunner = self;
   (*context)();
-  OCDSpecSharedResults *results = [[[OCDSpecSharedResults alloc] init] autorelease];
-  results.failures = failures;
-  results.successes = successes;
+  results.failures = [failures intValue];
+  results.successes = [successes intValue];
   return results;
 }
 
@@ -33,17 +22,6 @@ static OCDSpecDescriptionRunner *currentRunner = NULL;
   [desc describe];
   failures = [NSNumber numberWithInt:[desc.failures intValue] + [failures intValue] ];
   successes = [NSNumber numberWithInt:[desc.successes intValue] + [successes intValue] ];
-}
-
-+(void) describe:(NSString *)descriptionName withExamples:(va_list)examples
-{
-  OCDSpecDescription *description = [OCDSpecDescription descriptionFromName:descriptionName examples:examples];
-
-  [description describe];
-
-  OCDSpecSharedResults *results = [OCDSpecSharedResults sharedResults];
-  results.successes = description.successes;
-  results.failures = description.failures;
 }
 
 @end

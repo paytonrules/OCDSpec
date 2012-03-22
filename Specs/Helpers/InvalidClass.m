@@ -1,11 +1,11 @@
 #import "InvalidClass.h"
-#import "OCDSpec/OCDSpecSharedResults.h"
+#import "OCDSpecResults.h"
 
 static BOOL inValidClassWasRun = false;
 
 @implementation InvalidClass
 
-+ (OCDSpecSharedResults *)run
++ (OCDSpecResults *)run
 {
   inValidClassWasRun = true;
 }

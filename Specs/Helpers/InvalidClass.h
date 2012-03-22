@@ -1,8 +1,7 @@
 #import <Foundation/Foundation.h>
-
-@class OCDSpecSharedResults;
+#import "OCDSpec/OCDSpecResults.h"
 
 @interface InvalidClass : NSObject
-+ (OCDSpecSharedResults *)run;
++ (OCDSpecResults)run;
 + (bool)wasRun;
 @end

@@ -1,4 +1,5 @@
 #import "OCDSpec/OCDSpec.h"
+#import "OCDSpec/OCDSpecDescription.h"
 #import "OCDSpec/OCDSpecOutputter.h"
 #import "OCDSpecOutputter+RedirectOutput.h"
 
@@ -69,10 +70,10 @@ CONTEXT(OCDSpecDescriptionRunner)
           }),
 
           it(@"returns the results from runContext", ^{
-            OCDSpecSharedResults *results = [runner runContext:testDescription];
+            OCDSpecResults results = [runner runContext:testDescription];
 
-            [expect(results.failures) toBeEqualTo:[NSNumber numberWithInt:1]];
-            [expect(results.successes) toBeEqualTo:[NSNumber numberWithInt:1]];
+            [expect([NSNumber numberWithInt:results.failures]) toBeEqualTo:[NSNumber numberWithInt:1]];
+            [expect([NSNumber numberWithInt:results.successes]) toBeEqualTo:[NSNumber numberWithInt:1]];
           }),
 
           it(@"Runs an individual description", ^{
@@ -110,13 +111,12 @@ CONTEXT(OCDSpecDescriptionRunner)
           }),
 
           it(@"Does not overwrite counts when two describes are nested in a context", ^{
-            OCDSpecSharedResults *results = [runner runContext:testContextWithTwoDescribes];
+            OCDSpecResults results = [runner runContext:testContextWithTwoDescribes];
 
-            [expect(results.failures) toBeEqualTo:[NSNumber numberWithInt:1]];
-            [expect(results.successes) toBeEqualTo:[NSNumber numberWithInt:1]];
+            [expect([NSNumber numberWithInt:results.failures]) toBeEqualTo:[NSNumber numberWithInt:1]];
+            [expect([NSNumber numberWithInt:results.successes]) toBeEqualTo:[NSNumber numberWithInt:1]];
           }),
 
-          // This should fix the issue where you are miscounting success/failures.
           // Replace global shared results with a struct
           // Get describe method in the OCDSpecDescription method working
           // Look around for stray tests.  beforeEach, describe, you've got some stuff out there nowhere near the right spots.

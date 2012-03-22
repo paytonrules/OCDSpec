@@ -1,8 +1,6 @@
-@class OCDSpecSharedResults;
+#import "OCDSpec/OCDSpecResults.h"
 @protocol DescriptionRunner
 
-+(OCDSpecSharedResults *) run;
-+(int) getSuccesses;
-+(int) getFailures;
++(OCDSpecResults) run;
 
 @end

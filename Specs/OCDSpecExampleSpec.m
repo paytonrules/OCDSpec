@@ -1,8 +1,5 @@
-#import "OCDSpecSuiteRunner.h"
-#import "OCDSpec/OCDSpecFail.h"
-#import "OCDSpec/OCDSpecExample.h"
+#import "OCDSpec/OCDSpec.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
-#import "OCDSpecExpectation.h"
 
 CONTEXT(OCDSpecExample){
   describe(@"Standard Failures",

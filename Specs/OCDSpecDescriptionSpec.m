@@ -1,6 +1,7 @@
 #import "OCDSpec/OCDSpec.h"
 #import "Specs/Mocks/MockExample.h"
 #import "OCDSpec/OCDSpecOutputter+RedirectOutput.h"
+#import "OCDSpec/OCDSpecDescription.h"
 
 CONTEXT(OCDSpecDescription){
   describe(@"The Description",

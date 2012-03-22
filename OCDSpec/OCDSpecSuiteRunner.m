@@ -1,6 +1,8 @@
 #include <objc/runtime.h>
 #import "OCDSpecSuiteRunner.h"
 #import "OCDSpec/OCDSpecOutputter.h"
+#import "OCDSpec/OCDSpecResults.h"
+#import "OCDSpec/OCDSpecDescriptionRunner.h"
 
 @class TestDescriptionRunner;
 
@@ -44,10 +46,10 @@
     // Check if it conforms our protocol
     if ([self isDescriptionRunner:currClass])
     {
-      OCDSpecSharedResults *results = [currClass run];
+      OCDSpecResults results = [currClass run];
 
-      successes += [results.successes intValue];
-      failures += [results.failures intValue];
+      successes += results.successes;
+      failures += results.failures;
     }
   }
 }

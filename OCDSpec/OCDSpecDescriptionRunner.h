@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "OCDSpec/Protocols/DescriptionRunner.h"
-@class OCDSpecSharedResults;
+#import "OCDSpec/OCDSpecResults.h"
+
 @class OCDSpecDescription;
 
 @interface OCDSpecDescriptionRunner : NSObject<DescriptionRunner>
@@ -11,10 +12,8 @@
 
 @property(nonatomic, retain) NSNumber *failures;
 @property(nonatomic, retain) NSNumber *successes;
--(OCDSpecSharedResults *) runContext:(void(*)(void)) context;
--(OCDSpecSharedResults *) runDescription:(OCDSpecDescription *) desc;
-
-+(void) describe: (NSString *) descriptionName withExamples: (va_list) examples;
+-(OCDSpecResults) runContext:(void(*)(void)) context;
+-(void) runDescription:(OCDSpecDescription *) desc;
 @end
 
 void describe(NSString *description,  ...);
@@ -25,7 +24,7 @@ void (*funcPtr)(void); \
 @interface TestRunner##classname : OCDSpecDescriptionRunner \
 @end\
 @implementation TestRunner##classname\
-+(OCDSpecSharedResults *) run \
++(OCDSpecResults) run \
 { \
   TestRunner##classname *runner = [[[TestRunner##classname alloc] init] autorelease]; \
   return [runner runContext: &descriptionOf##classname]; \

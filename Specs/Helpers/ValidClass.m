@@ -1,5 +1,5 @@
 #import "ValidClass.h"
-#import "OCDSpec/OCDSpecSharedResults.h"
+#import "OCDSpecResults.h"
 
 static int validClassSuccesses = 0;
 static int validClassFailures = 0;
@@ -16,11 +16,11 @@ static BOOL validClassWasRun = false;
   validClassFailures = failures;
 }
 
-+ (OCDSpecSharedResults *)run
++ (OCDSpecResults)run
 {
-  OCDSpecSharedResults *results = [[[OCDSpecSharedResults alloc] init] autorelease];
-  results.failures = [NSNumber numberWithInt:validClassFailures];
-  results.successes = [NSNumber numberWithInt:validClassSuccesses];
+  OCDSpecResults results;
+  results.failures = validClassFailures;
+  results.successes = validClassSuccesses;
   validClassWasRun = true;
   return results;
 }

@@ -1,5 +1,5 @@
 #import "MultipleMatchingClasses.h"
-#import "OCDSpec/OCDSpecSharedResults.h"
+#import "OCDSpecResults.h"
 
 @implementation MultipleMatchingClasses
 
@@ -15,11 +15,11 @@ static int multipleClassFailures = 0;
   multipleClassFailures = failures;
 }
 
-+ (OCDSpecSharedResults *)run
++ (OCDSpecResults)run
 {
-  OCDSpecSharedResults *results = [[[OCDSpecSharedResults alloc] init] autorelease];
-  results.failures = [NSNumber numberWithInt:multipleClassFailures];
-  results.successes = [NSNumber numberWithInt:multipleClassSuccesses];
+  OCDSpecResults results;
+  results.failures = multipleClassFailures;
+  results.successes = multipleClassSuccesses;
   return results;
 }
 @end
@@ -34,11 +34,11 @@ static int multipleSecondClassFailures = 0;
   multipleSecondClassFailures = failures;
 }
 
-+ (OCDSpecSharedResults *)run
++ (OCDSpecResults)run
 {
-  OCDSpecSharedResults *results = [[[OCDSpecSharedResults alloc] init] autorelease];
-  results.failures = [NSNumber numberWithInt:multipleSecondClassFailures];
-  results.successes = [NSNumber numberWithInt:multipleSecondClassSuccesses];
+  OCDSpecResults results;
+  results.failures = multipleSecondClassFailures;
+  results.successes = multipleSecondClassSuccesses;
   return results;
 }
 @end
