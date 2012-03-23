@@ -117,8 +117,7 @@ CONTEXT(OCDSpecDescriptionRunner)
             [expect([NSNumber numberWithInt:results.successes]) toBeEqualTo:[NSNumber numberWithInt:1]];
           }),
 
-          // Replace global shared results with a struct
-          // Get describe method in the OCDSpecDescription method working
+          // Get describe method in the OCDSpecDescription method tested
           // Look around for stray tests.  beforeEach, describe, you've got some stuff out there nowhere near the right spots.
           nil
   );
