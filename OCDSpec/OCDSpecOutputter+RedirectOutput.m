@@ -1,8 +1,5 @@
 #import "OCDSpecOutputter+RedirectOutput.h"
 
-@interface OCDSpecOutputter()
-+(NSFileHandle *) temporaryFileHandle;
-@end
 
 @implementation OCDSpecOutputter (RedirectOutput)
 

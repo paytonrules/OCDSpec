@@ -5,9 +5,11 @@ static BOOL inValidClassWasRun = false;
 
 @implementation InvalidClass
 
-+ (OCDSpecResults *)run
++ (OCDSpecResults)run
 {
+  OCDSpecResults results;
   inValidClassWasRun = true;
+  return results;
 }
 
 + (bool)wasRun
