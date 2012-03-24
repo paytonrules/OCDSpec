@@ -6,6 +6,12 @@ static OCDSpecDescriptionRunner *currentRunner = NULL;
 @implementation OCDSpecDescriptionRunner
 
 @synthesize failures, successes;
++(OCDSpecResults) run
+{
+    OCDSpecResults results;
+    [self doesNotRecognizeSelector:_cmd];
+    return results;
+}
 
 -(OCDSpecResults) runContext:(void( *)(void))context
 {
