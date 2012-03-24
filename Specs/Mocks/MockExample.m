@@ -7,7 +7,6 @@
 {
   MockExample *example = [[MockExample alloc] init];
   example.failed = YES;
-  [example autorelease];
   return example;
 }
 

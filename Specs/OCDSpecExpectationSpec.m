@@ -9,10 +9,10 @@ CONTEXT(OCDSpecExpectation){
   describe(@"The Expectation",
 
           it(@"throws its failures with the line and file passed in", ^{
-            actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
-            expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
+            actualObject = [[MockObjectWithEquals alloc] initAsNotEqual];
+            expectedObject = [[MockObjectWithEquals alloc] init];
 
-            OCDSpecExpectation *expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"FILENAME" atLineNumber:120] autorelease];
+            OCDSpecExpectation *expectation = [[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"FILENAME" atLineNumber:120];
 
             @try
             {
@@ -39,19 +39,19 @@ CONTEXT(OCDSpecExpectation){
 
   describe(@"toBeEqualTo",
           it(@"passes when two objects are equal", ^{
-            actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
-            expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
+            actualObject = [[MockObjectWithEquals alloc] init];
+            expectedObject = [[MockObjectWithEquals alloc] init];
 
-            expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+            expectation = [[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0];
 
             [expectation toBeEqualTo:expectedObject];
           }),
 
           it(@"fails if the two objects are not equal using equalTo", ^{
-            actualObject = [[[MockObjectWithEquals alloc] initAsNotEqual] autorelease];
-            expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
+            actualObject = [[MockObjectWithEquals alloc] initAsNotEqual];
+            expectedObject = [[MockObjectWithEquals alloc] init];
 
-            expectation = [[[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0] autorelease];
+            expectation = [[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"" atLineNumber:0];
 
             @try
             {
@@ -70,8 +70,8 @@ CONTEXT(OCDSpecExpectation){
 
   describe(@"toBe",
           it(@"fails if two objects are not the same object", ^{
-            actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
-            expectedObject = [[[MockObjectWithEquals alloc] init] autorelease];
+            actualObject = [[MockObjectWithEquals alloc] init];
+            expectedObject = [[MockObjectWithEquals alloc] init];
 
             @try
             {
@@ -87,7 +87,7 @@ CONTEXT(OCDSpecExpectation){
           }),
 
           it(@"does not fail if the two objects are the same", ^{
-            actualObject = [[[MockObjectWithEquals alloc] init] autorelease];
+            actualObject = [[MockObjectWithEquals alloc] init];
 
             [expect(actualObject) toBe:actualObject];
           }),

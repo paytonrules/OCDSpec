@@ -30,7 +30,7 @@
     }
   }
 
-  OCDSpecDescription *description = [[[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList] autorelease];
+  OCDSpecDescription *description = [[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList];
   description.precondition = precondition;
   description.postcondition = postcondition;
   return description;

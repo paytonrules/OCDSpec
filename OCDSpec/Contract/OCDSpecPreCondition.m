@@ -6,7 +6,7 @@
 @end
 
 OCDSpecPreCondition *beforeEach(VOIDBLOCK precondition) {
-  OCDSpecPreCondition *cond = [[[OCDSpecPreCondition alloc] init] autorelease];
+  OCDSpecPreCondition *cond = [[OCDSpecPreCondition alloc] init];
   cond.condition = precondition;
 
   return cond;

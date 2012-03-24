@@ -15,8 +15,6 @@
         actualObject = object;
         line = lineNumber;
         file = fileName;
-        [file retain];
-        [actualObject retain];
     }
     
     return self;
@@ -54,10 +52,4 @@
                inFile:file];
 }
 
--(void) dealloc
-{
-    [actualObject release];
-    [file release];
-    [super dealloc];
-}
 @end

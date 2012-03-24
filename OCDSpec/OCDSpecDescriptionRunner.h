@@ -26,7 +26,7 @@ void (*funcPtr)(void); \
 @implementation TestRunner##classname\
 +(OCDSpecResults) run \
 { \
-  TestRunner##classname *runner = [[[TestRunner##classname alloc] init] autorelease]; \
+  TestRunner##classname *runner = [[TestRunner##classname alloc] init]; \
   return [runner runContext: &descriptionOf##classname]; \
 } \
 @end \

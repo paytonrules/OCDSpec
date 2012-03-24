@@ -60,7 +60,7 @@ CONTEXT(OCDSpecDescriptionRunner)
   describe(@"OCDSpecDescriptionRunner",
 
           beforeEach(^{
-            runner = [[[OCDSpecDescriptionRunner alloc] init] autorelease];
+            runner = [[OCDSpecDescriptionRunner alloc] init];
           }),
 
           it(@"runs the passed in C function", ^{
@@ -77,7 +77,7 @@ CONTEXT(OCDSpecDescriptionRunner)
           }),
 
           it(@"Runs an individual description", ^{
-            FakeDescription *desc = [[[FakeDescription alloc] init]  autorelease];
+            FakeDescription *desc = [[FakeDescription alloc] init];
             desc.wasRun = false;
 
             [runner runDescription: desc];
@@ -86,7 +86,7 @@ CONTEXT(OCDSpecDescriptionRunner)
           }),
 
           it(@"stores the results of a description on itself", ^{
-            OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *description = [[OCDSpecDescription alloc] init];
             description.failures = [NSNumber numberWithInt: 8 ];
             description.successes = [NSNumber numberWithInt: 6 ];
 
@@ -97,10 +97,10 @@ CONTEXT(OCDSpecDescriptionRunner)
           }),
 
           it(@"Totals up the runDescriptions on multiple runs", ^{
-            OCDSpecDescription *descriptionOne = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *descriptionOne = [[OCDSpecDescription alloc] init];
             descriptionOne.failures = [NSNumber numberWithInt: 8 ];
             descriptionOne.successes = [NSNumber numberWithInt: 1 ];
-            OCDSpecDescription *descriptionTwo = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *descriptionTwo = [[OCDSpecDescription alloc] init];
             descriptionTwo.successes = [NSNumber numberWithInt: 8 ];
 
             [runner runDescription: descriptionOne];

@@ -28,8 +28,8 @@
 -(NSString *) readOutput
 {
   NSFileHandle *inputFile = [NSFileHandle fileHandleForReadingAtPath:[OCDSpecOutputter temporaryDirectory]];
-  return [[[NSString alloc] initWithData:[inputFile readDataToEndOfFile] 
-                                encoding:NSUTF8StringEncoding] autorelease];
+  return [[NSString alloc] initWithData:[inputFile readDataToEndOfFile] 
+                                encoding:NSUTF8StringEncoding];
 }
 
 @end

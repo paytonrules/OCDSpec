@@ -6,15 +6,15 @@
 CONTEXT(OCDSpecDescription){
   describe(@"The Description",
           it(@"describes one example without errors", ^{
-            OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *description = [[OCDSpecDescription alloc] init] ;
 
-            [description describe:@"It Should Do Something" onArrayOfExamples:[[[NSArray alloc] init] autorelease]];
+            [description describe:@"It Should Do Something" onArrayOfExamples:[[NSArray alloc] init] ];
 
             [expect(description.failures) toBeEqualTo:[NSNumber numberWithInt:0]];
           }),
 
           it(@"describes an example with one error", ^{
-            OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *description = [[OCDSpecDescription alloc] init];
             OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
             outputter.fileHandle = [NSFileHandle fileHandleWithNullDevice];
 
@@ -29,12 +29,12 @@ CONTEXT(OCDSpecDescription){
           }),
 
           it(@"writes the exceptions to the shared outputter", ^{
-            OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *description = [[OCDSpecDescription alloc] init];
             __block NSString *outputException;
             [OCDSpecOutputter withRedirectedOutput:^{
-              OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{
+              OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock:^{
                 FAIL(@"FAIL");
-              }] autorelease];
+              }];
               NSArray *tests = [NSArray arrayWithObject:example];
 
               [description describe:@"It Should Do Something" onArrayOfExamples:tests];
@@ -49,16 +49,16 @@ CONTEXT(OCDSpecDescription){
           }),
 
           it(@"can describe multiple examples", ^{
-            OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *description = [[OCDSpecDescription alloc] init];
             OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
             outputter.fileHandle = [NSFileHandle fileHandleWithNullDevice];
 
-            OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock:^{
+            OCDSpecExample *exampleOne = [[OCDSpecExample alloc] initWithBlock:^{
               FAIL(@"Fail One");
-            }] autorelease];
-            OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock:^{
+            }];
+            OCDSpecExample *exampleTwo = [[OCDSpecExample alloc] initWithBlock:^{
               FAIL(@"Fail Two");
-            }] autorelease];
+            }];
 
             NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
 
@@ -70,14 +70,14 @@ CONTEXT(OCDSpecDescription){
           }),
 
           it(@"can describe multiple successes", ^{
-            OCDSpecDescription *description = [[[OCDSpecDescription alloc] init] autorelease];
+            OCDSpecDescription *description = [[OCDSpecDescription alloc] init];
             OCDSpecOutputter *outputter = [OCDSpecOutputter sharedOutputter];
             outputter.fileHandle = [NSFileHandle fileHandleWithNullDevice];
 
-            OCDSpecExample *exampleOne = [[[OCDSpecExample alloc] initWithBlock:^{
-            }] autorelease];
-            OCDSpecExample *exampleTwo = [[[OCDSpecExample alloc] initWithBlock:^{
-            }] autorelease];
+            OCDSpecExample *exampleOne = [[OCDSpecExample alloc] initWithBlock:^{
+            }];
+            OCDSpecExample *exampleTwo = [[OCDSpecExample alloc] initWithBlock:^{
+            }];
 
             NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
 
@@ -91,17 +91,15 @@ CONTEXT(OCDSpecDescription){
           it(@"Will still run the postcondition even if the example throws an exception", ^{
             __block bool calledPost = NO;
 
-            OCDSpecExample *exampleGoBoom = [[[OCDSpecExample alloc] initWithBlock:
+            OCDSpecExample *exampleGoBoom = [[OCDSpecExample alloc] initWithBlock:
                     ^{
                       [NSException raise:@"OH NO" format:@"This is a test exception"];
-                    }] autorelease];
+                    }];
 
             NSArray *tests = [NSArray arrayWithObject:exampleGoBoom];
 
             OCDSpecDescription *desc = [[OCDSpecDescription alloc] initWithName:@"test"
                                                                        examples:tests];
-
-            [desc autorelease];
 
             desc.postcondition = ^{
               calledPost = YES;

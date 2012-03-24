@@ -44,7 +44,7 @@ CONTEXT(OCDSpecFail)
   OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock: ^{
     __block NSString *outputException;
     [OCDSpecOutputter withRedirectedOutput: ^{
-      OCDSpecSuiteRunner *runner = [[[OCDSpecSuiteRunner alloc] init] autorelease];
+      OCDSpecSuiteRunner *runner = [[OCDSpecSuiteRunner alloc] init];
       [runner runAllDescriptions];
      
       outputException = [self readResultFromFile];
@@ -66,7 +66,7 @@ CONTEXT(OCDSpecFail)
   example = [self testFinalResultOfMultipleDescribeMacrosFailing];
 
   
-  [app performSelector:@selector(_terminateWithStatus:) withObject:(id) (example.failed ? 1 : 0)];
+  [app performSelector:@selector(_terminateWithStatus:) withObject:[NSNumber numberWithInt:(example.failed ? 1 : 0)]];
 }
 @end
 
@@ -75,10 +75,7 @@ CONTEXT(OCDSpecFail)
 // causes them to interfere with those tests, so I've got this tiny program.
 // Theoretically redundant since the Macros are implicitly tested by being used in the tests.
 int main(int argc, char *argv[]) 
-{  
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+{
   UIApplicationMain(argc, argv, nil, @"TestClass");
-  
-  [pool release];
   return 0;
 }

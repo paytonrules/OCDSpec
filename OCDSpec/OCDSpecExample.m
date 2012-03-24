@@ -16,9 +16,8 @@
 
 -(id) initWithBlock:(void (^)(void))example
 {
-  if ((self = [super init]))
+  if ((self = [self init]))
   {
-    [self init];
     itsExample = [example copy];
   }
   return self;

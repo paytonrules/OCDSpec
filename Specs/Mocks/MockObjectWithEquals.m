@@ -29,10 +29,4 @@
     return equal;
 }
 
--(void) dealloc
-{
-    [expected release];
-    [super dealloc];
-}
-
 @end

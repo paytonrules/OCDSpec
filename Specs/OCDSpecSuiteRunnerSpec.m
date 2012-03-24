@@ -12,10 +12,6 @@ CONTEXT(OCDSpecSuiteRunner){
             runner = [[OCDSpecSuiteRunner alloc] init];
           }),
 
-          afterEach(^{
-            [runner release];
-          }),
-
           it(@"runs classes based on the base class", ^{
             runner.baseClass = [AbstractBaseClass class];
 

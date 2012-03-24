@@ -21,9 +21,9 @@ CONTEXT(OCDSpecExample){
           }),
 
           it(@"writes its exceptions to the outputter", ^{
-            OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{
+            OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock:^{
               FAIL(@"FAIL");
-            }] autorelease];
+            }];
 
             __block NSString *outputException;
             [OCDSpecOutputter withRedirectedOutput:^{
@@ -40,9 +40,9 @@ CONTEXT(OCDSpecExample){
 
           it(@"Examples write their output in a XCode friendly format", ^{
             int outputLine = __LINE__ + 2;
-            OCDSpecExample *example = [[[OCDSpecExample alloc] initWithBlock:^{
+            OCDSpecExample *example = [[OCDSpecExample alloc] initWithBlock:^{
               FAIL(@"FAIL");
-            }] autorelease];
+            }];
             __block NSString *outputException;
             [OCDSpecOutputter withRedirectedOutput:^{
               [example run];
