@@ -1,3 +1,4 @@
+#import <UIKit/UIApplication.h>
 #import "OCDSpecSuiteRunner.h"
 
 @interface TestClass : NSObject
@@ -8,22 +9,24 @@
 
 @implementation TestClass
 
--(void) applicationDidFinishLaunching:(UIApplication *) app
+-(void) applicationDidFinishLaunching:(UIApplication *)app
 {
-  OCDSpecSuiteRunner *runner = [[[OCDSpecSuiteRunner alloc] init] autorelease];
-  
-  [runner runAllDescriptions];
-  
-  [app performSelector:@selector(_terminateWithStatus:) withObject:(id) runner.failures];
+  int failures;
+  OCDSpecSuiteRunner *runner = [[OCDSpecSuiteRunner alloc] init];
+
+  @autoreleasepool
+  {
+    [runner runAllDescriptions];
+    failures = runner.failures;
+
+
+    [app performSelector:@selector(_terminateWithStatus:) withObject:(id) failures];
+  }
 }
 
 @end
 
-int main(int argc, char *argv[]) 
-{  
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+int main(int argc, char *argv[]) {
   UIApplicationMain(argc, argv, nil, @"TestClass");
-    
-  [pool release];
   return 0;
 }
