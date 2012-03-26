@@ -11,8 +11,10 @@
 {
   id example;
   NSMutableArray *exampleList = [NSMutableArray arrayWithCapacity:20];
-  VOIDBLOCK precondition = ^{};
-  VOIDBLOCK postcondition = ^{};
+  VOIDBLOCK precondition = ^{
+  };
+  VOIDBLOCK postcondition = ^{
+  };
 
   while ((example = va_arg(examples, id)))
   {
@@ -36,19 +38,20 @@
   return description;
 }
 
-- (id)init
+-(id) init
 {
   if ((self = [super init]))
   {
     successes = [NSNumber numberWithInt:0];
     failures = [NSNumber numberWithInt:0];
-    precondition = postcondition = ^{};
+    precondition = postcondition = ^{
+    };
   }
 
   return self;
 }
 
-- (id)initWithName:(NSString *)name examples:(NSArray *)examples
+-(id) initWithName:(NSString *)name examples:(NSArray *)examples
 {
   if ((self = [self init]))
   {
@@ -58,14 +61,14 @@
   return self;
 }
 
-- (void)describe:(NSString *)name onArrayOfExamples:(NSArray *)examples
+-(void) describe:(NSString *)name onArrayOfExamples:(NSArray *)examples
 {
   itsExamples = examples;
   itsName = name;
   [self describe];
 }
 
-- (void)describe
+-(void) describe
 {
   [itsExamples enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     OCDSpecExample *example = (OCDSpecExample *) obj;
@@ -83,7 +86,5 @@
     self.postcondition();
   }];
 }
-
-// TEST DEALLOC
 
 @end
