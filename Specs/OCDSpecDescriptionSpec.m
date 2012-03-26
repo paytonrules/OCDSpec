@@ -106,6 +106,31 @@ CONTEXT(OCDSpecDescription){
                                                                      nil ]];
           }),
 
+          it(@"runs a postcondition after each example", ^{
+            __block NSMutableArray *callsMade = [[NSMutableArray alloc] init];
+
+            OCDSpecExample *exampleOne = [[OCDSpecExample alloc] initWithBlock:^{
+              [callsMade addObject:@"Ran First Example"];
+            }];
+            OCDSpecExample *exampleTwo = [[OCDSpecExample alloc] initWithBlock:^{
+              [callsMade addObject:@"Ran Second Example"];
+            }];
+
+            NSArray *tests = [NSArray arrayWithObjects:exampleOne, exampleTwo, nil];
+
+            OCDSpecDescription *description = [[OCDSpecDescription alloc] initWithName:@"Something" examples:tests];
+            description.postcondition = ^{
+              [callsMade addObject:@"Postcondition Called"];
+            };
+            [description describe];
+
+            [expect(callsMade) toBeEqualTo:[NSArray arrayWithObjects:@"Ran First Example",
+                                                                     @"Postcondition Called",
+                                                                     @"Ran Second Example",
+                                                                     @"Postcondition Called",
+                                                                     nil]];
+          }),
+
           it(@"Will still run the postcondition even if the example throws an exception", ^{
             __block bool calledPost = NO;
 
