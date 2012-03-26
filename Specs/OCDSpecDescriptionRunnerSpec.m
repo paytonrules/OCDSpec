@@ -5,8 +5,7 @@
 
 static BOOL descriptionWasRun = false;
 
-void testDescription(void)
-{
+void testDescription(void) {
   descriptionWasRun = true;
 
   [OCDSpecOutputter withRedirectedOutput:^{
@@ -21,8 +20,7 @@ void testDescription(void)
   }];
 }
 
-void testContextWithTwoDescribes(void)
-{
+void testContextWithTwoDescribes(void) {
   [OCDSpecOutputter withRedirectedOutput:^{
     describe(@"MyFakeTest",
             it(@"succeeds", ^{
@@ -54,8 +52,7 @@ void testContextWithTwoDescribes(void)
 }
 @end
 
-CONTEXT(OCDSpecDescriptionRunner)
-{
+CONTEXT(OCDSpecDescriptionRunner){
   __block OCDSpecDescriptionRunner *runner;
   describe(@"OCDSpecDescriptionRunner",
 
@@ -80,34 +77,34 @@ CONTEXT(OCDSpecDescriptionRunner)
             FakeDescription *desc = [[FakeDescription alloc] init];
             desc.wasRun = false;
 
-            [runner runDescription: desc];
+            [runner runDescription:desc];
 
             expectTruth(desc.wasRun);
           }),
 
           it(@"stores the results of a description on itself", ^{
             OCDSpecDescription *description = [[OCDSpecDescription alloc] init];
-            description.failures = [NSNumber numberWithInt: 8 ];
-            description.successes = [NSNumber numberWithInt: 6 ];
+            description.failures = [NSNumber numberWithInt:8];
+            description.successes = [NSNumber numberWithInt:6];
 
-            [runner runDescription: description];
+            [runner runDescription:description];
 
-            [expect(runner.failures) toBeEqualTo:[NSNumber numberWithInt:8] ];
-            [expect(runner.successes) toBeEqualTo:[NSNumber numberWithInt:6] ];
+            [expect(runner.failures) toBeEqualTo:[NSNumber numberWithInt:8]];
+            [expect(runner.successes) toBeEqualTo:[NSNumber numberWithInt:6]];
           }),
 
           it(@"Totals up the runDescriptions on multiple runs", ^{
             OCDSpecDescription *descriptionOne = [[OCDSpecDescription alloc] init];
-            descriptionOne.failures = [NSNumber numberWithInt: 8 ];
-            descriptionOne.successes = [NSNumber numberWithInt: 1 ];
+            descriptionOne.failures = [NSNumber numberWithInt:8];
+            descriptionOne.successes = [NSNumber numberWithInt:1];
             OCDSpecDescription *descriptionTwo = [[OCDSpecDescription alloc] init];
-            descriptionTwo.successes = [NSNumber numberWithInt: 8 ];
+            descriptionTwo.successes = [NSNumber numberWithInt:8];
 
-            [runner runDescription: descriptionOne];
-            [runner runDescription: descriptionTwo];
+            [runner runDescription:descriptionOne];
+            [runner runDescription:descriptionTwo];
 
-            [expect(runner.failures) toBeEqualTo:[NSNumber numberWithInt:8] ];
-            [expect(runner.successes) toBeEqualTo:[NSNumber numberWithInt:9] ];
+            [expect(runner.failures) toBeEqualTo:[NSNumber numberWithInt:8]];
+            [expect(runner.successes) toBeEqualTo:[NSNumber numberWithInt:9]];
           }),
 
           it(@"Does not overwrite counts when two describes are nested in a context", ^{
@@ -116,9 +113,6 @@ CONTEXT(OCDSpecDescriptionRunner)
             [expect([NSNumber numberWithInt:results.failures]) toBeEqualTo:[NSNumber numberWithInt:1]];
             [expect([NSNumber numberWithInt:results.successes]) toBeEqualTo:[NSNumber numberWithInt:1]];
           }),
-
-          // Get describe method in the OCDSpecDescription method tested
-          // Look around for stray tests.  beforeEach, describe, you've got some stuff out there nowhere near the right spots.
           nil
   );
 }
