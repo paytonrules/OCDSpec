@@ -7,17 +7,13 @@
 
 @synthesize failures, successes, precondition, postcondition;
 
-+(OCDSpecDescription *) descriptionFromName:(NSString *)descriptionName examples:(va_list)examples
++(OCDSpecDescription *) descriptionFromName:(NSString *)descriptionName examples:(NSArray *)examplesAndConditions
 {
-  id example;
-  NSMutableArray *exampleList = [NSMutableArray arrayWithCapacity:20];
-  VOIDBLOCK precondition = ^{
-  };
-  VOIDBLOCK postcondition = ^{
-  };
+  NSMutableArray *exampleList = [[NSMutableArray alloc] init];
+  __block VOIDBLOCK precondition = ^{};
+  __block VOIDBLOCK postcondition = ^{};
 
-  while ((example = va_arg(examples, id)))
-  {
+  [examplesAndConditions enumerateObjectsUsingBlock:^(id example, NSUInteger idx, BOOL *stop){
     if ([example isKindOfClass:[OCDSpecExample class]])
     {
       [exampleList addObject:example];
@@ -30,7 +26,8 @@
     {
       precondition = ((OCDSpecPreCondition *) example).condition;
     }
-  }
+
+  }];
 
   OCDSpecDescription *description = [[OCDSpecDescription alloc] initWithName:descriptionName examples:exampleList];
   description.precondition = precondition;

@@ -34,9 +34,16 @@ static OCDSpecDescriptionRunner *currentRunner = NULL;
 
 void describe(NSString *descriptionName, ...) {
   va_list examples;
+  id example;
+  NSMutableArray *examplesAsArray = [[NSMutableArray alloc] init];
 
   va_start(examples, descriptionName);
-  OCDSpecDescription *description = [OCDSpecDescription descriptionFromName:descriptionName examples:examples];
+  while ((example = va_arg(examples, id)))
+  {
+    [examplesAsArray addObject:example];
+  }
+
+  OCDSpecDescription *description = [OCDSpecDescription descriptionFromName:descriptionName examples:examplesAsArray];
   [currentRunner runDescription:description];
   va_end(examples);
 }
