@@ -18,9 +18,7 @@
   {
     [runner runAllDescriptions];
     failures = runner.failures;
-
-
-    [app performSelector:@selector(_terminateWithStatus:) withObject:(id) failures];
+    exit(failures);
   }
 }
 
