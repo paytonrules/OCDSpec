@@ -45,6 +45,12 @@
     }
 }
 
+-(void) toExist
+{
+    if (!actualObject)
+        FAIL(@"Object was expected to exist, but didn't");
+}
+
 -(void) fail:(NSString *)errorFormat with:(id)expectedObject
 {
     [OCDSpecFail fail:[NSString stringWithFormat:errorFormat, actualObject, expectedObject]

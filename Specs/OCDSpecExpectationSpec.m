@@ -137,7 +137,26 @@ CONTEXT(OCDSpecExpectation){
             }
           }),
 
-
+          nil);
+    
+  describe(@"toExist",
+           it(@"fails for nil", ^{
+             @try
+             {
+               [expect(nil) toExist];
+               FAIL(@"Should have thrown an exception, but didn't");
+             }
+             @catch (NSException *exception)
+             {
+               NSString *expectedReason = [NSString stringWithFormat:@"Object was expected to exist, but didn't"];
+               [expect([exception reason]) toBeEqualTo:expectedReason];
+             }
+          }),
+          
+          it(@"succeeds for non-nil", ^{
+            [expect(@"not nil") toExist];
+          }),
+        
           nil);
 
   describe(@"expectFalse",
