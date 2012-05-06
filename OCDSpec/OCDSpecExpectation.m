@@ -48,7 +48,9 @@
 -(void) toExist
 {
     if (!actualObject)
-        FAIL(@"Object was expected to exist, but didn't");
+        [OCDSpecFail fail:@"Object was expected to exist, but didn't"
+                   atLine: line
+                   inFile: file];
 }
 
 -(void) fail:(NSString *)errorFormat with:(id)expectedObject
