@@ -58,6 +58,8 @@
 		C01FCF5008A95454005424AE /* InvalidClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424A9 /* InvalidClass.m */; };
 		C01FCF5008A95454005424B1 /* MultipleMatchingClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C01FCF5008A95454005424B5 /* MultipleMatchingClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */; };
+		F8E1ABEA1566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E1ABE91566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.m */; };
+		F8E1ABED1566F58A00D8DAAB /* OCDCustomMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E1ABEC1566F58A00D8DAAB /* OCDCustomMatcherSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +135,9 @@
 		C01FCF5008A95454005424AF /* InvalidClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvalidClass.h; path = Helpers/InvalidClass.h; sourceTree = "<group>"; };
 		C01FCF5008A95454005424B0 /* MultipleMatchingClasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultipleMatchingClasses.m; path = Helpers/MultipleMatchingClasses.m; sourceTree = "<group>"; };
 		C01FCF5008A95454005424B6 /* MultipleMatchingClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleMatchingClasses.h; path = Helpers/MultipleMatchingClasses.h; sourceTree = "<group>"; };
+		F8E1ABE81566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCDSpecExpectation+CustomMatcher.h"; sourceTree = "<group>"; };
+		F8E1ABE91566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCDSpecExpectation+CustomMatcher.m"; sourceTree = "<group>"; };
+		F8E1ABEC1566F58A00D8DAAB /* OCDCustomMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDCustomMatcherSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +166,8 @@
 				07C2DDF4128442EA009E03F7 /* MockExample.m */,
 				07C3DBA913622CE600CADEDB /* MockObjectWithEquals.h */,
 				07C3DBAA13622CE600CADEDB /* MockObjectWithEquals.m */,
+				F8E1ABE81566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.h */,
+				F8E1ABE91566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.m */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 				0761B5231359E48C00FE98CC /* OCDSpecExpectationSpec.m */,
 				073A6F9312F1D43C003EC052 /* Mocks */,
 				073A6FCC12F1D7DF003EC052 /* Programs */,
+				F8E1ABEC1566F58A00D8DAAB /* OCDCustomMatcherSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -458,6 +466,8 @@
 				C01FCF5008A95454005424A3 /* ValidClass.m in Sources */,
 				C01FCF5008A95454005424AA /* InvalidClass.m in Sources */,
 				C01FCF5008A95454005424B1 /* MultipleMatchingClasses.m in Sources */,
+				F8E1ABEA1566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.m in Sources */,
+				F8E1ABED1566F58A00D8DAAB /* OCDCustomMatcherSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

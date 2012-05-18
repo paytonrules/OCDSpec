@@ -35,22 +35,26 @@
 -(void) toBeTrue
 {
     if (![actualObject boolValue])
-        [OCDSpecFail fail:[NSString stringWithFormat:@"%b was expected to be true, but was false", actualObject] atLine:line inFile:file];
+        [self failWithMessage:[NSString stringWithFormat:@"%b was expected to be true, but was false", actualObject]];
 }
 
 -(void) toBeFalse
 {
     if ([actualObject boolValue]) {
-        [OCDSpecFail fail:[NSString stringWithFormat:@"%b was expected to be false, but was true", actualObject] atLine:line inFile:file];
-    }
+        [self failWithMessage:[NSString stringWithFormat:@"%b was expected to be false, but was true", actualObject]];    }
 }
 
 -(void) toExist
 {
     if (!actualObject)
-        [OCDSpecFail fail:@"Object was expected to exist, but didn't"
-                   atLine: line
-                   inFile: file];
+        [self failWithMessage: @"Object was expected to exist, but didn't"];
+}
+
+-(void) failWithMessage:(NSString *)message
+{
+    [OCDSpecFail fail: message
+               atLine: line
+               inFile: file];
 }
 
 -(void) fail:(NSString *)errorFormat with:(id)expectedObject
