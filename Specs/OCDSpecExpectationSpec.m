@@ -36,6 +36,32 @@ CONTEXT(OCDSpecExpectation){
             [expect(expectation.file) toBeEqualTo:[NSString stringWithUTF8String:__FILE__]];
           }),
           nil);
+    
+  describe(@"failWithMessage",
+           it(@"includes the line and file",
+              ^{
+                  OCDSpecExpectation *expectation = [[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"FILENAME" atLineNumber:456];
+                  @try {
+                      [expectation failWithMessage: @"Some Message"];
+                      FAIL(@"Code did not throw a failure exception");
+                  }
+                  @catch (NSException *exception) {
+                      [expect([[exception userInfo] objectForKey:@"file"]) toBeEqualTo:@"FILENAME"];
+                      [expect([[exception userInfo] objectForKey:@"line"]) toBeEqualTo:[NSNumber numberWithLong:456]];
+                  }              
+              }),
+           it(@"includes the message",
+              ^{
+                  OCDSpecExpectation *expectation = [[OCDSpecExpectation alloc] initWithObject:actualObject inFile:@"FILENAME" atLineNumber:456];
+                  @try {
+                      [expectation failWithMessage: @"Some Message"];
+                      FAIL(@"Code did not throw a failure exception");
+                  }
+                  @catch (NSException *exception) {
+                      [expect([exception reason]) toBeEqualTo: @"Some Message"];
+                  }              
+              }),
+           nil);
 
   describe(@"toBeEqualTo",
           it(@"passes when two objects are equal", ^{
@@ -137,7 +163,26 @@ CONTEXT(OCDSpecExpectation){
             }
           }),
 
-
+          nil);
+    
+  describe(@"toExist",
+           it(@"fails for nil", ^{
+             @try
+             {
+               [expect(nil) toExist];
+               FAIL(@"Should have thrown an exception, but didn't");
+             }
+             @catch (NSException *exception)
+             {
+               NSString *expectedReason = [NSString stringWithFormat:@"Object was expected to exist, but didn't"];
+               [expect([exception reason]) toBeEqualTo:expectedReason];
+             }
+          }),
+          
+          it(@"succeeds for non-nil", ^{
+            [expect(@"not nil") toExist];
+          }),
+        
           nil);
 
   describe(@"expectFalse",

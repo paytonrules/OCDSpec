@@ -13,6 +13,9 @@
 -(void) toBe:(id) expectedObject;
 -(void) toBeTrue;
 -(void) toBeFalse;
+-(void) toExist;
+
+-(void) failWithMessage:(NSString *)message;
 
 @end
 
