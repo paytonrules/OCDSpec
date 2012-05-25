@@ -4,8 +4,7 @@
 CONTEXT(OCDSpecOutputter_RedirectOutput)
 {
   describe(@"The redirected output category", 
-           it(@"redirects the output within the block",
-              ^{
+           it(@"redirects the output within the block", ^{
                 __block NSString *outputData;
                 [OCDSpecOutputter withRedirectedOutput:
                  ^{
@@ -21,8 +20,7 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                 }
               }),
            
-           it(@"still restores the outputter to the standard error if the call raises an exception",
-              ^{
+           it(@"still restores the outputter to the standard error if the call raises an exception", ^{
                 @try {
                   [OCDSpecOutputter withRedirectedOutput:
                    ^{
@@ -45,8 +43,7 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                 }
               }),
 
-           it(@"Make sure the file is deleted on exception",
-              ^{
+           it(@"Make sure the file is deleted on exception", ^{
                 @try {
                   [OCDSpecOutputter withRedirectedOutput:
                    ^{
@@ -68,8 +65,7 @@ CONTEXT(OCDSpecOutputter_RedirectOutput)
                 }
               }),
            
-           it(@"Allows you to read the redirected output", 
-              ^{
+           it(@"Allows you to read the redirected output", ^{
                 __block NSString *outputData;
                 [OCDSpecOutputter withRedirectedOutput: ^{
                   [[OCDSpecOutputter sharedOutputter] writeMessage:@"Message"];
