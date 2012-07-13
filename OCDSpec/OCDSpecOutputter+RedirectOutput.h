@@ -3,6 +3,6 @@
 
 @interface OCDSpecOutputter (RedirectOutput)
 +(void) withRedirectedOutput:(void (^)(void))context;
--(NSString *) readOutput;
+-(NSString *) readOutput __attribute((ns_returns_retained));
 
 @end

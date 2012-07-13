@@ -7,7 +7,7 @@
 }
 
 @property(assign) BOOL failed;
-+(MockExample*) exampleThatFailed;
++(MockExample*) newExampleThatFailed;
 -(void) run;
 
 @end

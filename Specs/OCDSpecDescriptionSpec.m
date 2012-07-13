@@ -26,7 +26,7 @@ CONTEXT(OCDSpecDescription){
           }),
 
           it(@"describes an example with one error", ^{
-            MockExample *example = [MockExample exampleThatFailed];
+            MockExample *example = [MockExample newExampleThatFailed];
             NSArray *examples = [NSArray arrayWithObjects:example, nil];
 
             [description describe:@"It Should Do Something" onArrayOfExamples:examples];

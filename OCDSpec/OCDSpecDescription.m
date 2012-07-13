@@ -7,7 +7,7 @@
 
 @synthesize failures, successes, precondition, postcondition;
 
-+(OCDSpecDescription *) descriptionFromName:(NSString *)descriptionName examples:(NSArray *)examplesAndConditions
++(OCDSpecDescription *) newDescriptionFromName:(NSString *)descriptionName examples:(NSArray *)examplesAndConditions
 {
   NSMutableArray *exampleList = [[NSMutableArray alloc] init];
   __block VOIDBLOCK precondition = ^{};

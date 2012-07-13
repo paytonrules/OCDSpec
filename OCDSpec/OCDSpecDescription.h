@@ -11,7 +11,7 @@
     VOIDBLOCK       postcondition;
 }
 
-+(OCDSpecDescription *) descriptionFromName:(NSString *)descriptionName examples:(NSArray *)examples;
++(OCDSpecDescription *) newDescriptionFromName:(NSString *)descriptionName examples:(NSArray *)examples;
 
 @property(nonatomic, retain) NSNumber *failures;
 @property(nonatomic, retain) NSNumber *successes;

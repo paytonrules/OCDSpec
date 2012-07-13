@@ -19,7 +19,7 @@ static OCDSpecOutputter *sharedOutputter = nil;
 +(OCDSpecOutputter *)sharedOutputter
 {
   if (sharedOutputter == nil) {
-    sharedOutputter = [[super alloc] init];
+    sharedOutputter = [[self alloc] init];
   }
   return sharedOutputter;
 }

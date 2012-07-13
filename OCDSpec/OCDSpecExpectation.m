@@ -41,7 +41,8 @@
 -(void) toBeFalse
 {
     if ([actualObject boolValue]) {
-        [self failWithMessage:[NSString stringWithFormat:@"%b was expected to be false, but was true", actualObject]];    }
+        [self failWithMessage:[NSString stringWithFormat:@"%b was expected to be false, but was true", actualObject]];
+    }
 }
 
 -(void) toExist

@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "Protocols/Expectation.h"
 
-@interface OCDSpecExpectation : NSObject {
+@interface OCDSpecExpectation : NSObject<Expectation> {
     id actualObject;
     int line;
     NSString *file;
@@ -9,13 +10,11 @@
 @property(readonly) NSString *file;
 
 -(id) initWithObject:(id) object inFile:(NSString*) fileName atLineNumber:(int) lineNumber;
--(void) toBeEqualTo:(id) expectedObject;
--(void) toBe:(id) expectedObject;
--(void) toBeTrue;
 -(void) toBeFalse;
--(void) toExist;
-
 -(void) failWithMessage:(NSString *)message;
+-(void) failWithErrorFormat:(NSString *)errorFormat expectedObject: (id) expectedObject;
+-(void) toBeTrue;
+-(void) toExist;
 
 @end
 

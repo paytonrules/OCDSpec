@@ -27,7 +27,8 @@ void (*funcPtr)(void); \
 +(OCDSpecResults) run \
 { \
   TestRunner##classname *runner = [[TestRunner##classname alloc] init]; \
-  return [runner runContext: &descriptionOf##classname]; \
+  OCDSpecResults results = [runner runContext: &descriptionOf##classname]; \
+  return results; \
 } \
 @end \
 void descriptionOf##classname(void)

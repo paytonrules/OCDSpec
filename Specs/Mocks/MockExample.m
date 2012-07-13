@@ -3,7 +3,7 @@
 @implementation MockExample
 @synthesize failed;
 
-+(MockExample *)exampleThatFailed
++(MockExample *)newExampleThatFailed
 {
   MockExample *example = [[MockExample alloc] init];
   example.failed = YES;

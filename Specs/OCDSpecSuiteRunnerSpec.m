@@ -19,7 +19,7 @@ CONTEXT(OCDSpecSuiteRunner){
               [runner runAllDescriptions];
             }];
 
-            expectTruth([ValidClass wasRun]);
+            expectTruth((bool) [ValidClass wasRun]);
           }),
 
           it(@"runs classes based on the base class", ^{

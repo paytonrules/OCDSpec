@@ -6,6 +6,7 @@ static OCDSpecDescriptionRunner *currentRunner = NULL;
 @implementation OCDSpecDescriptionRunner
 
 @synthesize failures, successes;
+
 +(OCDSpecResults) run
 {
     OCDSpecResults results;
@@ -43,7 +44,7 @@ void describe(NSString *descriptionName, ...) {
     [examplesAsArray addObject:example];
   }
 
-  OCDSpecDescription *description = [OCDSpecDescription descriptionFromName:descriptionName examples:examplesAsArray];
+  OCDSpecDescription *description = [OCDSpecDescription newDescriptionFromName:descriptionName examples:examplesAsArray];
   [currentRunner runDescription:description];
   va_end(examples);
 }

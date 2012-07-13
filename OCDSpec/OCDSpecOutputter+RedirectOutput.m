@@ -25,11 +25,12 @@
   }
 }
 
--(NSString *) readOutput
+-(NSString *) readOutput __attribute((ns_returns_retained))
 {
   NSFileHandle *inputFile = [NSFileHandle fileHandleForReadingAtPath:[OCDSpecOutputter temporaryDirectory]];
-  return [[NSString alloc] initWithData:[inputFile readDataToEndOfFile] 
-                                encoding:NSUTF8StringEncoding];
+  NSString *output = [[NSString alloc] initWithData:[inputFile readDataToEndOfFile] 
+                                           encoding:NSUTF8StringEncoding];
+  return output;
 }
 
 @end

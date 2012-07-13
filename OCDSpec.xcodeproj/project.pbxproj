@@ -138,6 +138,7 @@
 		F8E1ABE81566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCDSpecExpectation+CustomMatcher.h"; sourceTree = "<group>"; };
 		F8E1ABE91566F50700D8DAAB /* OCDSpecExpectation+CustomMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCDSpecExpectation+CustomMatcher.m"; sourceTree = "<group>"; };
 		F8E1ABEC1566F58A00D8DAAB /* OCDCustomMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDCustomMatcherSpec.m; sourceTree = "<group>"; };
+		F8E1ABED1566F58A00D8DAAC /* Expectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expectation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +286,7 @@
 		07C2DE3512844C33009E03F7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F8E1ABED1566F58A00D8DAAC /* Expectation.h */,
 				07C2DE3712844CDE009E03F7 /* Example.h */,
 				0783C697128A6162003EBDFE /* DescriptionRunner.h */,
 			);

@@ -4,8 +4,6 @@
 #import "OCDSpec/OCDSpecResults.h"
 #import "OCDSpec/OCDSpecDescriptionRunner.h"
 
-@class TestDescriptionRunner;
-
 @implementation OCDSpecSuiteRunner
 
 @synthesize successes, failures, baseClass;
