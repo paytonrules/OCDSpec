@@ -1,3 +1,1 @@
-OCDSpec has been retired.  You can now use SpecKit.
-
-Please see: https://github.com/sdegutis/SpecKit/
+OCDSpec has been succeeded by [OCDSpec2](https://github.com/ericmeyer/OCDSpec2).
