@@ -44,7 +44,7 @@ CONTEXT(OCDSpecSuiteRunner){
             [expect([NSNumber numberWithInt: runner.failures]) toBeEqualTo:[NSNumber numberWithInt: 2]];
           }),
 
-          it(@"totals the results` from multiple classes", ^{
+          it(@"totals the results from multiple classes", ^{
             runner.baseClass = [MultipleMatchingClasses class];
 
             [FirstMultipleClass setSuccesses: 1 andFailures:3];
